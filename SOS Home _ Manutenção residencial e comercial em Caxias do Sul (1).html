@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SOS Home | Manutenção residencial e comercial em Caxias do Sul</title>
+<meta name="description" content="Elétrica, hidráulica, pintura, automação smart, reformas e manutenção preventiva para residências e comércios em Caxias do Sul e região. Orçamento rápido pelo WhatsApp e garantia de serviço.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+tailwind.config={theme:{extend:{fontFamily:{sans:['"Plus Jakarta Sans"','Inter','system-ui','sans-serif']},colors:{bg:'var(--bg)',surf:'var(--surf)',line:'var(--line)',ink:'var(--ink)',mute:'var(--mute)',brand:'var(--brand)',btn:'var(--btn)',acc:'var(--acc)'}}}}
+</script>
+<style>
+:root{--bg:#F4F6F8;--surf:#FFFFFF;--line:#DCE2E8;--ink:#10151C;--mute:#4B5565;--brand:#0E3A63;--btn:#0E3A63;--acc:#C85A17;--tint:#E8EEF4;--home:#0E3A63;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1319;--surf:#151C25;--line:#273240;--ink:#E8EDF2;--mute:#A3AEBB;--brand:#7DB2E6;--btn:#1B5A94;--acc:#EE8446;--tint:#1A2430;--home:#F1F5F9}}
+:root[data-theme="dark"]{--bg:#0E1319;--surf:#151C25;--line:#273240;--ink:#E8EDF2;--mute:#A3AEBB;--brand:#7DB2E6;--btn:#1B5A94;--acc:#EE8446;--tint:#1A2430;--home:#F1F5F9}
+html{scroll-behavior:smooth;scroll-padding-top:calc(5rem + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sans",Inter,system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surf);z-index:60}
+.grid-bg{background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:40px 40px;opacity:.45;mask-image:linear-gradient(to bottom,#000,transparent 85%);-webkit-mask-image:linear-gradient(to bottom,#000,transparent 85%)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:700;border-radius:.5rem;padding:.8rem 1.25rem;transition:filter .15s,border-color .15s;text-align:center}
+.btn-p{background:var(--btn);color:#fff}.btn-p:hover{filter:brightness(1.12)}
+.btn-a{background:var(--acc);color:#fff}.btn-a:hover{filter:brightness(1.08)}
+.btn-o{border:1.5px solid var(--line);background:var(--surf)}.btn-o:hover{border-color:var(--brand)}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.chip{border:1px solid var(--line);background:var(--surf);padding:.5rem 1rem;border-radius:999px;font-weight:600;font-size:.9rem;color:var(--mute)}
+.chip[aria-pressed="true"]{background:var(--btn);border-color:var(--btn);color:#fff}
+.fld{width:100%;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:.5rem;padding:.7rem .85rem}
+.fld:focus{border-color:var(--brand);outline:none}
+.faq-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .25s}
+.faq-body>div{overflow:hidden}
+.faq-open .faq-body{grid-template-rows:1fr}.faq-open .plus{transform:rotate(45deg)}
+.plus{transition:transform .2s}
+.reveal{animation:rv .7s ease both}@keyframes rv{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body class="antialiased">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="logo-sos" viewBox="0 0 240 170">
+<path d="M12 66 L118 10 L176 40 V20 H198 V52 L226 66" fill="none" stroke="var(--brand)" stroke-width="7" stroke-linejoin="miter"/>
+<path d="M34 66 L118 24 L168 48" fill="none" stroke="var(--acc)" stroke-width="3"/>
+<rect x="104" y="29" width="31" height="27" fill="none" stroke="var(--brand)" stroke-width="3"/>
+<g fill="var(--acc)"><rect x="107.5" y="32.5" width="11" height="9"/><rect x="120.5" y="32.5" width="11" height="9"/><rect x="107.5" y="43.5" width="11" height="9"/><rect x="120.5" y="43.5" width="11" height="9"/></g>
+<path d="M6 96h24M10 106h22M14 116h18" stroke="var(--acc)" stroke-width="3.5" stroke-linecap="round"/>
+<text transform="skewX(-12)" x="64.4" y="124" font-size="72" font-weight="800" fill="var(--acc)" textLength="158" lengthAdjust="spacingAndGlyphs" style="font-family:'Plus Jakarta Sans',Inter,sans-serif">SOS</text>
+<text transform="skewX(-12)" x="72" y="160" font-size="38" font-weight="800" fill="var(--home)" textLength="158" lengthAdjust="spacingAndGlyphs" style="font-family:'Plus Jakarta Sans',Inter,sans-serif">HOME</text>
+</symbol></defs></svg>
+
+<header class="fixed top-0 inset-x-0 z-50 border-b border-line bg-surf/95 backdrop-blur" style="padding-top:env(safe-area-inset-top,0px)">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+    <a href="#topo" aria-label="SOS Home, início"><svg class="h-14 w-auto" viewBox="0 0 240 170" role="img" aria-label="SOS Home – Serviços profissionais a domicílio"><use href="#logo-sos"/></svg></a>
+    <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-mute" aria-label="Principal">
+      <a class="hover:text-ink" href="#servicos">Serviços</a>
+      <a class="hover:text-ink" href="#atendimento">Planos e atendimento</a>
+      <a class="hover:text-ink" href="#vistoria">Vistoria técnica</a>
+      <a class="hover:text-ink" href="#como">Como funciona</a>
+      <a class="hover:text-ink" href="#faq">Dúvidas</a>
+    </nav>
+    <a href="tel:+5554996960909" class="hidden md:block text-sm font-extrabold hover:underline">(54) 99696-0909</a>
+    <a href="#contato" data-wa="Olá, SOS Home! Gostaria de pedir um orçamento." class="btn btn-a hidden sm:inline-flex !py-2.5 text-sm">Chamar no WhatsApp</a>
+    <button id="menuBtn" class="lg:hidden btn btn-o !py-2 !px-3" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">Menu</button>
+  </div>
+  <div id="menu" class="hidden lg:hidden border-t border-line bg-surf px-4 py-3 text-sm font-semibold">
+    <a class="block py-2.5" href="#servicos">Serviços</a>
+    <a class="block py-2.5" href="#atendimento">Planos e atendimento</a>
+    <a class="block py-2.5" href="#vistoria">Vistoria técnica</a>
+    <a class="block py-2.5" href="#como">Como funciona</a>
+    <a class="block py-2.5" href="#faq">Dúvidas</a>
+    <a class="btn btn-a w-full mt-2" href="#contato" data-wa="Olá, SOS Home! Gostaria de pedir um orçamento.">Chamar no WhatsApp</a>
+  </div>
+</header>
+
+<main id="topo" class="pt-16">
+
+<section class="relative overflow-hidden border-b border-line">
+  <div class="grid-bg absolute inset-0" aria-hidden="true"></div>
+  <div class="relative max-w-6xl mx-auto px-4 py-14 lg:py-24 grid lg:grid-cols-5 gap-10 items-center">
+    <div class="lg:col-span-3 reveal">
+      <p class="inline-block text-sm font-bold text-brand border border-line bg-surf rounded-full px-3 py-1 mb-5">Caxias do Sul e região</p>
+      <h1 class="text-4xl sm:text-5xl font-extrabold leading-[1.08] tracking-tight">Na hora que precisa, com a qualidade que você merece.</h1>
+      <p class="mt-5 text-lg text-mute max-w-xl leading-relaxed">Manutenção preventiva e corretiva, atendimentos emergenciais, instalações e reformas para residências, comércios e indústrias. Elétrica, hidráulica, climatização, solda, pintura e automação smart com orçamento rápido e garantia de serviço.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#contato" class="btn btn-a">Pedir orçamento</a>
+        <a href="#explorar" class="btn btn-o">Explore o seu imóvel</a>
+      </div>
+    </div>
+    <aside class="lg:col-span-2 reveal" style="animation-delay:.12s" aria-label="Diferenciais">
+      <div class="bg-surf border border-line rounded-xl overflow-hidden">
+        <div class="px-5 py-3 border-b border-line bg-[var(--tint)] font-bold text-sm">Como a SOS Home atende</div>
+        <ul class="divide-y divide-line" id="difer"></ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="explorar" class="border-b border-line bg-surf">
+  <div class="max-w-6xl mx-auto px-4 py-16 lg:py-20">
+    <h2 class="text-3xl font-extrabold tracking-tight">Explore o seu imóvel</h2>
+    <p class="mt-3 text-mute max-w-2xl">Gire o imóvel em 3D e toque nos números para ver o que costuma dar problema em cada ambiente e como a SOS Home resolve.</p>
+    <div class="mt-6 flex gap-2" id="expTabs" role="group" aria-label="Tipo de imóvel"></div>
+    <div class="mt-6 relative rounded-xl overflow-hidden border border-line" style="background:radial-gradient(circle at 50% 30%,#1b4a78,#0b1a2b 80%)">
+      <canvas id="sc" class="w-full block" style="height:min(62vw,440px);min-height:300px;cursor:grab" aria-label="Imóvel em 3D com pontos de inspeção numerados"></canvas>
+      <p class="absolute top-3 left-3 text-xs text-white/85 bg-black/40 rounded-md px-2.5 py-1.5 pointer-events-none">Arraste para girar · toque nos números</p>
+      <div class="absolute bottom-3 left-3 right-3 flex flex-wrap gap-2">
+        <button id="scRot" type="button" class="btn btn-o !py-1.5 !px-3 text-xs">Girar</button>
+        <button id="scTour" type="button" class="btn btn-a !py-1.5 !px-3 text-xs">Tour guiado</button>
+        <button id="scReset" type="button" class="btn btn-o !py-1.5 !px-3 text-xs">Visão geral</button>
+      </div>
+    </div>
+    <div class="mt-6 grid lg:grid-cols-5 gap-6 items-start">
+      <div class="lg:col-span-2">
+        <svg viewBox="0 0 300 46" class="w-full block" preserveAspectRatio="none" aria-hidden="true"><path d="M3 46 L150 5 L297 46" fill="var(--tint)" stroke="var(--brand)" stroke-width="6" vector-effect="non-scaling-stroke"/></svg>
+        <div id="expTiles" class="grid grid-cols-2 gap-2 p-3 bg-bg" style="border:6px solid var(--brand);border-top:0"></div>
+      </div>
+      <div id="expPanel" class="lg:col-span-3 bg-bg border border-line rounded-xl p-6" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section id="servicos" class="max-w-6xl mx-auto px-4 py-16 lg:py-20">
+  <h2 class="text-3xl font-extrabold tracking-tight">Serviços para a sua casa e para o seu negócio</h2>
+  <p class="mt-3 text-mute max-w-2xl">Filtre para ver o que atende o seu caso.</p>
+  <div class="mt-6 flex flex-wrap gap-2" id="filtros" role="group" aria-label="Filtrar serviços"></div>
+  <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="gridServ" aria-live="polite"></div>
+</section>
+
+<section id="sinais" class="max-w-6xl mx-auto px-4 py-16 lg:py-20 grid lg:grid-cols-5 gap-8">
+  <div class="lg:col-span-2">
+    <h2 class="text-3xl font-extrabold tracking-tight">Seu imóvel está pedindo manutenção?</h2>
+    <p class="mt-3 text-mute leading-relaxed">Marque os sinais que você já percebeu. Pequenos defeitos costumam piorar com o tempo, e identificar cedo sai mais barato.</p>
+  </div>
+  <div class="lg:col-span-3 bg-surf border border-line rounded-xl p-6">
+    <div class="grid sm:grid-cols-2 gap-3" id="sgList"></div>
+    <div class="mt-6 h-2 rounded bg-line overflow-hidden"><div id="sgBar" class="h-full bg-acc" style="width:0;transition:width .3s"></div></div>
+    <p id="sgTxt" class="mt-3 font-semibold" aria-live="polite"></p>
+    <p id="sgRisco" class="hidden mt-3 text-sm rounded-lg border border-line bg-[var(--tint)] p-3">Com cheiro de queimado, tomadas quentes ou choque, desligue o circuito no quadro e chame com urgência. Não mexa na instalação por conta própria.</p>
+    <a id="sgBtn" href="#contato" data-srv="Manutenção preventiva" data-modo="Atendimento avulso" class="btn btn-a mt-5">Pedir uma revisão</a>
+  </div>
+</section>
+
+<section id="atendimento" class="border-y border-line bg-surf">
+  <div class="max-w-6xl mx-auto px-4 py-16 lg:py-20">
+    <h2 class="text-3xl font-extrabold tracking-tight">Escolha como contratar</h2>
+    <p class="mt-3 text-mute max-w-2xl">Resolva um problema agora, evite que ele aconteça ou deixe a manutenção por nossa conta.</p>
+    <div class="mt-8 grid md:grid-cols-3 gap-5" id="modos"></div>
+  </div>
+</section>
+
+<section id="vistoria" class="max-w-6xl mx-auto px-4 py-16 lg:py-20 grid lg:grid-cols-5 gap-8 items-center">
+  <div class="lg:col-span-3">
+    <h2 class="text-3xl font-extrabold tracking-tight">Vistoria técnica com laudo e inspeção termográfica</h2>
+    <p class="mt-3 text-mute leading-relaxed max-w-xl">Antes de comprar, alugar ou reformar um imóvel, ou para investigar problemas que não aparecem a olho nu, inspecionamos com câmera termográfica FLIR e entregamos um laudo com o logo da SOS Home e assinatura do responsável técnico.</p>
+    <a href="#contato" data-modo="Vistoria técnica" class="btn btn-p mt-6">Solicitar vistoria</a>
+  </div>
+  <ul class="lg:col-span-2 bg-surf border border-line rounded-xl divide-y divide-line text-sm font-semibold">
+    <li class="p-4">Identificação de pontos de aquecimento em instalações elétricas</li>
+    <li class="p-4">Apoio na busca por umidade e infiltrações</li>
+    <li class="p-4">Registro fotográfico e laudo escrito</li>
+  </ul>
+</section>
+
+<section id="como" class="border-y border-line bg-surf">
+  <div class="max-w-6xl mx-auto px-4 py-16 lg:py-20">
+    <h2 class="text-3xl font-extrabold tracking-tight">Como funciona</h2>
+    <ol class="mt-8 grid md:grid-cols-4 gap-5" id="etapas"></ol>
+  </div>
+</section>
+
+<section id="faq" class="max-w-3xl mx-auto px-4 py-16 lg:py-20">
+  <h2 class="text-3xl font-extrabold tracking-tight">Dúvidas frequentes</h2>
+  <div class="mt-8 border border-line rounded-xl divide-y divide-line bg-surf" id="faqList"></div>
+</section>
+
+<section id="mapa" class="relative overflow-hidden border-b border-line">
+  <div class="grid-bg absolute inset-0" aria-hidden="true"></div>
+  <div class="relative max-w-6xl mx-auto px-4 py-16 lg:py-20 grid lg:grid-cols-5 gap-8 items-center">
+    <div class="lg:col-span-2">
+      <h2 class="text-3xl font-extrabold tracking-tight">Onde atendemos: Caxias do Sul e Serra Gaúcha</h2>
+      <p class="mt-3 text-mute leading-relaxed">Nossa base fica em Caxias do Sul. Toque em uma cidade para ver a distância até a base e pedir orçamento já com o local preenchido.</p>
+      <div id="mapaInfo" class="mt-6 bg-surf border border-line rounded-xl p-5" aria-live="polite"></div>
+      <p class="mt-3 text-xs text-mute">Mapa esquemático. As distâncias são em linha reta e a disponibilidade deve ser confirmada pelo WhatsApp.</p>
+    </div>
+    <div class="lg:col-span-3">
+      <div class="bg-surf/90 border border-line rounded-xl p-3">
+        <svg id="mapaSvg" viewBox="0 150 480 260" class="w-full h-auto block" role="img" aria-label="Mapa esquemático da Serra Gaúcha com Caxias do Sul e cidades da região"></svg>
+      </div>
+      <div id="mapaChips" class="mt-3 flex flex-wrap gap-2" role="group" aria-label="Escolher cidade"></div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="border-t border-line bg-surf">
+  <div class="max-w-6xl mx-auto px-4 py-16 lg:py-20 grid lg:grid-cols-5 gap-8">
+    <div class="lg:col-span-2">
+      <h2 class="text-3xl font-extrabold tracking-tight">Peça seu orçamento</h2>
+      <p class="mt-3 text-mute leading-relaxed">Preencha os dados e gere a mensagem. Ela abre pronta no WhatsApp para você enviar. Se puder, anexe fotos do problema na conversa.</p>
+      <ul class="mt-6 space-y-2 text-sm font-semibold">
+        <li><a href="tel:+5554996960909" class="hover:underline">Telefone: (54) 99696-0909</a></li>
+        <li><a href="#contato" data-wa="Olá, SOS Home! Gostaria de pedir um orçamento." class="hover:underline">WhatsApp: (54) 99696-0909</a></li>
+        <li><a href="mailto:soshome54@gmail.com" class="hover:underline">E-mail: soshome54@gmail.com</a></li>
+      </ul>
+    </div>
+    <div class="lg:col-span-3 bg-bg border border-line rounded-xl p-6">
+      <div class="grid sm:grid-cols-2 gap-4">
+        <label class="block text-sm font-semibold">Seu nome<input id="f_nome" class="fld mt-1.5" autocomplete="name"></label>
+        <label class="block text-sm font-semibold">Telefone / WhatsApp<input id="f_tel" class="fld mt-1.5" type="tel" autocomplete="tel" placeholder="(54) 90000-0000"></label>
+        <label class="block text-sm font-semibold">Tipo de imóvel
+          <select id="f_imo" class="fld mt-1.5"><option value="">Selecione</option><option>Residência</option><option>Comércio</option><option>Indústria</option></select></label>
+        <label class="block text-sm font-semibold">Bairro ou cidade<input id="f_loc" class="fld mt-1.5" placeholder="Ex.: Centro, Caxias do Sul"></label>
+        <label class="block text-sm font-semibold">Como quer contratar
+          <select id="f_modo" class="fld mt-1.5"><option value="">Selecione</option><option>Atendimento avulso</option><option>Emergência</option><option>Plano mensal de manutenção</option><option>Vistoria técnica</option></select></label>
+        <label class="block text-sm font-semibold">Serviço
+          <select id="f_srv" class="fld mt-1.5"><option value="">Selecione</option><option>Elétrica</option><option>Hidráulica</option><option>Pintura</option><option>Automação smart</option><option>Climatização</option><option>Solda e estruturas metálicas</option><option>Instalações e reformas</option><option>Manutenção preventiva</option><option>Vistoria com termografia</option><option>Outro</option></select></label>
+        <label class="block text-sm font-semibold sm:col-span-2">Descreva o que precisa<textarea id="f_obs" rows="3" class="fld mt-1.5" placeholder="O que aconteceu, onde fica e qual o melhor horário"></textarea></label>
+      </div>
+      <p id="erro" class="hidden mt-4 text-sm font-semibold text-acc" role="alert"></p>
+      <button id="gerar" class="btn btn-a w-full mt-5">Gerar mensagem para WhatsApp</button>
+      <div id="resumo" class="hidden mt-5 border border-line rounded-lg bg-surf p-4">
+        <p class="font-bold text-sm">Resumo do pedido</p>
+        <pre id="msgTxt" class="mt-2 whitespace-pre-wrap text-sm text-mute" style="font-family:inherit"></pre>
+        <div class="mt-4 flex flex-wrap gap-3">
+          <a id="waLink" target="_blank" rel="noopener" class="btn btn-p">Enviar pelo WhatsApp</a>
+          <button id="copiar" class="btn btn-o" type="button">Copiar texto</button>
+          <a id="mailLink" class="btn btn-o">Enviar por e-mail</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-surf shadow-[0_-4px_16px_rgba(0,0,0,.12)]" style="padding-bottom:env(safe-area-inset-bottom,0px)">
+  <div class="max-w-6xl mx-auto px-3 py-2 flex items-center justify-between gap-3">
+    <a href="tel:+5554996960909" class="flex items-center gap-2.5 font-extrabold text-base" aria-label="Ligar para a SOS Home, (54) 99696-0909">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--acc)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+      <span><span class="block text-[11px] font-medium text-mute leading-none mb-0.5">Ligue agora</span>(54) 99696-0909</span>
+    </a>
+    <a href="#contato" data-wa="Olá, SOS Home! Gostaria de pedir um orçamento." class="btn btn-a !py-2 !px-4 text-sm">WhatsApp</a>
+  </div>
+</div>
+
+<footer class="border-t border-line pb-16">
+  <div class="max-w-6xl mx-auto px-4 py-10 grid sm:grid-cols-3 gap-8 text-sm">
+    <div><svg class="h-24 w-auto" viewBox="0 0 240 170" role="img" aria-label="SOS Home"><use href="#logo-sos"/></svg><p class="text-mute mt-2">Serviços profissionais a domicílio</p><p class="text-mute mt-1">Caxias do Sul e região – RS</p><p class="mt-3"><a class="font-bold hover:underline" href="tel:+5554996960909">(54) 99696-0909</a></p><p class="mt-1"><a class="text-mute hover:text-ink" href="mailto:soshome54@gmail.com">soshome54@gmail.com</a></p></div>
+    <div><p class="font-bold">Links rápidos</p><ul class="mt-2 space-y-1.5 text-mute"><li><a class="hover:text-ink" href="#servicos">Serviços</a></li><li><a class="hover:text-ink" href="#atendimento">Planos e atendimento</a></li><li><a class="hover:text-ink" href="#vistoria">Vistoria técnica</a></li><li><a class="hover:text-ink" href="#faq">Dúvidas</a></li><li><a class="hover:text-ink" href="#contato">Pedir orçamento</a></li></ul></div>
+    <div><p class="font-bold">Nosso compromisso</p><p class="text-mute mt-2 leading-relaxed">Profissionais uniformizados, ferramentas completas e garantia de serviço. Agendamento pelo WhatsApp.</p></div>
+  </div>
+  <p class="border-t border-line text-center text-xs text-mute py-4">© 2026 SOS Home – Serviços Profissionais a Domicílio. Caxias do Sul – RS.</p>
+</footer>
+
+<script>
+// WhatsApp da SOS Home: (54) 99696-0909 (DDI + DDD + número, só dígitos)
+const WA_NUMBER = "5554996960909";
+const $ = s => document.querySelector(s);
+const wa = t => "https://wa.me/" + WA_NUMBER + (t ? "?text=" + encodeURIComponent(t) : "");
+const OK = '<svg width="18" height="18" viewBox="0 0 20 20" fill="none" class="shrink-0 mt-0.5" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="var(--btn)"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+if (WA_NUMBER) document.querySelectorAll("[data-wa]").forEach(a => { a.href = wa(a.dataset.wa); a.target = "_blank"; a.rel = "noopener"; });
+
+const mb = $("#menuBtn"), mn = $("#menu");
+mb.onclick = () => { const o = mn.classList.toggle("hidden") === false; mb.setAttribute("aria-expanded", o); };
+mn.querySelectorAll("a").forEach(a => a.addEventListener("click", () => { mn.classList.add("hidden"); mb.setAttribute("aria-expanded", "false"); }));
+
+const dif = [["Orçamento rápido","Descreva o problema pelo WhatsApp e receba o orçamento sem enrolação."],["Profissionais uniformizados","Equipe identificada, com ferramentas completas para resolver no local."],["Garantia de serviço","O trabalho executado tem garantia."]];
+$("#difer").innerHTML = dif.map(d => `<li class="p-5 flex gap-4"><span class="w-1.5 rounded bg-acc shrink-0"></span><div><p class="font-bold">${d[0]}</p><p class="text-sm text-mute mt-1">${d[1]}</p></div></li>`).join("");
+
+// Serviços
+const servicos = [
+  ["Elétrica","Tomadas, interruptores, disjuntores, quadros, chuveiros, luminárias e ventiladores.",["res","com","emer"]],
+  ["Hidráulica","Vazamentos, torneiras, registros, descargas, caixa d’água, desentupimento e louças.",["res","com","emer"]],
+  ["Pintura","Pintura interna e externa, correção de paredes e acabamento para casa ou loja.",["res","com"]],
+  ["Automação smart","Instalação e configuração de iluminação, tomadas, fechaduras e câmeras inteligentes.",["res","com"]],
+  ["Instalações e reformas","Instalações em geral, pequenas reformas e obras com acabamento cuidadoso.",["res","com"]],
+  ["Manutenção preventiva","Revisões periódicas para encontrar e corrigir problemas antes que virem emergência.",["res","com","prev"]],
+  ["Vistoria com termografia","Inspeção com câmera FLIR e laudo técnico do imóvel.",["res","com","prev"]]
+];
+const cats = [["todos","Todos"],["res","Residências"],["com","Comércios"],["ind","Indústrias"],["emer","Emergência"],["prev","Preventiva"]];
+servicos.forEach(s => { if (["Elétrica","Hidráulica","Pintura","Instalações e reformas","Manutenção preventiva","Vistoria com termografia"].includes(s[0])) s[2].push("ind"); });
+servicos.push(["Climatização","Manutenção de climatização, ventilação e exaustão para conforto e operação sem paradas.",["res","com","ind","prev"]],["Solda e estruturas metálicas","Soldagem, reforços, portões, suportes e reparos em estruturas metálicas.",["res","com","ind"]]);
+const nome = {res:"Residências",com:"Comércios",ind:"Indústrias",emer:"Emergência",prev:"Preventiva"};
+const fil = $("#filtros"), gs = $("#gridServ");
+fil.innerHTML = cats.map(c => `<button class="chip" data-c="${c[0]}" aria-pressed="${c[0]==="todos"}">${c[1]}</button>`).join("");
+function render(c){
+  gs.innerHTML = servicos.filter(s => c === "todos" || s[2].includes(c)).map(s => `<article class="bg-surf border border-line rounded-xl p-6 flex flex-col"><h3 class="font-bold text-lg">${s[0]}</h3><p class="text-sm text-mute mt-2 leading-relaxed grow">${s[1]}</p><p class="mt-4 text-xs font-semibold text-brand">${s[2].map(x => nome[x]).join(" · ")}</p><a href="#contato" data-srv="${s[0]}" class="mt-3 text-sm font-bold text-acc hover:underline">Pedir orçamento deste serviço</a></article>`).join("");
+  fil.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", b.dataset.c === c));
+}
+fil.onclick = e => { const b = e.target.closest(".chip"); if (b) render(b.dataset.c); };
+render("todos");
+
+// Modos de contratação
+const modos = [
+  ["Atendimento avulso","Precisa resolver algo específico? Chame, receba o orçamento rápido e agende.",["Orçamento rápido pelo WhatsApp","Serviço com garantia","Ideal para reparos e instalações"]],
+  ["Emergência","Falta de energia, vazamento ou outro problema que não pode esperar.",["Atendimento emergencial","Descreva a situação e marque como emergência","Confirmamos a disponibilidade na hora"]],
+  ["Plano mensal de manutenção","Manutenção preventiva e corretiva recorrente para a sua casa ou o seu comércio.",["Revisões periódicas","Menos surpresas e custos de última hora","Atendimento contínuo por plano mensal"]]
+];
+$("#modos").innerHTML = modos.map((m, i) => `<div class="bg-bg border border-line rounded-xl p-6 flex flex-col ${i===2?'border-t-4':''}" ${i===2?'style="border-top-color:var(--acc)"':''}><h3 class="text-xl font-bold">${m[0]}</h3><p class="text-sm text-mute mt-2 leading-relaxed">${m[1]}</p><ul class="mt-4 space-y-2.5 text-sm grow">${m[2].map(x => `<li class="flex gap-3">${OK}<span>${x}</span></li>`).join("")}</ul><a href="#contato" data-modo="${m[0]}" class="btn ${i===2?'btn-a':'btn-p'} mt-6">Escolher ${m[0].toLowerCase()}</a></div>`).join("");
+
+// Etapas
+const et = [["Chame no WhatsApp","Conte o que precisa e envie fotos, se puder."],["Receba o orçamento","Retorno rápido com valores e prazo."],["Agende o atendimento","Definimos o dia e o horário que ficam bons para você."],["Serviço executado","Equipe uniformizada, ferramentas completas e garantia."]];
+$("#etapas").innerHTML = et.map((e, i) => `<li class="bg-surf border border-line rounded-xl p-6"><span class="text-3xl font-extrabold text-acc">0${i+1}</span><h3 class="font-bold mt-2">${e[0]}</h3><p class="text-sm text-mute mt-2 leading-relaxed">${e[1]}</p></li>`).join("");
+
+// FAQ
+const faq = [
+  ["Quais regiões vocês atendem?","Atendemos Caxias do Sul e região. Informe o endereço ou o bairro no WhatsApp para confirmarmos a disponibilidade."],
+  ["Como funciona o orçamento?","Você descreve o problema pelo WhatsApp, de preferência com fotos, e enviamos o orçamento de forma rápida. Em alguns casos, uma visita é necessária para avaliar."],
+  ["Os serviços têm garantia?","Sim. Todos os serviços executados pela SOS Home têm garantia."],
+  ["Qual a diferença entre atendimento avulso e plano mensal?","O avulso resolve um problema específico, com orçamento para cada serviço. O plano mensal mantém a manutenção preventiva e corretiva recorrente, para evitar problemas antes que aconteçam."],
+  ["Vocês fazem atendimento de emergência?","Sim. Informe a situação no WhatsApp e escolha “Emergência” no formulário. Confirmamos a disponibilidade na hora."],
+  ["Preciso comprar ferramentas ou fornecer algo?","Não. Nossos profissionais chegam uniformizados e com ferramentas completas. Os materiais necessários entram no orçamento."],
+  ["Vocês fazem obras e reformas?","Sim. Executamos instalações e reformas, além da manutenção do dia a dia."]
+];
+$("#faqList").innerHTML = faq.map((f, i) => `<div class="faq-item"><h3><button class="w-full flex justify-between items-center gap-4 text-left p-5 font-bold" aria-expanded="false" aria-controls="fa${i}"><span>${f[0]}</span><span class="plus text-2xl text-acc leading-none" aria-hidden="true">+</span></button></h3><div class="faq-body" id="fa${i}"><div><p class="px-5 pb-5 text-mute leading-relaxed">${f[1]}</p></div></div></div>`).join("");
+$("#faqList").onclick = e => { const b = e.target.closest("button"); if (!b) return; const o = b.closest(".faq-item").classList.toggle("faq-open"); b.setAttribute("aria-expanded", o); };
+
+// Explorador do imóvel
+const lugares = {
+  res: [
+    ["Sala e quartos",["Tomadas soltas ou sem energia","Luminárias e ventiladores para instalar","Paredes manchadas ou descascando"],"Instalação e reparo de pontos elétricos, luminárias e ventiladores, além de pintura e correção das paredes.","Elétrica"],
+    ["Cozinha",["Torneira ou sifão vazando","Pia ou ralo entupido","Tomadas sobrecarregadas"],"Reparo de vazamentos, desentupimento, troca de torneiras e adequação das tomadas.","Hidráulica"],
+    ["Banheiro",["Chuveiro que não esquenta","Descarga vazando","Mofo e manchas de umidade"],"Troca de chuveiros e resistências, reparo de descargas e registros e tratamento das áreas com umidade.","Hidráulica"],
+    ["Área externa e fachada",["Pintura desbotada ou descascando","Iluminação externa queimada","Caixa d’água com problemas"],"Pintura externa, iluminação e manutenção da caixa d’água.","Pintura"],
+    ["Quadro de energia",["Disjuntor que desarma","Cheiro de queimado","Fiação antiga ou aquecendo"],"Revisão do quadro, troca de disjuntores e, se necessário, vistoria com câmera termográfica.","Elétrica"],
+    ["Casa inteligente",["Luzes e tomadas sem controle por app","Fechadura ou câmera para instalar","Dispositivos que não conectam"],"Instalação e configuração de iluminação, tomadas, fechaduras e câmeras inteligentes.","Automação smart"]
+  ],
+  com: [
+    ["Loja e atendimento",["Iluminação ruim ou queimada","Paredes com marcas e desgaste","Tomadas para novos equipamentos"],"Instalação elétrica, pintura e acabamento para manter o ambiente pronto para receber clientes.","Elétrica"],
+    ["Copa e cozinha",["Vazamentos sob a pia","Ralos entupidos","Equipamentos desarmando o disjuntor"],"Reparo hidráulico, desentupimento e adequação elétrica para os equipamentos.","Hidráulica"],
+    ["Banheiros",["Descarga ou torneira vazando","Infiltração e mofo","Louças soltas ou trincadas"],"Reparo e instalação de louças e metais e correção de infiltrações.","Hidráulica"],
+    ["Fachada e letreiro",["Pintura desgastada","Iluminação do letreiro falhando","Infiltrações na parede externa"],"Pintura externa, iluminação e reparos na fachada.","Pintura"],
+    ["Quadro de energia",["Disjuntor desarmando com frequência","Cheiro de queimado","Carga maior com novos equipamentos"],"Revisão do quadro, troca de disjuntores e vistoria termográfica para encontrar pontos de aquecimento.","Elétrica"],
+    ["Automação e segurança",["Câmeras e fechaduras para instalar","Iluminação programada","Sensores e alertas"],"Instalação e configuração de câmeras, fechaduras e iluminação inteligente.","Automação smart"]
+  ]
+};
+lugares.ind = [
+  ["Painéis e quadros de comando",["Aquecimento em conexões e barramentos","Disjuntores e contatores com desgaste","Falhas intermitentes em comandos"],"Revisão de quadros e painéis, reaperto de conexões, troca de componentes e vistoria termográfica para encontrar pontos quentes.","Elétrica"],
+  ["Hidráulica e reservatórios",["Vazamentos em redes e registros","Reservatório com sujeira ou vedação falhando","Bombas e boias com problemas"],"Reparo de redes, registros e bombas, além de limpeza e manutenção de reservatórios.","Hidráulica"],
+  ["Climatização e exaustão",["Filtros sujos e baixa vazão de ar","Ruídos e vibração em ventiladores","Drenos entupidos"],"Manutenção preventiva de equipamentos de climatização, ventilação e exaustão para evitar paradas.","Climatização"],
+  ["Cobertura, calhas e trabalho em altura",["Goteiras sobre máquinas ou estoque","Calhas obstruídas","Telhas soltas ou danificadas"],"Inspeção e reparo de cobertura e calhas, com planejamento e equipamentos de proteção para o trabalho em altura.","Instalações e reformas"],
+  ["Estruturas metálicas e solda",["Soldas com trincas ou corrosão","Portões e suportes com folga","Reforços estruturais necessários"],"Soldagem, reforço e reparo de estruturas metálicas, portões e suportes, com prevenção de corrosão.","Solda e estruturas metálicas"],
+  ["Pisos e reparos civis",["Pisos desgastados ou trincados","Fissuras em paredes e bordas","Juntas e vedações soltas"],"Reparos em pisos, alvenaria e acabamentos para manter a área segura e em operação.","Instalações e reformas"],
+  ["Fachada",["Infiltrações e manchas","Pintura desgastada","Trincas e peças soltas"],"Recuperação de fachada, pintura externa e vedações, com trabalho em altura quando necessário.","Pintura"]
+];
+lugares.res.push(
+  ["Telhado e cobertura",["Telhas quebradas ou deslocadas","Rufos e cumeeira com falha","Goteiras e manchas no forro"],"Revisão do telhado, troca de telhas, vedação de rufos e cumeeiras e tratamento de goteiras, com segurança para trabalho em altura.","Instalações e reformas"],
+  ["Calhas e condutores",["Calhas entupidas por folhas","Vazamento nas emendas","Água escorrendo pela parede"],"Limpeza, reparo e troca de calhas e condutores para a água escoar sem molhar paredes e fundações.","Hidráulica"],
+  ["Infiltrações e umidade",["Manchas escuras e mofo","Pintura estufada ou descascando","Cheiro de umidade nos cômodos"],"Identificação da origem da umidade, impermeabilização, correção do reboco e nova pintura, com vistoria termográfica quando necessário.","Vistoria com termografia"]
+);
+lugares.com.push(
+  ["Cobertura e laje",["Empoçamento de água na laje","Manta ou impermeabilização envelhecida","Goteiras no teto da loja"],"Inspeção e reparo da cobertura e da laje, com vedação e impermeabilização para proteger estoque e equipamentos.","Instalações e reformas"],
+  ["Calhas, rufos e condutores",["Calhas e ralos entupidos","Rufos soltos","Água escorrendo pela fachada"],"Limpeza e reparo de calhas, rufos, ralos e condutores para a água escoar corretamente.","Hidráulica"],
+  ["Infiltrações e umidade",["Manchas e mofo nas paredes","Pintura descascando","Umidade perto de pisos e rodapés"],"Localização da origem da umidade, tratamento das paredes e repintura, para manter a loja apresentável e seca.","Vistoria com termografia"]
+);
+lugares.ind.push(
+  ["Calhas e condutores",["Calhas de grande vazão entupidas","Emendas vazando","Água caindo junto às paredes e ao piso"],"Limpeza, reparo e substituição de calhas e condutores, com planejamento do trabalho em altura.","Hidráulica"],
+  ["Infiltrações e umidade",["Manchas e corrosão na base das paredes","Umidade em piso e rodapés","Goteiras sobre estoque ou máquinas"],"Identificação da origem da infiltração, vedação, tratamento das paredes e acabamentos, com vistoria termográfica quando necessário.","Vistoria com termografia"]
+);
+let exM = "res", exI = 0;
+function drawEx(){
+  const L = lugares[exM], l = L[exI];
+  $("#expTabs").innerHTML = [["res","Residência"],["com","Comércio"],["ind","Indústria"]].map(t => `<button class="chip" data-m="${t[0]}" aria-pressed="${t[0]===exM}">${t[1]}</button>`).join("");
+  $("#expTiles").innerHTML = L.map((x, i) => `<button class="chip !rounded-xl !py-4 !text-base" data-i="${i}" aria-pressed="${i===exI}">${x[0]}</button>`).join("");
+  $("#expPanel").innerHTML = `<h3 class="text-2xl font-bold">${l[0]}</h3><p class="mt-4 font-bold text-sm text-mute">Problemas que costumam aparecer</p><ul class="mt-2 space-y-2.5">${l[1].map(x => `<li class="flex gap-3">${OK}<span>${x}</span></li>`).join("")}</ul><p class="mt-5 font-bold text-sm text-mute">O que a SOS Home faz</p><p class="mt-1 leading-relaxed">${l[2]}</p><a href="#contato" data-srv="${l[3]}" data-obs="Local: ${l[0]}" data-imo="${({res:"Residência",com:"Comércio",ind:"Indústria"})[exM]}" class="btn btn-a mt-6">Pedir orçamento para ${l[0].toLowerCase()}</a>`;
+}
+$("#expTabs").onclick = e => { const b = e.target.closest("[data-m]"); if (b) { exM = b.dataset.m; exI = 0; drawEx(); } };
+$("#expTiles").onclick = e => { const b = e.target.closest("[data-i]"); if (b) { exI = +b.dataset.i; drawEx(); } };
+drawEx();
+
+// Cena 3D (Three.js): marcadores ligados ao painel do explorador
+let scSyncFn = null;
+const _dx = drawEx; drawEx = function(){ _dx(); scSyncFn && scSyncFn(); };
+addEventListener("load", () => {
+  const cv = $("#sc"); let R;
+  try { R = new THREE.WebGLRenderer({canvas: cv, antialias: true, alpha: true}); } catch (e) { cv.parentElement.remove(); return; }
+  R.setPixelRatio(Math.min(devicePixelRatio, 2)); R.outputEncoding = THREE.sRGBEncoding; R.shadowMap.enabled = true; R.shadowMap.type = THREE.PCFSoftShadowMap;
+  const S = new THREE.Scene(), C = new THREE.PerspectiveCamera(40, 2, .1, 100), O = new THREE.OrbitControls(C, cv), Y = new THREE.Vector3(0,1,0);
+  const home = new THREE.Vector3(0,1.5,0), homePos = new THREE.Vector3(0,5,11);
+  C.position.copy(homePos); O.target.copy(home); O.enableDamping = true; O.enableZoom = false; O.enablePan = false; O.maxPolarAngle = Math.PI/2 - .05;
+  S.add(new THREE.HemisphereLight(0xcfe3ff, 0x2a3442, .85)); const dl = new THREE.DirectionalLight(0xfff3e0, 1.05); dl.position.set(6,10,8); dl.castShadow = true; dl.shadow.mapSize.set(2048,2048); Object.assign(dl.shadow.camera, {left:-9, right:9, top:9, bottom:-9, near:1, far:40}); dl.shadow.bias = -.0005; S.add(dl);
+  const mat = c => new THREE.MeshStandardMaterial({color: c, roughness: .7});
+  
+  const chao = new THREE.Mesh(new THREE.CylinderGeometry(6,6.2,.3,48), mat(0x2a3442)); chao.position.y = -.15; chao.receiveShadow = true; S.add(chao);
+  const casa = new THREE.Group(), loja = new THREE.Group(), ind = new THREE.Group(); S.add(casa, loja, ind);
+  // Materiais procedurais, auxiliares e edificações
+  const mm = (c, r = .85, m = 0, o = {}) => new THREE.MeshStandardMaterial(Object.assign({color: c, roughness: r, metalness: m}, o));
+  const tx = (w, h, fn, rx = 1, ry = 1) => { const c = document.createElement('canvas'); c.width = w; c.height = h; fn(c.getContext('2d'), w, h); const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(rx, ry); t.encoding = THREE.sRGBEncoding; t.anisotropy = 4; return t; };
+  const grain = (x, w, h, n, a) => { for (let i = 0; i < n; i++) { const l = i % 2 ? 255 : 0; x.fillStyle = `rgba(${l},${l},${l},${Math.random() * a})`; x.fillRect(Math.random() * w, Math.random() * h, 2, 2); } };
+  const plaster = (col, rx = 2, ry = 1) => mm(0xffffff, .9, 0, {map: tx(128, 128, (x, w, h) => { x.fillStyle = col; x.fillRect(0, 0, w, h); grain(x, w, h, 1400, .07); }, rx, ry)});
+  const concrete = (rx = 1, ry = 1) => mm(0xffffff, .95, 0, {map: tx(128, 128, (x, w, h) => { x.fillStyle = '#8c949e'; x.fillRect(0, 0, w, h); grain(x, w, h, 2200, .12); }, rx, ry)});
+  const metal = (col, rx = 6) => mm(0xffffff, .45, .5, {map: tx(128, 64, (x, w, h) => { x.fillStyle = col; x.fillRect(0, 0, w, h); for (let i = 0; i < w; i += 8) { x.fillStyle = 'rgba(255,255,255,.14)'; x.fillRect(i, 0, 3, h); x.fillStyle = 'rgba(0,0,0,.18)'; x.fillRect(i + 5, 0, 2, h); } }, rx, 1)});
+  const tiles = mm(0xffffff, .75, 0, {map: tx(128, 128, (x, w, h) => { for (let r = 0; r < 8; r++) for (let c = 0; c < 9; c++) { x.fillStyle = `hsl(${14 + Math.random() * 6},${52 + Math.random() * 10}%,${32 + Math.random() * 9}%)`; x.fillRect(c * 16 + (r % 2) * 8 - 8, r * 16, 15, 15); } }, 6, 3)});
+  const slats = mm(0xffffff, .5, .4, {map: tx(64, 128, (x, w, h) => { x.fillStyle = '#c9d1da'; x.fillRect(0, 0, w, h); for (let i = 0; i < h; i += 8) { x.fillStyle = 'rgba(0,0,0,.25)'; x.fillRect(0, i, w, 2); } })});
+  const grass = mm(0xffffff, 1, 0, {map: tx(128, 128, (x, w, h) => { x.fillStyle = '#3f7a3a'; x.fillRect(0, 0, w, h); grain(x, w, h, 2500, .2); }, 3, 3)});
+  const sign = mm(0xffffff, .6, 0, {map: tx(256, 64, (x, w, h) => { x.fillStyle = '#0e3a63'; x.fillRect(0, 0, w, h); x.fillStyle = '#fff'; x.font = 'bold 40px sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText('SUA LOJA', w / 2, h / 2 + 2); })});
+  const glass = mm(0x8fb8d8, .08, .6, {emissive: 0x1b3550, emissiveIntensity: .35});
+  const dark = mm(0x2b3a4a, .6), alu = mm(0x9aa7b5, .4, .7), white = mm(0xf4f1ea, .8), steel = mm(0xc85a17, .5, .4), box = mm(0x9aa3ad, .5, .4);
+  const B = (g, w, h, d, x, y, z, m) => { const o = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m); o.position.set(x, y, z); o.castShadow = o.receiveShadow = true; g.add(o); return o; };
+  const CY = (g, rt, rb, h, x, y, z, m) => { const o = new THREE.Mesh(new THREE.CylinderGeometry(rt, rb, h, 24), m); o.position.set(x, y, z); o.castShadow = o.receiveShadow = true; g.add(o); return o; };
+  const SP = (g, r, x, y, z, m) => { const o = new THREE.Mesh(new THREE.SphereGeometry(r, 14, 10), m); o.position.set(x, y, z); o.castShadow = true; g.add(o); };
+  const win = (g, x, y, z, w, h, ry = 0) => { const k = new THREE.Group(); B(k, w + .14, h + .14, .08, 0, 0, 0, dark); B(k, w, h, .1, 0, 0, .02, glass); B(k, .04, h, .12, 0, 0, .03, dark); B(k, w, .04, .12, 0, 0, .03, dark); B(k, w + .22, .06, .2, 0, -h / 2 - .08, .08, white); k.position.set(x, y, z); k.rotation.y = ry; g.add(k); };
+  // Pessoas, escada, van, calhas e manchas de infiltração
+  const skin = [0xf1c9a5, 0xc68642, 0x8d5524];
+  const person = (g, x, z, ry, shirt, pants, k = 0, hat = null, vest = false, hold = false) => {
+    const p = new THREE.Group(), sk = mm(skin[k], .7);
+    [-.09, .09].forEach(s => B(p, .14, .75, .16, s, .38, 0, mm(pants, .8)));
+    B(p, .36, .6, .22, 0, 1.05, 0, mm(shirt, .8));
+    if (vest) { B(p, .38, .5, .24, 0, 1.08, 0, mm(0xff7a1a, .7)); B(p, .39, .06, .25, 0, 1.0, 0, mm(0xdfe6ee, .4, .3)); }
+    [-.25, .25].forEach(s => hold ? B(p, .09, .1, .5, s, 1.25, .25, mm(shirt, .8)) : B(p, .09, .55, .12, s, 1.05, 0, mm(shirt, .8)));
+    SP(p, .13, 0, 1.5, 0, sk);
+    if (hat) { const h = new THREE.Mesh(new THREE.SphereGeometry(.15, 14, 8, 0, Math.PI * 2, 0, Math.PI / 2), mm(hat, .5)); h.position.set(0, 1.52, 0); h.castShadow = true; p.add(h); B(p, .34, .03, .3, 0, 1.52, 0, mm(hat, .5)); }
+    p.position.set(x, 0, z); p.rotation.y = ry; g.add(p);
+  };
+  const ladder = (g, x, z, len, ry, tilt) => { const l = new THREE.Group(); [-.21, .21].forEach(s => { B(l, .05, len, .05, 0, len / 2, s, alu); B(l, .08, .05, .1, 0, .025, s, dark); }); for (let y = .3; y < len - .1; y += .3) B(l, .05, .04, .42, 0, y, 0, alu); l.rotation.z = tilt; const w = new THREE.Group(); w.add(l); w.position.set(x, 0, z); w.rotation.y = ry; g.add(w); };
+  const vanTxt = new THREE.MeshBasicMaterial({map: tx(256, 40, (x, w, h) => { x.fillStyle = '#fff'; x.font = 'bold 30px sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText('SOS HOME', w / 2, h / 2); }), transparent: true});
+  const van = (g, x, z, ry) => {
+    const v = new THREE.Group(), w = mm(0xf4f6f8, .5, .2);
+    B(v, 1.5, .85, .95, -.2, .75, 0, w); B(v, .6, .6, .95, .85, .62, 0, w); B(v, .05, .35, .8, 1.16, .8, 0, glass); B(v, .4, .25, .96, .85, .8, 0, glass);
+    B(v, 1.52, .28, .96, -.2, .85, 0, mm(0x0e3a63, .5)); B(v, 1.52, .05, .96, -.2, .66, 0, steel);
+    [-.55, .65].forEach(a => [-.5, .5].forEach(c => { const t = CY(v, .22, .22, .16, a, .22, c, mm(0x15191f, .9)); t.rotation.x = Math.PI / 2; }));
+    [1, -1].forEach(s => { const m = new THREE.Mesh(new THREE.PlaneGeometry(1.3, .2), vanTxt); m.position.set(-.2, .85, s * .485); if (s < 0) m.rotation.y = Math.PI; v.add(m); });
+    v.position.set(x, 0, z); v.rotation.y = ry; g.add(v);
+  };
+  const gutters = (g, W, D, y0, m) => { [-1, 1].forEach(s => { const c = CY(g, .07, .07, D + .5, s * (W / 2 + .3), y0 - .08, 0, m); c.rotation.x = Math.PI / 2; CY(g, .05, .05, y0 - .1, s * (W / 2 + .3), (y0 - .1) / 2, D / 2 + .05, m); }); };
+  const stainM = new THREE.MeshBasicMaterial({map: tx(128, 128, (x, w, h) => { const r = x.createRadialGradient(64, 64, 4, 64, 64, 62); r.addColorStop(0, 'rgba(40,32,24,.75)'); r.addColorStop(.6, 'rgba(60,50,40,.4)'); r.addColorStop(1, 'rgba(60,50,40,0)'); x.fillStyle = r; x.fillRect(0, 0, w, h); }), transparent: true, depthWrite: false});
+  const stain = (g, x, y, z, w, h, ry = 0) => { const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), stainM); m.position.set(x, y, z); m.rotation.y = ry; g.add(m); };
+  const gable = (g, W, D, H, y0, wm, rm) => {
+    const a = Math.atan2(H, W / 2), L = Math.hypot(W / 2, H) + .35;
+    [-1, 1].forEach(s => { const o = B(g, L, .14, D + .5, s * (W / 4 + .17 * Math.cos(a)), y0 + H / 2 - .17 * Math.sin(a) + .07, 0, rm); o.rotation.z = -s * a; });
+    B(g, .22, .12, D + .5, 0, y0 + H + .08, 0, dark);
+    const sh = new THREE.Shape(); sh.moveTo(-W / 2, 0); sh.lineTo(W / 2, 0); sh.lineTo(0, H);
+    const ge = new THREE.ExtrudeGeometry(sh, {depth: D - .02, bevelEnabled: false}); ge.translate(0, 0, -(D - .02) / 2);
+    const gm = new THREE.Mesh(ge, wm); gm.position.y = y0; gm.castShadow = true; g.add(gm);
+  };
+  const tree = (g, x, z, s = 1) => { CY(g, .08 * s, .12 * s, .9 * s, x, .45 * s, z, mm(0x5b3a22, .9)); const l1 = mm(0x2f6b34, .9), l2 = mm(0x3d8a42, .9); SP(g, .7 * s, x, 1.3 * s, z, l1); SP(g, .5 * s, x + .3 * s, 1.7 * s, z + .1 * s, l2); SP(g, .45 * s, x - .25 * s, 1.6 * s, z - .15 * s, l1); };
+
+  // Casa
+  B(casa, 4.4, 2.4, 3.6, 0, 1.2, 0, plaster('#e8e1d3')); B(casa, 4.52, .3, 3.72, 0, .15, 0, concrete(3, 1));
+  gable(casa, 4.4, 3.6, 1.3, 2.4, mm(0xe8e1d3, .9), tiles);
+  B(casa, .5, 1.3, .5, 1.3, 3.5, -.4, mm(0xb0603b, .9)); B(casa, .62, .1, .62, 1.3, 4.2, -.4, concrete());
+  B(casa, .95, 1.6, .06, -1.4, .95, 1.81, white); B(casa, .8, 1.45, .08, -1.4, .9, 1.84, mm(0x6b3f23, .7)); B(casa, .05, .12, .05, -1.12, .9, 1.9, alu); B(casa, 1.3, .14, .6, -1.4, .07, 2.1, concrete());
+  win(casa, -.1, 1.4, 1.8, .9, .8); win(casa, 1.3, 1.4, 1.8, .9, .8); win(casa, 2.2, 1.4, .3, .7, .7, Math.PI / 2);
+  B(casa, .15, .55, .35, -2.27, 1.1, .4, box);
+  const gl = new THREE.Mesh(new THREE.CylinderGeometry(4.7, 4.7, .06, 48), grass); gl.position.set(0, .03, .3); gl.receiveShadow = true; casa.add(gl);
+  B(casa, .9, .05, 1.6, -1.4, .08, 2.9, concrete(1, 2));
+  for (let i = -4; i <= 4; i++) if (i !== -2) B(casa, .1, .6, .05, i * .9, .3, 3.6, white);
+  tree(casa, -3.5, 1.2); tree(casa, 3.7, -2.2, 1.15); tree(casa, -3.2, -1.5, .8);
+  gutters(casa, 4.4, 3.6, 2.4, white); stain(casa, -2.215, .9, -1, 1.4, 1.2, -Math.PI / 2); stain(casa, -2.215, 2.15, -.2, .9, .5, -Math.PI / 2);
+  const bt = B(casa, .5, .05, .4, 1.2, 3.12, .8, mm(0xc4623a, .7)); bt.rotation.z = -.75;
+  ladder(casa, 3.2, -.9, 2.5, 0, .2618); person(casa, 3.42, -.9, -Math.PI / 2, 0x0e3a63, 0x2b3a4a, 0, 0xc85a17, false, true); B(casa, .4, .2, .2, 3.6, .1, -.2, steel);
+  person(casa, -1.4, 3.1, Math.PI, 0xb5485a, 0x3b4252, 1); van(casa, -3.4, 4.5, .15);
+  [-2.1, .7, 1.9].forEach(x => SP(casa, .3, x, .3, 1.95, mm(0x2f6b34, .9)));
+
+  // Comércio
+  B(loja, 5, 2.6, 3.4, 0, 1.3, 0, plaster('#cfd6de')); B(loja, 5.2, .4, 3.6, 0, 2.8, 0, concrete(3, 1)); B(loja, 4.8, .05, 3.2, 0, 3.02, 0, mm(0x4b5563, .9));
+  [-1.3, 1.2].forEach(x => { B(loja, .9, .5, .7, x, 3.3, 0, alu); CY(loja, .22, .22, .06, x, 3.58, 0, dark); });
+  B(loja, 3.1, 1.6, .1, -.8, 1, 1.72, alu); B(loja, 2.9, 1.4, .1, -.8, 1, 1.75, glass); [-1.5, -.8, -.1].forEach(x => B(loja, .05, 1.4, .12, x, 1, 1.77, alu));
+  B(loja, 1, 1.85, .1, 1.3, .93, 1.72, alu); B(loja, .8, 1.65, .1, 1.3, .9, 1.76, glass); B(loja, .04, .4, .06, 1.62, .9, 1.84, dark);
+  const aw = new THREE.Group(); aw.position.set(0, 2.2, 2.2); aw.rotation.x = .3; for (let i = 0; i < 8; i++) B(aw, .65, .06, 1.1, -2.275 + i * .65, 0, 0, i % 2 ? white : steel); loja.add(aw);
+  B(loja, 3.2, .5, .1, 0, 2.62, 1.76, sign);
+  win(loja, 2.5, 1.5, -.2, .7, .7, Math.PI / 2); win(loja, -2.5, 1.5, -.2, .8, .7, -Math.PI / 2);
+  B(loja, .45, .65, .14, 2.2, 1.1, 1.77, box); B(loja, .12, .12, .3, -2.2, 2.45, 1.85, dark);
+  B(loja, 7, .08, 2, 0, .04, 2.7, concrete(3, 1)); B(loja, 6.6, .06, 1.2, 0, .03, 4.4, mm(0x2a2f38, .95));
+  tree(loja, -3.3, 3, .8); tree(loja, 3.3, 3, .8);
+  CY(loja, .05, .05, 2.7, 2.65, 1.35, 1.55, dark); stain(loja, -2.515, .9, 1, 1.6, 1.3, -Math.PI / 2); B(loja, 1.6, .02, 1.2, .8, 3.06, -.8, mm(0x2e3f52, .15, .4));
+  ladder(loja, 3.47, -1.2, 4.04, 0, .2618); person(loja, 3.69, -1.2, -Math.PI / 2, 0x0e3a63, 0x2b3a4a, 2, 0xc85a17, false, true);
+  person(loja, -1.2, 3, Math.PI, 0x2f7f6e, 0x2b3a4a, 1); person(loja, -.1, 3.3, Math.PI, 0xc85a8a, 0x3b4252, 0); van(loja, -1.8, 4.4, 0);
+
+  // Indústria
+  B(ind, 6, 3.2, 4, 0, 1.6, 0, metal('#5b6b7c')); B(ind, 6.06, .5, 4.06, 0, .25, 0, concrete(4, 1));
+  gable(ind, 6, 4, .55, 3.2, mm(0x5b6b7c, .5, .4), metal('#8b97a5', 8));
+  B(ind, 2.2, 2.3, .08, 0, 1.15, 2.02, steel); B(ind, 2, 2.1, .1, 0, 1.1, 2.06, slats);
+  B(ind, 1.05, 2.1, .08, 1.9, 1.05, 2.02, dark); B(ind, .9, 1.95, .1, 1.9, 1, 2.06, mm(0x7b8794, .5, .4));
+  B(ind, .7, 1, .25, -2.4, 1.4, 2.12, mm(0x1f4f7a, .5, .4));
+  for (let i = 0; i < 4; i++) { B(ind, 1, .55, .06, -2.1 + i * 1.4, 2.6, 2.02, dark); B(ind, .9, .45, .08, -2.1 + i * 1.4, 2.6, 2.04, glass); }
+  B(ind, .25, 3.1, .25, -3.2, 1.55, 2.25, steel); B(ind, .25, 3.1, .25, 3.2, 1.55, 2.25, steel); B(ind, 6.7, .25, .25, 0, 3.1, 2.25, steel);
+  const br = B(ind, .12, 1.4, .12, 2.95, 2.4, 2.25, steel); br.rotation.z = .75; const br2 = B(ind, .12, 1.4, .12, -2.95, 2.4, 2.25, steel); br2.rotation.z = -.75;
+  B(ind, .05, .5, 4.02, -3.02, 2.4, 0, steel);
+  CY(ind, .32, .36, 1.8, 2, 4.25, 0, mm(0x9aa3ad, .4, .6)); CY(ind, .55, .3, .25, 2, 5.25, 0, dark);
+  CY(ind, .7, .7, 2.2, 4.1, 1.1, -.5, mm(0x9aa7b5, .35, .6)); CY(ind, .73, .73, .08, 4.1, .6, -.5, dark); CY(ind, .73, .73, .08, 4.1, 1.6, -.5, dark); B(ind, .5, .14, .14, 3.2, .6, -.5, dark); B(ind, .06, 2.2, .06, 4.78, 1.1, -.5, dark);
+  B(ind, 8, .06, 2.4, 0, .03, 3.1, concrete(4, 1)); B(ind, 8, .02, .1, 0, .07, 2.5, mm(0xf2c200, .6)); B(ind, 8, .02, .1, 0, .07, 3.9, mm(0xf2c200, .6));
+  gutters(ind, 6, 4, 3.2, mm(0x9aa3ad, .4, .6)); stain(ind, 3.035, .9, 1.3, 1.6, 1.3, Math.PI / 2);
+  person(ind, -2.4, 2.8, Math.PI, 0x2b3a4a, 0x2b3a4a, 0, 0xf2c200, true);
+  ladder(ind, -4.22, -1.2, 3.67, Math.PI, .2618); person(ind, -4.44, -1.2, Math.PI / 2, 0x0e3a63, 0x2b3a4a, 1, 0xf2c200, true, true);
+  B(ind, .7, .5, .7, 3.6, .25, 3.2, mm(0xb08a5a, .9)); B(ind, .6, .4, .6, 3.6, .7, 3.2, mm(0xb08a5a, .9)); B(ind, .7, .5, .7, -3.6, .25, 3.4, mm(0xb08a5a, .9));
+  van(ind, 2, 3.6, .1);
+  
+  
+  
+  
+  
+  
+  
+  
+  const P = {
+    res: [[-1.3,1.5,2.2],[1.3,1.5,2.2],[2.6,1.2,.3],[0,.3,2.9],[-2.6,1,.4],[0,4.1,.2],[-1.2,3.6,1.0],[2.9,2.4,1.0],[-2.7,1.0,-1.0]],
+    com: [[-1.2,1.2,2.3],[2.9,1.3,-.2],[-2.9,1.3,-.2],[0,3.8,.6],[2.1,1,2.3],[-2.2,2.2,2.3],[0,3.6,-1.0],[2.9,2.3,1.6],[-2.9,.8,1.0]],
+    ind: [[-2.4,2.1,2.5],[4.1,2.7,-.5],[2,5.9,0],[-1.5,4.2,.8],[3.3,2.2,2.6],[0,.3,3.5],[-3.5,2.4,0],[-3.6,3.1,.8],[3.45,.9,1.3]]
+  };
+  const mk = n => { const c = document.createElement("canvas"); c.width = c.height = 128; const x = c.getContext("2d"); x.beginPath(); x.arc(64,64,54,0,7); x.fillStyle = "#C85A17"; x.fill(); x.lineWidth = 8; x.strokeStyle = "#fff"; x.stroke(); x.fillStyle = "#fff"; x.font = "bold 58px sans-serif"; x.textAlign = "center"; x.textBaseline = "middle"; x.fillText(n,64,68); const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; return t; };
+  const sp = {};
+  for (const k in P) sp[k] = P[k].map((p, i) => { const s = new THREE.Sprite(new THREE.SpriteMaterial({map: mk(i+1), depthTest: false})); s.position.set(...p); s.renderOrder = 9; s.userData.i = i; S.add(s); return s; });
+  let foc = 0, goal = 0, auto = !matchMedia("(prefers-reduced-motion:reduce)").matches, tour = null;
+  scSyncFn = () => { casa.visible = exM === "res"; loja.visible = exM === "com"; ind.visible = exM === "ind"; for (const k in sp) sp[k].forEach(s => s.visible = k === exM); const p = P[exM][exI]; goal = Math.atan2(p[0], p[2]); foc = 1.4; };
+  const rot = a => { const o = C.position.clone().sub(O.target).applyAxisAngle(Y, a); C.position.copy(O.target).add(o); };
+  const size = () => { const w = cv.clientWidth, h = cv.clientHeight; R.setSize(w, h, false); C.aspect = w / h; C.updateProjectionMatrix(); };
+  addEventListener("resize", size); size();
+  let vis = true; new IntersectionObserver(e => vis = e[0].isIntersecting).observe(cv);
+  const clock = new THREE.Clock();
+  (function loop(){
+    requestAnimationFrame(loop); if (!vis) return;
+    const dt = clock.getDelta(), t = clock.elapsedTime;
+    if (foc > 0) { foc -= dt; const a = Math.atan2(C.position.x - O.target.x, C.position.z - O.target.z); let d = goal - a; d = Math.atan2(Math.sin(d), Math.cos(d)); rot(d * .08); }
+    else if (auto) rot(.003);
+    sp[exM].forEach((s, i) => { const on = i === exI, k = (on ? 1.15 : .8) * (1 + (on ? Math.sin(t * 5) * .07 : 0)); s.scale.set(k, k, 1); });
+    O.update(); R.render(S, C);
+  })();
+  const ray = new THREE.Raycaster(), pt = new THREE.Vector2(); let down = null;
+  const rb = $("#scRot"), tb = $("#scTour");
+  const stopT = () => { clearInterval(tour); tour = null; tb.textContent = "Tour guiado"; };
+  cv.addEventListener("pointerdown", e => { down = [e.clientX, e.clientY]; foc = 0; stopT(); });
+  cv.addEventListener("pointerup", e => {
+    if (!down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 6) return;
+    const r = cv.getBoundingClientRect(); pt.set((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1);
+    ray.setFromCamera(pt, C); const h = ray.intersectObjects(sp[exM], false);
+    if (h.length) { exI = h[0].object.userData.i; drawEx(); }
+  });
+  const lab = () => rb.textContent = "Girar: " + (auto ? "ligado" : "pausado"); lab();
+  rb.onclick = () => { auto = !auto; lab(); };
+  tb.onclick = () => { if (tour) return stopT(); auto = false; lab(); tb.textContent = "Pausar tour"; const n = () => { exI = (exI + 1) % lugares[exM].length; drawEx(); }; n(); tour = setInterval(n, 4000); };
+  $("#scReset").onclick = () => { stopT(); foc = 0; O.target.copy(home); C.position.copy(homePos); };
+  scSyncFn();
+});
+
+// Mapa da Serra Gaúcha (esquemático, posições a partir de latitude e longitude)
+(function(){
+  const svg = $('#mapaSvg'), info = $('#mapaInfo'), chips = $('#mapaChips');
+  const cid = [['Caxias do Sul',-29.168,-51.179,'t'],['Farroupilha',-29.226,-51.347,'r'],['Bento Gonçalves',-29.166,-51.519,'l'],['Garibaldi',-29.256,-51.534,'l'],['Carlos Barbosa',-29.297,-51.503,'b'],['Flores da Cunha',-29.026,-51.182,'l'],['Nova Petrópolis',-29.374,-51.114,'t'],['Gramado',-29.379,-50.874,'b'],['Canela',-29.366,-50.812,'r']];
+  const px = (la, lo) => [(lo + 52) * 300, (-28.4 - la) * 343];
+  const km = (a, b) => { const r = Math.PI / 180, dl = (b[1] - a[1]) * r, dp = (b[0] - a[0]) * r, h = Math.sin(dp / 2) ** 2 + Math.cos(a[0] * r) * Math.cos(b[0] * r) * Math.sin(dl / 2) ** 2; return 12742 * Math.asin(Math.sqrt(h)); };
+  const sm = p => { const n = p.length; let d = `M${p[0][0]},${p[0][1]}`; for (let i = 0; i < n; i++) { const a = p[(i - 1 + n) % n], b = p[i], c = p[(i + 1) % n], e = p[(i + 2) % n]; d += `C${b[0] + (c[0] - a[0]) / 6},${b[1] + (c[1] - a[1]) / 6} ${c[0] - (e[0] - b[0]) / 6},${c[1] - (e[1] - b[1]) / 6} ${c[0]},${c[1]}`; } return d + 'Z'; };
+  const blob = [[40,230],[130,190],[250,170],[380,200],[450,270],[430,360],[330,395],[200,375],[100,340],[30,290]];
+  const cont = [1, .82, .64, .46].map((s, i) => `<path d="${sm(blob.map(([x, y]) => [260 + (x - 260) * s + Math.sin(y * .05) * (1 - s) * 14, 275 + (y - 275) * s + Math.cos(x * .04) * (1 - s) * 12]))}" fill="var(--tint)" fill-opacity=".4" stroke="${i ? 'var(--line)' : 'var(--brand)'}" stroke-opacity="${i ? 1 : .55}" stroke-width="${i ? 1.5 : 2}" ${i ? '' : 'stroke-dasharray="6 5"'}/>`).join('');
+  const pts = cid.map(c => px(c[1], c[2]));
+  const calm = matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const lines = pts.slice(1).map(p => `<line x1="${pts[0][0]}" y1="${pts[0][1]}" x2="${p[0]}" y2="${p[1]}" stroke="var(--brand)" stroke-opacity=".3" stroke-dasharray="4 4"/>`).join('');
+  const pins = cid.map((c, i) => {
+    const [x, y] = pts[i], r = i ? 7 : 11, f = i ? 15 : 18, o = r + 6;
+    const t = {t: [x, y - o, 'middle'], b: [x, y + o + 10, 'middle'], l: [x - o + 1, y + 5, 'end'], r: [x + o - 1, y + 5, 'start']}[c[3]];
+    return `<g class="pin" data-i="${i}" tabindex="0" role="button" aria-label="${c[0]}" style="cursor:pointer">${i === 0 && !calm ? `<circle cx="${x}" cy="${y}" r="11" fill="none" stroke="var(--acc)" stroke-width="2"><animate attributeName="r" values="11;26;11" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;0;.8" dur="2.4s" repeatCount="indefinite"/></circle>` : ''}<circle class="ring" cx="${x}" cy="${y}" r="${r + 5}" fill="none" stroke="var(--ink)" stroke-width="2.5" opacity="0"/><circle cx="${x}" cy="${y}" r="${r}" fill="${i ? 'var(--btn)' : 'var(--acc)'}" stroke="#fff" stroke-width="2.5"/><text x="${t[0]}" y="${t[1]}" text-anchor="${t[2]}" font-size="${f}" font-weight="${i ? 600 : 800}" fill="var(--ink)" style="paint-order:stroke;stroke:var(--surf);stroke-width:4px;stroke-linejoin:round">${c[0]}</text></g>`;
+  }).join('');
+  svg.innerHTML = cont + `<text x="385" y="240" text-anchor="middle" font-size="20" font-weight="800" letter-spacing="4" fill="var(--brand)" opacity=".35">SERRA GAÚCHA</text><path d="M24 200 l10 -22 l10 22 l-10 -6z" fill="var(--ink)" opacity=".7"/><text x="34" y="218" text-anchor="middle" font-size="13" font-weight="700" fill="var(--ink)">N</text><path d="M30 388h62M30 382v12M92 382v12" stroke="var(--ink)" stroke-width="2" fill="none"/><text x="61" y="376" text-anchor="middle" font-size="13" fill="var(--mute)">20 km</text>` + lines + pins;
+  chips.innerHTML = cid.map((c, i) => `<button type="button" class="chip" data-i="${i}" aria-pressed="false">${c[0]}</button>`).join('');
+  function sel(i){
+    const c = cid[i], d = km([cid[0][1], cid[0][2]], [c[1], c[2]]);
+    svg.querySelectorAll('.pin').forEach(g => g.querySelector('.ring').setAttribute('opacity', +g.dataset.i === i ? 1 : 0));
+    chips.querySelectorAll('.chip').forEach(b => b.setAttribute('aria-pressed', +b.dataset.i === i));
+    info.innerHTML = `<h3 class="text-xl font-bold">${c[0]}</h3><p class="mt-1 text-sm text-mute leading-relaxed">${i === 0 ? 'Base da SOS Home. Atendimento para residências, comércios e indústrias.' : `Cerca de ${Math.round(d)} km de Caxias do Sul, em linha reta. Confirme a disponibilidade e a agenda pelo WhatsApp.`}</p><a href="#contato" data-cidade="${c[0]}" class="btn btn-a mt-4">Pedir orçamento em ${c[0]}</a>`;
+  }
+  svg.addEventListener('click', e => { const g = e.target.closest('.pin'); if (g) sel(+g.dataset.i); });
+  svg.addEventListener('keydown', e => { const g = e.target.closest('.pin'); if (g && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); sel(+g.dataset.i); } });
+  chips.addEventListener('click', e => { const b = e.target.closest('.chip'); if (b) sel(+b.dataset.i); });
+  info.addEventListener('click', e => { const a = e.target.closest('[data-cidade]'); if (a) $('#f_loc').value = a.dataset.cidade + ', RS'; });
+  sel(0);
+})();
+
+// Sinais de manutenção
+const sinais = ["Disjuntor desarma com frequência","Cheiro de queimado perto de tomadas ou quadro","Tomadas ou plugues quentes","Torneira ou descarga pingando","Manchas de umidade ou mofo","Pintura descascando ou com bolhas","Luzes piscando ou oscilando","Chuveiro que não esquenta ou dá choque"];
+const sg = $("#sgList"), sgBtn = $("#sgBtn");
+sg.innerHTML = sinais.map((s, i) => `<label class="flex gap-3 p-3 border border-line rounded-lg cursor-pointer bg-bg text-sm font-semibold"><input type="checkbox" class="mt-0.5 w-4 h-4 accent-[#C85A17]" data-i="${i}"><span>${s}</span></label>`).join("");
+function sgUp(){
+  const on = [...sg.querySelectorAll("input:checked")].map(x => +x.dataset.i), n = on.length;
+  $("#sgBar").style.width = (n / sinais.length * 100) + "%";
+  $("#sgTxt").textContent = n === 0 ? "Nenhum sinal marcado. Revisões periódicas ajudam a manter tudo assim." : n < 3 ? `${n} sinal(is) marcado(s). Vale agendar uma revisão antes que o problema aumente.` : `${n} sinais marcados. Recomendamos uma avaliação em breve, porque vários sinais juntos aumentam o risco de um problema maior.`;
+  const risco = on.some(i => [1,2,7].includes(i));
+  $("#sgRisco").classList.toggle("hidden", !risco);
+  sgBtn.dataset.obs = n ? "Sinais observados: " + on.map(i => sinais[i].toLowerCase()).join("; ") + "." : "";
+  sgBtn.dataset.modo = risco ? "Emergência" : "Atendimento avulso";
+  sgBtn.textContent = risco ? "Pedir atendimento urgente" : "Pedir uma revisão";
+}
+sg.addEventListener("change", sgUp); sgUp();
+
+// Botões que pré-selecionam serviço, imóvel e observações
+document.addEventListener("click", e => {
+  const a = e.target.closest("[data-srv]"); if (!a) return;
+  const s = $("#f_srv"); [...s.options].forEach(o => { if (o.text === a.dataset.srv) s.value = o.text; });
+  if (a.dataset.imo) $("#f_imo").value = a.dataset.imo;
+  if (a.dataset.obs) $("#f_obs").value = a.dataset.obs;
+});
+
+// Botões que pré-selecionam a modalidade no formulário
+document.addEventListener("click", e => {
+  const a = e.target.closest("[data-modo]"); if (!a) return;
+  const m = a.dataset.modo, sel = $("#f_modo");
+  const alvo = m === "Vistoria técnica" ? "Vistoria técnica" : m;
+  [...sel.options].forEach(o => { if (o.text === alvo) sel.value = o.text; });
+  if (m === "Vistoria técnica") $("#f_srv").value = "Vistoria com termografia";
+});
+
+// Formulário -> WhatsApp
+let msg = "";
+$("#gerar").onclick = () => {
+  const v = id => $("#" + id).value.trim();
+  const d = {nome:v("f_nome"), tel:v("f_tel"), imo:v("f_imo"), loc:v("f_loc"), modo:v("f_modo"), srv:v("f_srv"), obs:v("f_obs")};
+  const er = $("#erro");
+  const falta = [["nome","Seu nome"],["tel","Telefone"],["imo","Tipo de imóvel"],["modo","Como quer contratar"],["srv","Serviço"]].filter(x => !d[x[0]]).map(x => x[1]);
+  if (falta.length) { er.textContent = "Preencha: " + falta.join(", ") + "."; er.classList.remove("hidden"); return; }
+  er.classList.add("hidden");
+  msg = `Olá, SOS Home! Gostaria de solicitar um atendimento.\n\n*Nome:* ${d.nome}\n*Telefone:* ${d.tel}\n*Imóvel:* ${d.imo}\n*Local:* ${d.loc || "Não informado"}\n*Contratação:* ${d.modo}\n*Serviço:* ${d.srv}\n*Detalhes:* ${d.obs || "Não informado"}\n\nAguardo retorno com o orçamento e a data para agendar.`;
+  $("#msgTxt").textContent = msg;
+  $("#waLink").href = wa(msg);
+  $("#mailLink").href = "mailto:soshome54@gmail.com?subject=" + encodeURIComponent("Pedido de orçamento – " + d.nome) + "&body=" + encodeURIComponent(msg);
+  $("#resumo").classList.remove("hidden");
+  $("#resumo").scrollIntoView({behavior:"smooth", block:"nearest"});
+};
+$("#copiar").onclick = async e => {
+  try { await navigator.clipboard.writeText(msg); e.target.textContent = "Texto copiado"; }
+  catch (_) { e.target.textContent = "Selecione e copie o texto acima"; }
+  setTimeout(() => e.target.textContent = "Copiar texto", 2200);
+};
+</script>
+</body>
+</html>
