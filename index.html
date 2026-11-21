@@ -13,7 +13,7 @@
 <meta property="og:title" content="SOS Home | Manutenção residencial e comercial em Caxias do Sul">
 <meta property="og:description" content="Elétrica, hidráulica, pintura, automação smart, reformas e manutenção preventiva em Caxias do Sul e região. Orçamento rápido pelo WhatsApp.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230E3A63'/%3E%3Cpath d='M10 32L32 14l22 18' fill='none' stroke='%23fff' stroke-width='5' stroke-linejoin='round'/%3E%3Cpath d='M18 30v20h28V30' fill='none' stroke='%23EE8446' stroke-width='5'/%3E%3C/svg%3E">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"SOS Home","description":"Serviços profissionais a domicílio: elétrica, hidráulica, pintura, automação smart, climatização, solda, reformas, manutenção preventiva e vistoria com termografia.","telephone":"+55 54 99696-0909","email":"soshome54@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Caxias do Sul","addressRegion":"RS","addressCountry":"BR"},"areaServed":[{"@type":"City","name":"Caxias do Sul"},{"@type":"City","name":"Farroupilha"},{"@type":"City","name":"Bento Gonçalves"},{"@type":"City","name":"Garibaldi"},{"@type":"City","name":"Carlos Barbosa"},{"@type":"City","name":"Flores da Cunha"},{"@type":"City","name":"Nova Petrópolis"},{"@type":"City","name":"Gramado"},{"@type":"City","name":"Canela"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"SOS Home","description":"Serviços profissionais a domicílio: elétrica, hidráulica, pintura, automação smart, climatização, solda, reformas, manutenção preventiva e vistoria com termografia.","telephone":"+5554996960909","email":"soshome54@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Caxias do Sul","addressRegion":"RS","addressCountry":"BR"},"areaServed":[{"@type":"City","name":"Caxias do Sul"},{"@type":"City","name":"Farroupilha"},{"@type":"City","name":"Bento Gonçalves"},{"@type":"City","name":"Garibaldi"},{"@type":"City","name":"Carlos Barbosa"},{"@type":"City","name":"Flores da Cunha"},{"@type":"City","name":"Nova Petrópolis"},{"@type":"City","name":"Gramado"},{"@type":"City","name":"Canela"}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -103,6 +103,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <body class="antialiased">
 <a href="#topo" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[70] focus:bg-[var(--surf)] focus:text-[var(--ink)] focus:px-4 focus:py-2 focus:rounded-lg">Pular para o conteúdo</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b8fcf"/><stop offset=".3" stop-color="#8a5bd6"/><stop offset=".58" stop-color="#ff4f9a"/><stop offset=".82" stop-color="#ff8a3d"/><stop offset="1" stop-color="#ffc861"/></linearGradient>
+<radialGradient id="sunG"><stop offset="0" stop-color="#fff6c8"/><stop offset=".55" stop-color="#ffc24d"/><stop offset="1" stop-color="#ff6b9a" stop-opacity="0"/></radialGradient>
+<linearGradient id="roadG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2a52"/><stop offset="1" stop-color="#1d1530"/></linearGradient>
+<filter id="neonGlow" x="-20%" y="-40%" width="140%" height="180%"><feGaussianBlur stdDeviation="1.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 <radialGradient id="heatg"><stop offset="0" stop-color="#FFF59D"/><stop offset=".35" stop-color="#FF9800"/><stop offset=".7" stop-color="#E53935" stop-opacity=".85"/><stop offset="1" stop-color="#E53935" stop-opacity="0"/></radialGradient>
 <symbol id="logo-sos" viewBox="0 0 240 170">
 <path d="M12 66 L118 10 L176 40 V20 H198 V52 L226 66" fill="none" stroke="var(--brand)" stroke-width="7" stroke-linejoin="miter"/>
@@ -193,7 +197,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <h2 class="text-3xl font-extrabold tracking-tight">Explore o seu imóvel</h2>
     <p class="mt-3 text-mute max-w-2xl">Gire o imóvel em 3D e toque nos números para ver o que costuma dar problema em cada ambiente e como a SOS Home resolve.</p>
     <div class="mt-6 flex gap-2" id="expTabs" role="group" aria-label="Tipo de imóvel"></div>
-    <div class="mt-6 relative rounded-xl overflow-hidden border border-line" style="background:radial-gradient(circle at 50% 30%,#1b4a78,#0b1a2b 80%)">
+    <div class="mt-6 relative rounded-xl overflow-hidden border border-line" style="background:linear-gradient(#1b8fcf,#8a5bd6 38%,#ff4f9a 68%,#ffb347)">
       <canvas id="sc" class="w-full block" style="height:min(62vw,440px);min-height:300px;cursor:grab" aria-label="Imóvel em 3D com pontos de inspeção numerados"></canvas>
       <p class="absolute top-3 left-3 text-xs text-white/85 bg-black/40 rounded-md px-2.5 py-1.5 pointer-events-none">Arraste para girar · toque nos números</p>
       <div class="absolute bottom-3 left-3 right-3 flex flex-wrap gap-2">
@@ -303,7 +307,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <form id="orc" class="lg:col-span-3 bg-bg border border-line rounded-xl p-6" novalidate>
       <div class="grid sm:grid-cols-2 gap-4">
         <label class="block text-sm font-semibold">Seu nome<input id="f_nome" class="fld mt-1.5" autocomplete="name"></label>
-        <label class="block text-sm font-semibold">Telefone / WhatsApp<input id="f_tel" class="fld mt-1.5" type="tel" autocomplete="tel" placeholder="(54) 90000-0000"></label>
+        <label class="block text-sm font-semibold">Telefone / WhatsApp<input id="f_tel" class="fld mt-1.5" type="tel" inputmode="tel" maxlength="16" autocomplete="tel" placeholder="(54) 90000-0000"></label>
         <label class="block text-sm font-semibold">Tipo de imóvel
           <select id="f_imo" class="fld mt-1.5"><option value="">Selecione</option><option>Residência</option><option>Comércio</option><option>Indústria</option></select></label>
         <label class="block text-sm font-semibold">Bairro ou cidade<input id="f_loc" class="fld mt-1.5" placeholder="Ex.: Centro, Caxias do Sul"></label>
@@ -419,17 +423,19 @@ const cena = (k, cls = "") => `<svg viewBox="0 0 160 100" class="w-full block ${
 
 // Cenário por tipo de imóvel (painel do explorador): casa, loja e indústria, com um segundo profissional
 const smoke = [0, 1.5].map(d => `<circle class="rise" cx="416" cy="20" r="6" fill="var(--mute)" opacity=".5" style="animation-delay:${d}s"/>`).join("");
+const palm2 = (x, y, s, d, ph = 0) => `<g transform="translate(${x},${y}) scale(${s})"><path d="M0 0C2-18-2-34 3-48" stroke="#7a4f2a" stroke-width="4" fill="none" stroke-linecap="round"/><g transform="translate(3,-48)"><g class="sw" style="--a0:-4deg;--a1:4deg;--d:${d}s;animation-delay:${ph}s;transform:rotate(-4deg)"><path d="M0 0Q12-12 26 2M0 0Q-12-12-26 2M0 0Q8-16 18-12M0 0Q-8-16-18-12M0 0Q14-2 22 14M0 0Q-14-2-22 14" stroke="#1e9a52" stroke-width="3.4" fill="none" stroke-linecap="round"/><path d="M0 0Q10-8 18 2M0 0Q-10-8-18 2" stroke="#4fd47f" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="2" cy="2" r="2.4" fill="#5b3a22"/></g></g></g>`;
+const SKYB = `<rect width="480" height="110" fill="url(#skyG)"/><circle cx="212" cy="84" r="26" fill="url(#sunG)"/><g fill="#3a2260" opacity=".7"><rect x="186" y="70" width="12" height="40"/><rect x="200" y="58" width="16" height="52"/><rect x="218" y="74" width="12" height="36"/><rect x="450" y="64" width="14" height="46"/><rect x="466" y="76" width="14" height="34"/></g><g fill="#ffd166" opacity=".8"><rect x="203" y="64" width="3" height="3"/><rect x="209" y="72" width="3" height="3"/><rect x="453" y="70" width="3" height="3"/><rect x="469" y="82" width="3" height="3"/></g><rect y="110" width="480" height="20" fill="url(#roadG)"/><path d="M0 121H480" stroke="#ffd23f" stroke-width="1.6" stroke-dasharray="10 8" opacity=".9"/><rect y="109" width="480" height="2" fill="#00F5D4" opacity=".85"/>`;
 const BK = {
-  res: '<path d="M256 62L330 22L404 62Z" fill="var(--btn)"/><rect x="266" y="62" width="128" height="48" fill="var(--surf)" stroke="var(--brand)" stroke-width="3"/><rect x="278" y="74" width="24" height="20" rx="2" fill="#8fb8d8"/><rect x="358" y="74" width="24" height="20" rx="2" fill="#8fb8d8"/><rect x="322" y="78" width="18" height="32" fill="#8b5a2b"/><rect x="368" y="26" width="10" height="22" fill="#b0603b"/>',
-  com: `<rect x="244" y="50" width="196" height="60" fill="var(--surf)" stroke="var(--brand)" stroke-width="3"/>${[0, 1, 2, 3, 4, 5, 6, 7].map(i => `<rect x="${244 + i * 24.5}" y="50" width="24.5" height="14" fill="${i % 2 ? "#fff" : "#C85A17"}"/>`).join("")}<rect x="262" y="72" width="80" height="38" fill="#8fb8d8"/><rect x="358" y="72" width="28" height="38" fill="#8fb8d8"/><rect x="290" y="36" width="64" height="12" rx="2" fill="#0E3A63"/>`,
-  ind: `<path d="M236 110V62L266 42V62L296 42V62L326 42V62L356 42V62L386 42V62H420V110Z" fill="#8b97a5" stroke="var(--brand)" stroke-width="3" stroke-linejoin="round"/><rect x="408" y="22" width="16" height="46" fill="#6b7886"/>${smoke}<rect x="296" y="72" width="54" height="38" fill="#C85A17"/>`
+  res: `<rect x="256" y="76" width="130" height="34" fill="#fbf6f0"/><rect x="272" y="54" width="84" height="22" fill="#fff"/><rect x="254" y="73" width="134" height="4" fill="#ff2a85"/><rect x="270" y="51" width="88" height="4" fill="#00F5D4"/><rect x="280" y="60" width="26" height="11" fill="#8fd8ff"/><rect x="320" y="60" width="26" height="11" fill="#8fd8ff"/><rect x="266" y="84" width="46" height="26" fill="#8fd8ff"/><rect x="322" y="88" width="16" height="22" fill="#7a4a2a"/><rect x="346" y="86" width="40" height="24" fill="#7fe3d6"/><rect x="346" y="84" width="40" height="3" fill="#FF6B00"/><rect x="390" y="104" width="52" height="6" rx="2" fill="#00F5D4"/><rect x="390" y="104" width="52" height="6" rx="2" fill="url(#sunG)" opacity=".6"/>${palm2(448, 108, .72, 3.2)}${palm2(244, 108, .62, 3.8, -1)}<rect x="378" y="98" width="30" height="8" rx="3" fill="#ff2a85"/><rect x="384" y="94" width="16" height="6" rx="2" fill="#10131f"/><circle cx="386" cy="107" r="2.6" fill="#15191f"/><circle cx="402" cy="107" r="2.6" fill="#15191f"/>`,
+  com: `<rect x="244" y="50" width="196" height="60" fill="#ffe3c8"/><rect x="242" y="47" width="200" height="5" fill="#ffb3cf"/><rect x="320" y="34" width="44" height="14" fill="#ffe3c8"/><rect x="332" y="24" width="20" height="10" fill="#ffb3cf"/><rect x="341" y="12" width="2" height="12" fill="#b9b4c6"/><circle cx="342" cy="40" r="4.5" fill="none" stroke="#00F5D4" stroke-width="1.6" filter="url(#neonGlow)"/><rect x="242" y="68" width="200" height="3" fill="#8fe9dc"/><rect x="290" y="53" width="104" height="13" rx="2" fill="#1a0f2e" stroke="#ff2a85" stroke-width="1.4" filter="url(#neonGlow)"/><text x="342" y="63.5" text-anchor="middle" font-size="10" font-weight="800" fill="#fff" stroke="#ff2a85" stroke-width=".5" filter="url(#neonGlow)">SUA LOJA</text>${[0,1,2,3,4,5,6,7].map(i => `<rect x="${244 + i * 24.5}" y="72" width="24.5" height="9" fill="${i % 2 ? "#fff" : "#ff5fa2"}"/>`).join("")}<rect x="256" y="83" width="74" height="27" fill="#ffd9a0"/><rect x="340" y="83" width="30" height="27" fill="#ffd9a0"/><rect x="380" y="83" width="26" height="27" fill="#ffd9a0" stroke="#00F5D4" stroke-width="1.4"/><rect x="244" y="50" width="3" height="60" fill="#00F5D4" opacity=".9"/><rect x="437" y="50" width="3" height="60" fill="#ff2a85" opacity=".9"/>${palm2(228, 108, .72, 3.4)}${palm2(452, 108, .72, 3.9, -1.2)}`,
+  ind: `<path d="M236 110V66L266 50L330 50L388 50L420 66V110Z" fill="#6c7f95" stroke="#e8590c" stroke-width="3" stroke-linejoin="round"/><path d="M234 66L328 36L422 66Z" fill="#aab4c6"/><rect x="236" y="62" width="184" height="3" fill="#FF6B00"/><rect x="296" y="76" width="54" height="34" fill="#e8590c"/><rect x="296" y="76" width="54" height="34" fill="#10131f" opacity=".25"/><rect x="368" y="84" width="22" height="26" fill="#2b2338"/><rect x="250" y="70" width="22" height="9" fill="#ffd9a0"/><rect x="280" y="70" width="0" height="0"/><rect x="396" y="18" width="14" height="38" fill="#8a94a3"/><rect x="394" y="16" width="18" height="4" fill="#2b2338"/>${smoke}<g><rect x="226" y="40" width="3" height="70" fill="#2b2338"/><rect x="218" y="38" width="20" height="5" fill="#2b2338"/><rect x="220" y="43" width="16" height="4" fill="#ffe9b0"/><path d="M222 47L204 110H250Z" fill="#ffe4a8" opacity=".16"/><rect x="432" y="40" width="3" height="70" fill="#2b2338"/><rect x="424" y="38" width="20" height="5" fill="#2b2338"/><rect x="426" y="43" width="16" height="4" fill="#ffe9b0"/><path d="M430 47L412 110H458Z" fill="#ffe4a8" opacity=".16"/></g><g transform="translate(404,100)">${spark([[-8, -8, 0], [-12, 2, .2], [-4, -14, .4], [8, -10, .1]])}</g>`
 };
 const BX = {
   res: bn({x: 424, y: 110, s: .72, flip: -1, sh: "#2f7f6e", cap: "#0E3A63", a: [-10, -16, 2.4], b: [-72, -120, 1.5, T.roller]}),
   com: `<g transform="translate(250,110)"><g class="pace">${bn({s: .72, sh: "#2f7f6e", cap: "#0E3A63", walk: .7, a: [-20, 20, .7], b: [-70, -70, 1, T.box]})}</g></g>`,
   ind: bn({x: 440, y: 110, s: .72, flip: -1, vest: true, sh: "#0E3A63", cap: "#F2C200", a: [-8, -12, 2.6], b: [-78, -70, 1.9, T.clip]})
 };
-const banner = (tipo, srv) => `<svg viewBox="0 0 480 130" class="w-full h-auto block" aria-hidden="true"><rect width="480" height="130" fill="var(--tint)"/><rect y="110" width="480" height="20" fill="var(--line)" opacity=".8"/>${BK[tipo]}<svg x="0" y="${110 - 92 * 1.15}" width="184" height="115" viewBox="0 0 160 100" overflow="visible">${SC[KEY[srv] || "prev"]()}</svg>${BX[tipo]}</svg>`;
+const banner = (tipo, srv) => `<svg viewBox="0 0 480 130" class="w-full h-auto block" aria-hidden="true">${SKYB}${BK[tipo]}<svg x="0" y="${110 - 92 * 1.15}" width="184" height="115" viewBox="0 0 160 100" overflow="visible">${SC[KEY[srv] || "prev"]()}</svg>${BX[tipo]}</svg>`;
 
 // Pausa as animações das cenas que estão fora da tela
 const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle("off", !e.isIntersecting)), {rootMargin: "80px"}) : null;
@@ -458,7 +464,7 @@ const servicos = [
   ["Instalações e reformas","Instalações em geral, pequenas reformas e obras com acabamento cuidadoso.",["res","com","ind"]],
   ["Manutenção preventiva","Revisões periódicas para encontrar e corrigir problemas antes que virem emergência.",["res","com","prev","ind"]],
   ["Vistoria com termografia","Inspeção com câmera FLIR e laudo técnico do imóvel.",["res","com","prev","ind"]],
-  ["Climatização","Manutenção de climatização, ventilação e exaustão para conforto e operação sem paradas.",["res","com","ind","prev"]],
+  ["Climatização","Instalação, manutenção e higienização de ar-condicionado, com rotinas de PMOC para ambientes climatizados, além de ventilação e exaustão, para conforto, ar limpo e operação sem paradas.",["res","com","ind","prev"]],
   ["Solda e estruturas metálicas","Soldagem, reforços, portões, suportes e reparos em estruturas metálicas.",["res","com","ind"]]
 ];
 const cats = [["todos","Todos"],["res","Residências"],["com","Comércios"],["ind","Indústrias"],["emer","Emergência"],["prev","Preventiva"]];
@@ -493,7 +499,9 @@ const faq = [
   ["Qual a diferença entre atendimento avulso e plano mensal?","O avulso resolve um problema específico, com orçamento para cada serviço. O plano mensal mantém a manutenção preventiva e corretiva recorrente, para evitar problemas antes que aconteçam."],
   ["Vocês fazem atendimento de emergência?","Sim. Informe a situação no WhatsApp e escolha “Emergência” no formulário. Confirmamos a disponibilidade na hora."],
   ["Preciso comprar ferramentas ou fornecer algo?","Não. Nossos profissionais chegam uniformizados e com ferramentas completas. Os materiais necessários entram no orçamento."],
-  ["Vocês fazem obras e reformas?","Sim. Executamos instalações e reformas, além da manutenção do dia a dia."]
+  ["Vocês fazem obras e reformas?","Sim. Executamos instalações e reformas, além da manutenção do dia a dia."],
+  ["Vocês fazem higienização de ar-condicionado? Com que frequência?","Sim. A higienização inclui limpeza de filtros, serpentina, bandeja e dreno e a verificação geral do equipamento, o que ajuda a manter o ar mais limpo e o aparelho eficiente. Em geral, recomenda-se repetir de 6 a 12 meses em residências e com mais frequência em comércios e locais de uso intenso. O intervalo ideal depende do uso e do ambiente."],
+  ["O que é PMOC e o meu comércio precisa de um?","PMOC é o Plano de Manutenção, Operação e Controle dos sistemas de climatização. A Lei 13.589/2018 o exige para ambientes climatizados de uso público e coletivo, como lojas, escritórios e clínicas, e o plano deve ter um responsável técnico habilitado. Residências não entram nessa regra. Conte no WhatsApp o tipo de espaço e a quantidade de equipamentos, e executamos as rotinas de manutenção, limpeza e registro previstas no plano."]
 ];
 $("#faqList").innerHTML = faq.map((f, i) => `<div class="faq-item"><h3><button class="w-full flex justify-between items-center gap-4 text-left p-5 font-bold" aria-expanded="false" aria-controls="fa${i}"><span>${f[0]}</span><span class="plus text-2xl text-acc leading-none" aria-hidden="true">+</span></button></h3><div class="faq-body" id="fa${i}"><div><p class="px-5 pb-5 text-mute leading-relaxed">${f[1]}</p></div></div></div>`).join("");
 $("#faqList").onclick = e => { const b = e.target.closest("button"); if (!b) return; const o = b.closest(".faq-item").classList.toggle("faq-open"); b.setAttribute("aria-expanded", o); };
@@ -563,34 +571,74 @@ function init3D(){
   const cv = $("#sc"); let R;
   try { R = new THREE.WebGLRenderer({canvas: cv, antialias: true, alpha: true}); } catch (e) { cv.parentElement.remove(); return; }
   R.setPixelRatio(Math.min(devicePixelRatio, 2)); R.outputEncoding = THREE.sRGBEncoding; R.shadowMap.enabled = true; R.shadowMap.type = THREE.PCFSoftShadowMap;
-  const S = new THREE.Scene(), C = new THREE.PerspectiveCamera(40, 2, .1, 100), O = new THREE.OrbitControls(C, cv), Y = new THREE.Vector3(0,1,0);
-  const home = new THREE.Vector3(0,1.5,0), homePos = new THREE.Vector3(0,5,11);
+  const S = new THREE.Scene(), C = new THREE.PerspectiveCamera(40, 2, .1, 220), O = new THREE.OrbitControls(C, cv), Y = new THREE.Vector3(0,1,0);
+  const home = new THREE.Vector3(0,1.7,0), homePos = new THREE.Vector3(0,5.4,12.6);
   C.position.copy(homePos); O.target.copy(home); O.enableDamping = true; O.enableZoom = false; O.enablePan = false; O.maxPolarAngle = Math.PI/2 - .05; cv.style.touchAction = "pan-y";
-  S.add(new THREE.HemisphereLight(0xcfe3ff, 0x2a3442, .85)); const dl = new THREE.DirectionalLight(0xfff3e0, 1.05); dl.position.set(6,10,8); dl.castShadow = true; dl.shadow.mapSize.set(2048,2048); Object.assign(dl.shadow.camera, {left:-9, right:9, top:9, bottom:-9, near:1, far:40}); dl.shadow.bias = -.0005; S.add(dl);
-  const mat = c => new THREE.MeshStandardMaterial({color: c, roughness: .7});
-  
-  const chao = new THREE.Mesh(new THREE.CylinderGeometry(6,6.2,.3,48), mat(0x2a3442)); chao.position.y = -.15; chao.receiveShadow = true; S.add(chao);
-  const casa = new THREE.Group(), loja = new THREE.Group(), ind = new THREE.Group(); S.add(casa, loja, ind);
-  // Materiais procedurais, auxiliares e edificações
+  const anims = [];
+
+  // ===== Atmosfera Vice City: névoa rosada, luz dourada e neon =====
+  S.fog = new THREE.FogExp2(0xff8fa6, .022);
+  S.add(new THREE.HemisphereLight(0xffb36b, 0x6b2f8a, .85));
+  const dl = new THREE.DirectionalLight(0xffa24d, 1.3); dl.position.set(-14,10,17); dl.castShadow = true; dl.shadow.mapSize.set(2048,2048);
+  Object.assign(dl.shadow.camera, {left:-14, right:14, top:12, bottom:-12, near:1, far:60}); dl.shadow.camera.updateProjectionMatrix(); dl.shadow.bias = -.0005; S.add(dl);
+  const rim = new THREE.DirectionalLight(0x8a5bff, .6); rim.position.set(14,7,-14); S.add(rim);
+  const neonL = [0x00F5D4, 0xFF2A85, 0xFF6B00].map(c => { const l = new THREE.PointLight(c, 2.3, 13, 1.4); l.position.set(0,2,3); S.add(l); return l; });
+
+  // ===== Materiais e utilitários =====
   const mm = (c, r = .85, m = 0, o = {}) => new THREE.MeshStandardMaterial(Object.assign({color: c, roughness: r, metalness: m}, o));
+  const bm = c => new THREE.MeshBasicMaterial({color: c});
+  const NEON = []; const nm = c => { const m = bm(c); NEON.push([m, new THREE.Color(c)]); return m; };
+  const pinkN = nm(0xFF2A85), cyanN = nm(0x00F5D4), orgN = nm(0xFF6B00), warmN = nm(0xFFB14A), yelB = bm(0xFFD23F);
+  anims.push(t => NEON.forEach((n, i) => n[0].color.copy(n[1]).multiplyScalar(.82 + .18 * Math.sin(t * 2.4 + i * 1.7))));
   const tx = (w, h, fn, rx = 1, ry = 1) => { const c = document.createElement('canvas'); c.width = w; c.height = h; fn(c.getContext('2d'), w, h); const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(rx, ry); t.encoding = THREE.sRGBEncoding; t.anisotropy = 4; return t; };
   const grain = (x, w, h, n, a) => { for (let i = 0; i < n; i++) { const l = i % 2 ? 255 : 0; x.fillStyle = `rgba(${l},${l},${l},${Math.random() * a})`; x.fillRect(Math.random() * w, Math.random() * h, 2, 2); } };
   const plaster = (col, rx = 2, ry = 1) => mm(0xffffff, .9, 0, {map: tx(128, 128, (x, w, h) => { x.fillStyle = col; x.fillRect(0, 0, w, h); grain(x, w, h, 1400, .07); }, rx, ry)});
-  const concrete = (rx = 1, ry = 1) => mm(0xffffff, .95, 0, {map: tx(128, 128, (x, w, h) => { x.fillStyle = '#8c949e'; x.fillRect(0, 0, w, h); grain(x, w, h, 2200, .12); }, rx, ry)});
+  const concrete = (rx = 1, ry = 1, col = '#a09bb0') => mm(0xffffff, .95, 0, {map: tx(128, 128, (x, w, h) => { x.fillStyle = col; x.fillRect(0, 0, w, h); grain(x, w, h, 2200, .12); }, rx, ry)});
   const metal = (col, rx = 6) => mm(0xffffff, .45, .5, {map: tx(128, 64, (x, w, h) => { x.fillStyle = col; x.fillRect(0, 0, w, h); for (let i = 0; i < w; i += 8) { x.fillStyle = 'rgba(255,255,255,.14)'; x.fillRect(i, 0, 3, h); x.fillStyle = 'rgba(0,0,0,.18)'; x.fillRect(i + 5, 0, 2, h); } }, rx, 1)});
-  const tiles = mm(0xffffff, .75, 0, {map: tx(128, 128, (x, w, h) => { for (let r = 0; r < 8; r++) for (let c = 0; c < 9; c++) { x.fillStyle = `hsl(${14 + Math.random() * 6},${52 + Math.random() * 10}%,${32 + Math.random() * 9}%)`; x.fillRect(c * 16 + (r % 2) * 8 - 8, r * 16, 15, 15); } }, 6, 3)});
-  const slats = mm(0xffffff, .5, .4, {map: tx(64, 128, (x, w, h) => { x.fillStyle = '#c9d1da'; x.fillRect(0, 0, w, h); for (let i = 0; i < h; i += 8) { x.fillStyle = 'rgba(0,0,0,.25)'; x.fillRect(0, i, w, 2); } })});
-  const grass = mm(0xffffff, 1, 0, {map: tx(128, 128, (x, w, h) => { x.fillStyle = '#3f7a3a'; x.fillRect(0, 0, w, h); grain(x, w, h, 2500, .2); }, 3, 3)});
-  const sign = mm(0xffffff, .6, 0, {map: tx(256, 64, (x, w, h) => { x.fillStyle = '#0e3a63'; x.fillRect(0, 0, w, h); x.fillStyle = '#fff'; x.font = 'bold 40px sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText('SUA LOJA', w / 2, h / 2 + 2); })});
-  const glass = mm(0x8fb8d8, .08, .6, {emissive: 0x1b3550, emissiveIntensity: .35});
-  const dark = mm(0x2b3a4a, .6), alu = mm(0x9aa7b5, .4, .7), white = mm(0xf4f1ea, .8), steel = mm(0xc85a17, .5, .4), box = mm(0x9aa3ad, .5, .4);
-  const B = (g, w, h, d, x, y, z, m) => { const o = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m); o.position.set(x, y, z); o.castShadow = o.receiveShadow = true; g.add(o); return o; };
-  const CY = (g, rt, rb, h, x, y, z, m) => { const o = new THREE.Mesh(new THREE.CylinderGeometry(rt, rb, h, 24), m); o.position.set(x, y, z); o.castShadow = o.receiveShadow = true; g.add(o); return o; };
-  const SP = (g, r, x, y, z, m) => { const o = new THREE.Mesh(new THREE.SphereGeometry(r, 14, 10), m); o.position.set(x, y, z); o.castShadow = true; g.add(o); };
-  const win = (g, x, y, z, w, h, ry = 0) => { const k = new THREE.Group(); B(k, w + .14, h + .14, .08, 0, 0, 0, dark); B(k, w, h, .1, 0, 0, .02, glass); B(k, .04, h, .12, 0, 0, .03, dark); B(k, w, .04, .12, 0, 0, .03, dark); B(k, w + .22, .06, .2, 0, -h / 2 - .08, .08, white); k.position.set(x, y, z); k.rotation.y = ry; g.add(k); };
-  // Pessoas, escada, van, calhas e manchas de infiltração
+  const slats = mm(0xffffff, .5, .4, {map: tx(64, 128, (x, w, h) => { x.fillStyle = '#d8d2e6'; x.fillRect(0, 0, w, h); for (let i = 0; i < h; i += 8) { x.fillStyle = 'rgba(0,0,0,.25)'; x.fillRect(0, i, w, 2); } })});
+  const garageDoorM = mm(0xffffff, .5, .3, {map: tx(64, 128, (x, w, h) => { x.fillStyle = '#7fe3d6'; x.fillRect(0, 0, w, h); for (let i = 0; i < h; i += 16) { x.fillStyle = 'rgba(0,60,70,.35)'; x.fillRect(0, i, w, 3); } })});
+  const lawnM = mm(0xffffff, 1, 0, {map: tx(128, 128, (x, w, h) => { x.fillStyle = '#2fa05a'; x.fillRect(0, 0, w, h); grain(x, w, h, 2500, .2); }, 6, 4)});
+  const tileM = mm(0xffffff, .7, 0, {map: tx(64, 64, (x, w, h) => { x.fillStyle = '#f6dbe6'; x.fillRect(0, 0, w, h); x.fillStyle = '#ecc4d6'; x.fillRect(0, 0, 32, 32); x.fillRect(32, 32, 32, 32); }, 16, 10)});
+  const neonTx = (txt, col, bg, w = 256, h = 64, fs = 40) => new THREE.MeshBasicMaterial({map: tx(w, h, (x, w, h) => { x.fillStyle = bg; x.fillRect(0, 0, w, h); x.font = 'bold ' + fs + 'px sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.shadowColor = col; x.shadowBlur = 14; x.strokeStyle = col; x.lineWidth = 3; x.strokeText(txt, w / 2, h / 2 + 2); x.fillStyle = '#fff'; x.fillText(txt, w / 2, h / 2 + 2); })});
+  const signMat = neonTx('SUA LOJA', '#ff2a85', '#1a0f2e', 256, 64, 40), openMat = neonTx('OPEN', '#00f5d4', '#0d1b2a', 128, 48, 30);
+  anims.push(t => { signMat.color.setScalar(Math.sin(t * 41) * Math.sin(t * 3.1 + 1) > .94 ? .4 : 1); });
+  const white = plaster('#fbf6f0'), cream = plaster('#ffe3c8'), pinkW = plaster('#ffb3cf'), turqW = plaster('#8fe9dc');
+  const conc1 = concrete(3, 1), conc2 = concrete(1, 2), concA = concrete(8, 5, '#8f8a9e'), deckM = concrete(2, 1, '#e8d9e2');
+  const glass = mm(0x8fd8ff, .08, .6, {emissive: 0x2a6a99, emissiveIntensity: .5});
+  const warmGlass = mm(0xffd9a0, .1, .3, {emissive: 0xffb05a, emissiveIntensity: .9, transparent: true, opacity: .62});
+  const dark = mm(0x2b2338, .6), alu = mm(0xb9b4c6, .4, .7), steel = mm(0xe8590c, .5, .4), box = mm(0x9aa3ad, .5, .4), roofM = mm(0x3a3550, .8);
+  const waterM = mm(0x00f5d4, .1, .1, {emissive: 0x00c4d8, emissiveIntensity: .9});
+  anims.push(t => { waterM.emissiveIntensity = .75 + .2 * Math.sin(t * 2.2); });
+  const gc = {}; const bgeo = (w, h, d) => { const k = w + "|" + h + "|" + d; return gc[k] || (gc[k] = new THREE.BoxGeometry(w, h, d)); };
+  const B = (g, w, h, d, x, y, z, m, sh = 1) => { const o = new THREE.Mesh(bgeo(w, h, d), m); o.position.set(x, y, z); o.castShadow = o.receiveShadow = !!sh; g.add(o); return o; };
+  const CY = (g, rt, rb, h, x, y, z, m) => { const o = new THREE.Mesh(new THREE.CylinderGeometry(rt, rb, h, 16), m); o.position.set(x, y, z); o.castShadow = o.receiveShadow = true; g.add(o); return o; };
+  const SP = (g, r, x, y, z, m) => { const o = new THREE.Mesh(new THREE.SphereGeometry(r, 14, 10), m); o.position.set(x, y, z); o.castShadow = true; g.add(o); return o; };
+  const glowT = tx(64, 64, (x, w, h) => { const gr = x.createRadialGradient(32, 32, 0, 32, 32, 32); gr.addColorStop(0, 'rgba(255,255,255,1)'); gr.addColorStop(1, 'rgba(255,255,255,0)'); x.fillStyle = gr; x.fillRect(0, 0, w, h); });
+  glowT.wrapS = glowT.wrapT = THREE.ClampToEdgeWrapping;
+  const glowDisc = (g, x, z, r, c, op = .5, y = .12) => { const m = new THREE.Mesh(new THREE.PlaneGeometry(r * 2, r * 2), new THREE.MeshBasicMaterial({map: glowT, color: c, transparent: true, opacity: op, depthWrite: false, blending: THREE.AdditiveBlending})); m.rotation.x = -Math.PI / 2; m.position.set(x, y, z); g.add(m); return m; };
+
+  // ===== Céu de pôr do sol tropical =====
+  const skyTex = tx(8, 512, (x, w, h) => { const gr = x.createLinearGradient(0, 0, 0, h); [[0,'#1a1f6b'],[.22,'#2a7fd0'],[.30,'#19c3c9'],[.36,'#8a6bd6'],[.41,'#c957b8'],[.45,'#ff4f9a'],[.48,'#ff8a3d'],[.5,'#ffc861'],[.52,'#ff9a7a'],[.62,'#c4568a'],[1,'#3a1850']].forEach(s => gr.addColorStop(s[0], s[1])); x.fillStyle = gr; x.fillRect(0, 0, w, h); });
+  skyTex.wrapS = skyTex.wrapT = THREE.ClampToEdgeWrapping;
+  const sky = new THREE.Mesh(new THREE.SphereGeometry(150, 32, 24), new THREE.MeshBasicMaterial({map: skyTex, side: THREE.BackSide, fog: false, depthWrite: false})); sky.renderOrder = -2; S.add(sky);
+  const spr = (draw, sx, sy, pos) => { const t = tx(128, 128, draw); t.wrapS = t.wrapT = THREE.ClampToEdgeWrapping; const s = new THREE.Sprite(new THREE.SpriteMaterial({map: t, transparent: true, depthWrite: false, fog: false})); s.scale.set(sx, sy, 1); s.position.set(pos[0], pos[1], pos[2]); s.renderOrder = -1; S.add(s); return s; };
+  const sunDir = new THREE.Vector3(-30, 9, 26).normalize().multiplyScalar(120);
+  spr((x, w, h) => { const gr = x.createRadialGradient(64, 64, 0, 64, 64, 64); gr.addColorStop(0, 'rgba(255,250,210,1)'); gr.addColorStop(.22, 'rgba(255,214,102,1)'); gr.addColorStop(.4, 'rgba(255,107,154,.55)'); gr.addColorStop(1, 'rgba(255,107,154,0)'); x.fillStyle = gr; x.fillRect(0, 0, w, h); }, 70, 70, [sunDir.x, sunDir.y, sunDir.z]);
+  for (let i = 0; i < 8; i++) { const a = i * .78 + .3, r = 130; spr((x, w, h) => { x.translate(64, 64); x.scale(1, .26); const gr = x.createRadialGradient(0, 0, 0, 0, 0, 62); gr.addColorStop(0, 'rgba(255,170,200,.85)'); gr.addColorStop(1, 'rgba(255,170,200,0)'); x.fillStyle = gr; x.beginPath(); x.arc(0, 0, 62, 0, 7); x.fill(); }, 60 + (i % 3) * 14, 60 + (i % 3) * 14, [Math.sin(a) * r, 16 + (i % 4) * 9, Math.cos(a) * r]); }
+  const far = new THREE.Mesh(new THREE.CircleGeometry(140, 48), mm(0x2a1b3d, .95)); far.rotation.x = -Math.PI / 2; far.position.y = -.03; far.receiveShadow = true; S.add(far);
+
+  // ===== Palmeiras, pessoas, escada, van, carro esportivo =====
+  const trunkM = mm(0x8a5a33, .9), fr1 = mm(0x1e9a52, .75, 0, {side: THREE.DoubleSide}), fr2 = mm(0x38c46a, .75, 0, {side: THREE.DoubleSide}), coco = mm(0x5b3a22, .8);
+  const palm = (g, x, z, s = 1, ph = 0) => {
+    const p = new THREE.Group(), H = 2.7, cr = new THREE.Group();
+    const tr = CY(p, .07, .12, H, .1, H / 2, 0, trunkM); tr.rotation.z = -.075;
+    cr.position.set(.2, H, 0); p.add(cr);
+    for (let k = 0; k < 8; k++) { const pv = new THREE.Group(), d = new THREE.Group(); pv.rotation.y = k * Math.PI / 4 + ph; d.rotation.z = -.35 - (k % 2) * .18; pv.add(d); B(d, 1.0, .025, .3, .5, 0, 0, k % 2 ? fr1 : fr2, 0); B(d, .5, .02, .18, 1.2, -.05, 0, k % 2 ? fr2 : fr1, 0); cr.add(pv); }
+    SP(cr, .1, .1, -.05, 0, coco); SP(cr, .1, -.08, -.05, .08, coco);
+    p.position.set(x, 0, z); p.scale.setScalar(s); g.add(p);
+    anims.push(t => { if (!g.visible) return; p.rotation.z = Math.sin(t * 1.1 + ph * 3 + x) * .03; cr.rotation.x = Math.sin(t * 1.7 + ph) * .05; cr.rotation.y = Math.sin(t * .8 + ph) * .08; });
+  };
   const skin = [0xf1c9a5, 0xc68642, 0x8d5524];
-  const anims = [];
   const toolDef = {paint: [0x5b9bd5, .08, .2, .08], hammer: [0x6b7886, .22, .08, .08], wrench: [0xaab4bf, .07, .07, .32], weld: [0xc85a17, .07, .07, .3]};
   const person = (g, x, z, ry, shirt, pants, k = 0, hat = null, vest = false, task = null, y = 0) => {
     const p = new THREE.Group(), sk = mm(skin[k], .7), pm = mm(pants, .8), sm = mm(shirt, .8), ph = x * 1.7 + z;
@@ -623,15 +671,27 @@ function init3D(){
   };
   const ladder = (g, x, z, len, ry, tilt) => { const l = new THREE.Group(); [-.21, .21].forEach(s => { B(l, .05, len, .05, 0, len / 2, s, alu); B(l, .08, .05, .1, 0, .025, s, dark); }); for (let y = .3; y < len - .1; y += .3) B(l, .05, .04, .42, 0, y, 0, alu); l.rotation.z = tilt; const w = new THREE.Group(); w.add(l); w.position.set(x, 0, z); w.rotation.y = ry; g.add(w); };
   const vanTxt = new THREE.MeshBasicMaterial({map: tx(256, 40, (x, w, h) => { x.fillStyle = '#fff'; x.font = 'bold 30px sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText('SOS HOME', w / 2, h / 2); }), transparent: true});
-  const van = (g, x, z, ry) => {
+  const van = (g, x, z, ry, y = 0) => {
     const v = new THREE.Group(), w = mm(0xf4f6f8, .5, .2);
     B(v, 1.5, .85, .95, -.2, .75, 0, w); B(v, .6, .6, .95, .85, .62, 0, w); B(v, .05, .35, .8, 1.16, .8, 0, glass); B(v, .4, .25, .96, .85, .8, 0, glass);
     B(v, 1.52, .28, .96, -.2, .85, 0, mm(0x0e3a63, .5)); B(v, 1.52, .05, .96, -.2, .66, 0, steel);
     [-.55, .65].forEach(a => [-.5, .5].forEach(c => { const t = CY(v, .22, .22, .16, a, .22, c, mm(0x15191f, .9)); t.rotation.x = Math.PI / 2; }));
     [1, -1].forEach(s => { const m = new THREE.Mesh(new THREE.PlaneGeometry(1.3, .2), vanTxt); m.position.set(-.2, .85, s * .485); if (s < 0) m.rotation.y = Math.PI; v.add(m); });
-    v.position.set(x, 0, z); v.rotation.y = ry; g.add(v);
+    B(v, .06, .08, .2, 1.17, .5, .3, warmN, 0); B(v, .06, .08, .2, 1.17, .5, -.3, warmN, 0);
+    v.position.set(x, y, z); v.rotation.y = ry; g.add(v);
   };
-  const gutters = (g, W, D, y0, m) => { [-1, 1].forEach(s => { const c = CY(g, .07, .07, D + .5, s * (W / 2 + .3), y0 - .08, 0, m); c.rotation.x = Math.PI / 2; CY(g, .05, .05, y0 - .1, s * (W / 2 + .3), (y0 - .1) / 2, D / 2 + .05, m); }); };
+  // carro esportivo (comprimento no eixo z, frente em +z)
+  const car = (g, x, z, ry, col, neon, y = .1) => {
+    const c = new THREE.Group(), bd = mm(col, .25, .6), gl = mm(0x10131f, .1, .8), tire = mm(0x15191f, .9);
+    B(c, .82, .22, 1.9, 0, .32, 0, bd); B(c, .78, .12, .6, 0, .43, .62, bd); B(c, .7, .2, .8, 0, .52, -.15, gl); B(c, .66, .04, .55, 0, .63, -.18, bd);
+    B(c, .8, .04, .18, 0, .62, -.88, bd); B(c, .04, .1, .04, .3, .56, -.85, bd); B(c, .04, .1, .04, -.3, .56, -.85, bd);
+    [-.6, .62].forEach(a => [-1, 1].forEach(s => { const t = CY(c, .2, .2, .16, s * .43, .2, a, tire); t.rotation.z = Math.PI / 2; }));
+    [-1, 1].forEach(s => { B(c, .2, .06, .04, s * .26, .34, .96, bm(0xfff2c0), 0); B(c, .2, .05, .04, s * .26, .36, -.96, bm(0xff2040), 0); });
+    const ug = new THREE.Mesh(new THREE.PlaneGeometry(1.3, 2.5), new THREE.MeshBasicMaterial({map: glowT, color: neon, transparent: true, opacity: .75, depthWrite: false, blending: THREE.AdditiveBlending})); ug.rotation.x = -Math.PI / 2; ug.position.y = .03; c.add(ug);
+    c.position.set(x, y, z); c.rotation.y = ry; g.add(c); return c;
+  };
+  const fan = (g, x, y, z, r) => { const f = new THREE.Group(); f.position.set(x, y, z); CY(f, r, r, .04, 0, 0, 0, dark); const bl = new THREE.Group(); B(bl, r * 1.7, .02, .07, 0, .03, 0, alu, 0); B(bl, .07, .02, r * 1.7, 0, .03, 0, alu, 0); f.add(bl); g.add(f); anims.push(t => { if (g.visible) bl.rotation.y = t * 9; }); };
+  const win = (g, x, y, z, w, h, ry = 0, gm = glass) => { const k = new THREE.Group(); B(k, w + .14, h + .14, .08, 0, 0, 0, dark); B(k, w, h, .1, 0, 0, .02, gm); B(k, .04, h, .12, 0, 0, .03, dark); B(k, w, .04, .12, 0, 0, .03, dark); B(k, w + .22, .06, .2, 0, -h / 2 - .08, .08, white); k.position.set(x, y, z); k.rotation.y = ry; g.add(k); };
   const stainM = new THREE.MeshBasicMaterial({map: tx(128, 128, (x, w, h) => { const r = x.createRadialGradient(64, 64, 4, 64, 64, 62); r.addColorStop(0, 'rgba(40,32,24,.75)'); r.addColorStop(.6, 'rgba(60,50,40,.4)'); r.addColorStop(1, 'rgba(60,50,40,0)'); x.fillStyle = r; x.fillRect(0, 0, w, h); }), transparent: true, depthWrite: false});
   const stain = (g, x, y, z, w, h, ry = 0) => { const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), stainM); m.position.set(x, y, z); m.rotation.y = ry; g.add(m); };
   const gable = (g, W, D, H, y0, wm, rm) => {
@@ -642,80 +702,187 @@ function init3D(){
     const ge = new THREE.ExtrudeGeometry(sh, {depth: D - .02, bevelEnabled: false}); ge.translate(0, 0, -(D - .02) / 2);
     const gm = new THREE.Mesh(ge, wm); gm.position.y = y0; gm.castShadow = true; g.add(gm);
   };
-  const tree = (g, x, z, s = 1) => { CY(g, .08 * s, .12 * s, .9 * s, x, .45 * s, z, mm(0x5b3a22, .9)); const l1 = mm(0x2f6b34, .9), l2 = mm(0x3d8a42, .9); SP(g, .7 * s, x, 1.3 * s, z, l1); SP(g, .5 * s, x + .3 * s, 1.7 * s, z + .1 * s, l2); SP(g, .45 * s, x - .25 * s, 1.6 * s, z - .15 * s, l1); };
+  const gutters = (g, xL, xR, zc, D, y0, m, zs) => { [xL - .12, xR + .12].forEach(x => { const c = CY(g, .07, .07, D + .5, x, y0 - .08, zc, m); c.rotation.x = Math.PI / 2; CY(g, .05, .05, y0 - .1, x, (y0 - .1) / 2, zc + zs * (D / 2 + .05), m); }); };
 
-  const buildCasa = () => {
-  B(casa, 4.4, 2.4, 3.6, 0, 1.2, 0, plaster('#e8e1d3')); B(casa, 4.52, .3, 3.72, 0, .15, 0, concrete(3, 1));
-  gable(casa, 4.4, 3.6, 1.3, 2.4, mm(0xe8e1d3, .9), tiles);
-  B(casa, .5, 1.3, .5, 1.3, 3.5, -.4, mm(0xb0603b, .9)); B(casa, .62, .1, .62, 1.3, 4.2, -.4, concrete());
-  B(casa, .95, 1.6, .06, -1.4, .95, 1.81, white); B(casa, .8, 1.45, .08, -1.4, .9, 1.84, mm(0x6b3f23, .7)); B(casa, .05, .12, .05, -1.12, .9, 1.9, alu); B(casa, 1.3, .14, .6, -1.4, .07, 2.1, concrete());
-  win(casa, -.1, 1.4, 1.8, .9, .8); win(casa, 1.3, 1.4, 1.8, .9, .8); win(casa, 2.2, 1.4, .3, .7, .7, Math.PI / 2);
-  B(casa, .15, .55, .35, -2.27, 1.1, .4, box);
-  const gl = new THREE.Mesh(new THREE.CylinderGeometry(4.7, 4.7, .06, 48), grass); gl.position.set(0, .03, .3); gl.receiveShadow = true; casa.add(gl);
-  B(casa, .9, .05, 1.6, -1.4, .08, 2.9, concrete(1, 2));
-  for (let i = -4; i <= 4; i++) if (i !== -2) B(casa, .1, .6, .05, i * .9, .3, 3.6, white);
-  tree(casa, -3.5, 1.2); tree(casa, 3.7, -2.2, 1.15); tree(casa, -3.2, -1.5, .8);
-  gutters(casa, 4.4, 3.6, 2.4, white); stain(casa, -2.215, .9, -1, 1.4, 1.2, -Math.PI / 2); stain(casa, -2.215, 2.15, -.2, .9, .5, -Math.PI / 2);
-  const bt = B(casa, .5, .05, .4, 1.2, 3.12, .8, mm(0xc4623a, .7)); bt.rotation.z = -.75;
-  ladder(casa, 3.2, -.9, 2.5, 0, .2618); person(casa, 3.42, -.9, -Math.PI / 2, 0x0e3a63, 0x2b3a4a, 0, 0xc85a17, false, 'hammer'); B(casa, .4, .2, .2, 3.6, .1, -.2, steel);
-  person(casa, -2.95, .4, Math.PI / 2, 0xc85a17, 0x2b3a4a, 2, 0xf2c200, false, 'wrench'); person(casa, .9, 2.45, Math.PI, 0x2f7f6e, 0x2b3a4a, 0, 0x0e3a63, false, 'paint');
-  person(casa, -1.4, 3.1, Math.PI, 0xb5485a, 0x3b4252, 1, null, false, 'patrol'); van(casa, -3.4, 4.5, .15);
-  [-2.1, .7, 1.9].forEach(x => SP(casa, .3, x, .3, 1.95, mm(0x2f6b34, .9)));
+  // ===== Entorno: ruas, calçadas, postes quentes, skyline e tráfego =====
+  const env = new THREE.Group(); S.add(env);
+  const asphalt = mm(0xffffff, .38, .2, {map: tx(256, 256, (x, w, h) => { x.fillStyle = '#2d2540'; x.fillRect(0, 0, w, h); grain(x, w, h, 3500, .14); }, 6, 6)});
+  const walkM = mm(0xffffff, .8, 0, {map: tx(64, 64, (x, w, h) => { x.fillStyle = '#efd3df'; x.fillRect(0, 0, w, h); x.strokeStyle = 'rgba(120,70,110,.25)'; x.lineWidth = 2; x.strokeRect(0, 0, w, h); }, 14, 2)});
+  B(env, 23.2, .06, 2.8, 0, .03, 7.3, asphalt); B(env, 23.2, .06, 2.8, 0, .03, -7.3, asphalt); B(env, 2.8, .06, 11.8, 10.1, .03, 0, asphalt); B(env, 2.8, .06, 11.8, -10.1, .03, 0, asphalt);
+  B(env, 17.4, .1, .7, 0, .05, 5.55, walkM); B(env, 17.4, .1, .7, 0, .05, -5.55, walkM); B(env, .7, .1, 10.4, 8.35, .05, 0, walkM); B(env, .7, .1, 10.4, -8.35, .05, 0, walkM);
+  B(env, 17.4, .03, .06, 0, .115, 5.9, cyanN, 0); B(env, 17.4, .03, .06, 0, .115, -5.9, pinkN, 0); B(env, .06, .03, 10.4, 8.7, .115, 0, pinkN, 0); B(env, .06, .03, 10.4, -8.7, .115, 0, cyanN, 0);
+  for (let i = -11; i <= 11; i += 1.7) { B(env, .9, .012, .08, i, .066, 7.3, yelB, 0); B(env, .9, .012, .08, i, .066, -7.3, yelB, 0); }
+  for (let z = -5.2; z <= 5.2; z += 1.7) { B(env, .08, .012, .9, 10.1, .066, z, yelB, 0); B(env, .08, .012, .9, -10.1, .066, z, yelB, 0); }
+  const lamp = (x, z, dx, dz) => { CY(env, .035, .05, 2.7, x, 1.35, z, dark); B(env, dx ? .6 : .06, .06, dz ? .6 : .06, x + dx * .3, 2.68, z + dz * .3, dark, 0); B(env, .22, .08, .22, x + dx * .6, 2.64, z + dz * .6, warmN, 0); glowDisc(env, x + dx * .6, z + dz * .6, 1.7, 0xffa040, .5, .125); };
+  [[-7, 5.55, 0, 1], [-2.3, 5.55, 0, 1], [2.3, 5.55, 0, 1], [7, 5.55, 0, 1], [-5, -5.55, 0, -1], [0, -5.55, 0, -1], [5, -5.55, 0, -1], [8.35, -2.4, 1, 0], [8.35, 2.4, 1, 0], [-8.35, -2.4, -1, 0], [-8.35, 2.4, -1, 0]].forEach(l => lamp(l[0], l[1], l[2], l[3]));
+  palm(env, -6.5, 5.55, 1.1, 0); palm(env, 6.6, 5.55, 1.05, 1.3); palm(env, -6.5, -5.55, 1.1, 2.1); palm(env, 6.6, -5.55, 1.05, .6); palm(env, 8.35, 0, 1, 1.7); palm(env, -8.35, .2, 1, 2.6);
+  // skyline ao fundo, com janelas acesas
+  const towerTex = [6, 9, 13].map(h => tx(64, 128, (x, w, hh) => { x.fillStyle = '#3a2260'; x.fillRect(0, 0, w, hh); const cs = ['#ffd166', '#ff4fa0', '#3ff5e0', '#ffffff']; for (let r = 0; r < 16; r++) for (let c = 0; c < 6; c++) { x.fillStyle = Math.random() < .45 ? cs[(Math.random() * 4) | 0] : '#26143f'; x.fillRect(c * 10 + 4, r * 8 + 3, 6, 4); } }, 1, h / 5));
+  for (let i = 0; i < 22; i++) {
+    const a = i * Math.PI * 2 / 22 + (i % 3) * .06, r = 26 + (i * 7 % 6), hi = [6, 9, 13][i % 3], w = 2.2 + (i * 5 % 4) * .4;
+    const m = new THREE.Mesh(bgeo(w, hi, w), new THREE.MeshBasicMaterial({map: towerTex[i % 3]})); m.position.set(Math.sin(a) * r, hi / 2, Math.cos(a) * r); env.add(m);
+    B(env, w + .1, .18, w + .1, m.position.x, hi + .09, m.position.z, [pinkN, cyanN, orgN][i % 3], 0);
+  }
+  // tráfego com carros neon nas ruas ao redor
+  const lanes = [{ax: 'x', c: 8.0, dir: 1, ry: Math.PI / 2}, {ax: 'x', c: -8.0, dir: -1, ry: -Math.PI / 2}, {ax: 'z', c: -9.6, dir: 1, ry: 0}, {ax: 'z', c: 9.5, dir: -1, ry: Math.PI}];
+  [[0, 0xff2a85, 0x00F5D4, 2.6, 4], [0, 0xf4f1ea, 0xFF6B00, 2.6, 19], [1, 0x00c9b7, 0xFF2A85, 3.0, 9], [1, 0xff6b00, 0xFF2A85, 3.0, 24], [2, 0x7a4bd1, 0x00F5D4, 2.2, 6], [3, 0xffd23f, 0xFF2A85, 2.2, 17]].forEach(d => {
+    const ln = lanes[d[0]], L = 30, cr = car(env, 0, 0, ln.ry, d[1], d[2], .06);
+    anims.push(t => { const u = (t * d[3] + d[4]) % L, p = (ln.dir > 0 ? u : L - u) - L / 2; if (ln.ax === 'x') cr.position.set(p, .06, ln.c); else cr.position.set(ln.c, .06, p); });
+  });
 
+  const casa = new THREE.Group(), loja = new THREE.Group(), ind = new THREE.Group(); S.add(casa, loja, ind);
+
+  // ===================== RESIDÊNCIA: mansão tropical =====================
+  const buildCasa = () => { const g = casa;
+    B(g, 16, .08, 10.4, 0, .04, 0, lawnM);
+    // volumes principais
+    B(g, 5.2, 2.2, 3.4, -.6, 1.2, -.7, white); B(g, 5.5, .14, 3.7, -.6, 2.37, -.7, white); B(g, 5.5, .04, .05, -.6, 2.31, 1.17, pinkN, 0); B(g, .05, .04, 3.7, -3.35, 2.31, -.7, pinkN, 0);
+    B(g, 3.6, 1.6, 3.0, -.6, 3.24, -1.0, white); B(g, 3.9, .14, 3.3, -.6, 4.11, -1.0, white); B(g, 3.5, .04, 2.9, -.6, 4.2, -1.0, roofM);
+    B(g, 3.9, .05, .05, -.6, 4.03, .67, cyanN, 0); B(g, .05, .05, 3.3, -2.55, 4.03, -1.0, cyanN, 0);
+    B(g, .6, 1.6, .06, .85, 3.24, .53, pinkW); B(g, .3, 2.3, .3, 2.0, 1.25, 1.1, turqW);
+    win(g, -.75, 1.35, 1.02, 2.3, 1.5); win(g, 1.3, 1.4, 1.02, .8, .7); win(g, -1.55, 3.25, .52, 1.2, 1.0); win(g, -.1, 3.25, .52, 1.2, 1.0); win(g, -3.2, 1.5, -.9, .6, .6, -Math.PI / 2);
+    B(g, 1.05, 1.85, .06, -2.7, 1.02, 1.02, turqW); B(g, .9, 1.7, .08, -2.7, .95, 1.06, mm(0x7a4a2a, .7)); B(g, .05, .14, .05, -2.45, .95, 1.12, alu); B(g, 1.5, .12, .6, -2.7, .12, 1.3, conc1);
+    B(g, .12, .22, .05, -2.08, 1.25, 1.03, dark); B(g, .04, .04, .03, -2.08, 1.3, 1.06, cyanN, 0); B(g, .14, .1, .28, -3.0, 2.2, 1.16, dark);
+    // garagem
+    B(g, 3.2, 1.95, 3.2, 3.6, 1.075, -.4, white); B(g, 3.5, .12, 3.5, 3.6, 2.11, -.4, pinkW); B(g, 2.5, 1.55, .06, 3.6, .9, 1.23, garageDoorM); B(g, 2.5, .05, .05, 3.6, 1.72, 1.27, orgN, 0); B(g, 3.5, .05, .05, 3.6, 2.05, 1.37, cyanN, 0);
+    // quadro elétrico na lateral da garagem
+    B(g, .14, .62, .46, 5.27, 1.2, -.2, box); B(g, .06, .5, .34, 5.35, 1.2, -.2, mm(0x6b7886, .5, .5)); B(g, .04, .04, .04, 5.38, 1.35, -.3, bm(0x3dff7a), 0); B(g, .04, .04, .04, 5.38, 1.35, -.1, bm(0xff3b3b), 0); CY(g, .03, .03, .9, 5.27, .55, -.2, alu); B(g, .1, .1, .1, 5.28, 1.75, -.2, orgN, 0);
+    // calha e condutor
+    B(g, 3.5, .06, .09, 3.6, 2.0, 1.36, alu); CY(g, .05, .05, 2.0, 5.25, 1.1, 1.12, alu);
+    // infiltração na lateral esquerda
+    stain(g, -3.205, .9, -2.0, 1.4, 1.2, -Math.PI / 2); stain(g, -3.205, 2.0, -1.6, .8, .5, -Math.PI / 2);
+    // telhado: equipamentos
+    B(g, .9, .5, .7, .5, 4.47, -1.8, alu); fan(g, .5, 4.74, -1.8, .26); B(g, .9, .5, .7, -1.6, 4.47, -1.8, alu); fan(g, -1.6, 4.74, -1.8, .26); B(g, .7, .25, .7, -.4, 4.33, -.6, white);
+    // entrada e muro baixo com pilares
+    B(g, 2.4, .05, 4.2, 3.6, .1, 3.1, conc2);
+    B(g, 10.3, .55, .22, -2.75, .35, 5.0, pinkW); B(g, 10.3, .04, .05, -2.75, .64, 5.0, cyanN, 0); B(g, 3.1, .55, .22, 6.35, .35, 5.0, pinkW); B(g, 3.1, .04, .05, 6.35, .64, 5.0, cyanN, 0);
+    B(g, .22, .55, 10.0, -7.9, .35, 0, pinkW); B(g, .22, .55, 10.0, 7.9, .35, 0, pinkW); B(g, 15.8, .55, .22, 0, .35, -5.0, pinkW);
+    [2.4, 4.8].forEach(x => { B(g, .3, .9, .3, x, .5, 5.0, white); B(g, .18, .18, .18, x, 1.05, 5.0, orgN, 0); });
+    // piscina iluminada
+    B(g, 4.4, .07, 2.6, -3.3, .115, 3.2, deckM); B(g, 3.55, .03, 1.85, -3.3, .152, 3.2, cyanN, 0); B(g, 3.4, .02, 1.7, -3.3, .16, 3.2, waterM, 0); glowDisc(g, -3.3, 3.2, 3.4, 0x00F5D4, .5, .19);
+    B(g, .5, .1, 1.0, -4.6, .26, 4.0, pinkW); B(g, .5, .1, 1.0, -3.9, .26, 4.0, pinkW);
+    const bush = mm(0x2f8f4a, .9), flo = mm(0xff4fa0, .8);
+    [-1.6, -.3, 1.0].forEach((x, i) => { SP(g, .3, x, .3, 1.3, bush); SP(g, .12, x + .12, .5, 1.5, flo); });
+    palm(g, -6.4, 3.8, 1.1, 0); palm(g, 1.1, 4.5, .9, 1.4); palm(g, -6.5, -1.0, 1.2, .8); palm(g, 5.8, -3.6, 1.1, 2.2); palm(g, -2.5, -3.9, .9, 3.1); palm(g, 6.4, 3.6, .95, 1.9);
+    // carro esportivo na garagem e técnicos da SOS Home
+    car(g, 3.6, 3.0, 0, 0xff2a85, 0x00F5D4);
+    ladder(g, -3.9, .4, 2.6, Math.PI, .2618); person(g, -4.35, .4, Math.PI / 2, 0xc85a17, 0x2b3a4a, 2, 0xf2c200, false, 'wrench');
+    person(g, -.4, -1.8, Math.PI / 2, 0x0e3a63, 0x2b3a4a, 0, 0xc85a17, false, 'wrench', 4.18);
+    person(g, -1.8, .82, 0, 0x2f7f6e, 0x2b3a4a, 1, 0x0e3a63, false, 'hammer', 2.44);
+    person(g, 5.85, -.2, -Math.PI / 2, 0x0e3a63, 0x2b3a4a, 0, 0xf2c200, false, 'wrench');
+    person(g, .3, 3.9, Math.PI, 0xb5485a, 0x3b4252, 1, null, false, 'patrol');
+    person(g, -6.0, 4.4, 0, 0xc85a17, 0x2b3a4a, 2, 0xf2c200, false, 'paint');
+    van(g, -4.4, 6.45, 0);
   };
-  const buildLoja = () => {
-  B(loja, 5, 2.6, 3.4, 0, 1.3, 0, plaster('#cfd6de')); B(loja, 5.2, .4, 3.6, 0, 2.8, 0, concrete(3, 1)); B(loja, 4.8, .05, 3.2, 0, 3.02, 0, mm(0x4b5563, .9));
-  [-1.3, 1.2].forEach(x => { B(loja, .9, .5, .7, x, 3.3, 0, alu); CY(loja, .22, .22, .06, x, 3.58, 0, dark); });
-  B(loja, 3.1, 1.6, .1, -.8, 1, 1.72, alu); B(loja, 2.9, 1.4, .1, -.8, 1, 1.75, glass); [-1.5, -.8, -.1].forEach(x => B(loja, .05, 1.4, .12, x, 1, 1.77, alu));
-  B(loja, 1, 1.85, .1, 1.3, .93, 1.72, alu); B(loja, .8, 1.65, .1, 1.3, .9, 1.76, glass); B(loja, .04, .4, .06, 1.62, .9, 1.84, dark);
-  const aw = new THREE.Group(); aw.position.set(0, 2.2, 2.2); aw.rotation.x = .3; for (let i = 0; i < 8; i++) B(aw, .65, .06, 1.1, -2.275 + i * .65, 0, 0, i % 2 ? white : steel); loja.add(aw);
-  B(loja, 3.2, .5, .1, 0, 2.62, 1.76, sign);
-  win(loja, 2.5, 1.5, -.2, .7, .7, Math.PI / 2); win(loja, -2.5, 1.5, -.2, .8, .7, -Math.PI / 2);
-  B(loja, .45, .65, .14, 2.2, 1.1, 1.77, box); B(loja, .12, .12, .3, -2.2, 2.45, 1.85, dark);
-  B(loja, 7, .08, 2, 0, .04, 2.7, concrete(3, 1)); B(loja, 6.6, .06, 1.2, 0, .03, 4.4, mm(0x2a2f38, .95));
-  tree(loja, -3.3, 3, .8); tree(loja, 3.3, 3, .8);
-  CY(loja, .05, .05, 2.7, 2.65, 1.35, 1.55, dark); stain(loja, -2.515, .9, 1, 1.6, 1.3, -Math.PI / 2); B(loja, 1.6, .02, 1.2, .8, 3.06, -.8, mm(0x2e3f52, .15, .4));
-  ladder(loja, 3.47, -1.2, 4.04, 0, .2618); person(loja, 3.69, -1.2, -Math.PI / 2, 0x0e3a63, 0x2b3a4a, 2, 0xc85a17, false, 'paint');
-  person(loja, -1.2, 2.7, Math.PI, 0x2f7f6e, 0x2b3a4a, 1, null, false, 'patrol'); person(loja, -.1, 3.3, Math.PI, 0xc85a8a, 0x3b4252, 0, null, false, 'wave'); van(loja, -1.8, 4.4, 0);
-  person(loja, -.05, .7, Math.PI, 0x0e3a63, 0x2b3a4a, 1, 0xf2c200, false, 'wrench', 3.05);
 
+  // ===================== COMÉRCIO: Art Déco estilo Ocean Drive =====================
+  const buildLoja = () => { const g = loja;
+    B(g, 16, .08, 10.4, 0, .04, 0, tileM);
+    B(g, 7.2, 3.4, 3.8, 0, 1.8, -.5, cream); B(g, 7.3, .12, 3.9, 0, 2.75, -.5, turqW); B(g, 7.3, .1, 3.9, 0, 3.52, -.5, pinkW); B(g, 6.9, .06, 3.5, 0, 3.55, -.5, roofM);
+    B(g, 3.0, .7, 3.0, 0, 3.9, -.1, cream); B(g, 2.0, .5, 2.0, 0, 4.5, -.1, pinkW); B(g, .12, 1.0, .12, 0, 5.25, -.1, alu); SP(g, .1, 0, 5.8, -.1, cyanN);
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(.32, .04, 8, 24), cyanN); ring.position.set(0, 3.95, 1.42); g.add(ring);
+    B(g, 7.2, .04, .04, 0, 2.68, 1.46, cyanN, 0); B(g, .05, 3.2, .05, -3.62, 1.8, 1.42, cyanN, 0); B(g, .05, 3.2, .05, 3.62, 1.8, 1.42, pinkN, 0);
+    // letreiro neon
+    B(g, 3.6, .58, .05, 0, 3.12, 1.42, pinkN, 0); B(g, 3.4, .46, .06, 0, 3.12, 1.46, signMat, 0);
+    // vitrines iluminadas por dentro
+    B(g, 3.0, 1.7, .1, -1.9, 1.25, 1.43, warmGlass, 0); B(g, 1.7, 1.7, .1, .55, 1.25, 1.43, warmGlass, 0); [-3.4, -.4].forEach(x => B(g, .06, 1.8, .12, x, 1.25, 1.45, dark));
+    B(g, .06, 1.8, .12, 1.4, 1.25, 1.45, dark); B(g, .06, 1.8, .12, -.3, 1.25, 1.45, dark);
+    B(g, 3.0, .04, .12, -1.9, 2.1, 1.45, cyanN, 0); B(g, 1.7, .04, .12, .55, 2.1, 1.45, cyanN, 0);
+    [[-3.0, 0xffb3cf], [-2.1, 0x00c9b7], [-1.2, 0xffb3cf], [.1, 0xff6b9a], [.9, 0x00c9b7]].forEach(m => { CY(g, .13, .17, .8, m[0], .6, 1.1, mm(m[1], .6)); SP(g, .1, m[0], 1.1, 1.1, mm(0xf1c9a5, .7)); });
+    B(g, 1.6, .06, .35, -1.9, .8, 1.15, mm(0xf4f1ea, .6)); B(g, .7, .3, .04, .55, 1.7, 1.39, openMat, 0);
+    B(g, .95, 1.9, .08, 2.2, 1.05, 1.44, warmGlass, 0); B(g, 1.1, .05, .1, 2.2, 2.03, 1.46, cyanN, 0); B(g, .05, 1.95, .1, 1.66, 1.05, 1.46, cyanN, 0); B(g, .05, 1.95, .1, 2.74, 1.05, 1.46, cyanN, 0);
+    // toldo listrado
+    const aw = new THREE.Group(); aw.position.set(0, 2.5, 1.85); aw.rotation.x = .35; for (let i = 0; i < 11; i++) B(aw, .64, .05, 1.0, -3.2 + i * .64, 0, 0, i % 2 ? white : mm(0xff5fa2, .7)); g.add(aw);
+    // laterais, quadro, câmera, calha, infiltração
+    win(g, 3.6, 1.5, -.6, .8, .7, Math.PI / 2); win(g, -3.6, 1.5, -.7, .7, .7, -Math.PI / 2, mm(0xdfeaf2, .5, .1, {emissive: 0x88a0b0, emissiveIntensity: .3}));
+    B(g, .4, .65, .14, 3.2, 1.2, 1.47, box); B(g, .3, .5, .05, 3.2, 1.2, 1.55, mm(0x6b7886, .5, .5)); B(g, .04, .04, .04, 3.3, 1.4, 1.6, bm(0x3dff7a), 0);
+    B(g, .16, .12, .16, -3.45, 2.5, 1.5, dark); SP(g, .08, -3.45, 2.42, 1.5, mm(0x10131f, .2, .8));
+    B(g, 7.3, .08, .1, 0, 3.38, 1.45, alu); CY(g, .05, .05, 3.3, 3.7, 1.8, 1.5, alu);
+    stain(g, -3.605, .9, -1.7, 1.5, 1.3, -Math.PI / 2);
+    // cobertura: ar-condicionado, poça de água e antena
+    B(g, .9, .55, .7, -2.4, 3.85, -1.0, alu); fan(g, -2.4, 4.15, -1.0, .27); B(g, .9, .55, .7, -1.2, 3.85, -1.0, alu); fan(g, -1.2, 4.15, -1.0, .27); B(g, 1.4, .01, .9, 1.8, 3.6, -.8, mm(0x6fd7ff, .05, .6)); B(g, .5, .35, .5, 2.6, 3.75, -1.6, white);
+    // calçada larga, palmeiras em floreiras, poste Art Déco, glow neon
+    palm(g, -5.4, 3.2, 1.1, 0); palm(g, 5.4, 3.2, 1.1, 1.5); palm(g, -5.6, -1.5, 1.1, 2.4); palm(g, 5.6, -1.5, 1.1, .7);
+    [[-5.4, 3.2], [5.4, 3.2]].forEach(p => B(g, .7, .3, .7, p[0], .25, p[1], pinkW));
+    CY(g, .05, .06, 3.0, 4.3, 1.5, 3.4, dark); [-.35, .35].forEach(s => { SP(g, .17, 4.3 + s, 3.1, 3.4, warmN); B(g, .3, .04, .04, 4.3 + s / 2, 3.0, 3.4, dark, 0); }); const rg = new THREE.Mesh(new THREE.TorusGeometry(.4, .03, 8, 20), pinkN); rg.position.set(4.3, 3.2, 3.4); rg.rotation.x = Math.PI / 2; g.add(rg);
+    glowDisc(g, 0, 3.1, 4.4, 0xFF2A85, .45, .13); glowDisc(g, 2.2, 2.4, 2.0, 0x00F5D4, .4, .135); glowDisc(g, 4.3, 3.4, 1.8, 0xffa040, .4, .13);
+    // técnicos e van da SOS Home
+    ladder(g, -3.0, 2.25, 3.2, -Math.PI / 2, .2618); person(g, -3.0, 2.03, Math.PI, 0xc85a17, 0x2b3a4a, 2, 0xf2c200, false, 'paint', 1.5);
+    person(g, -1.8, -.2, Math.PI, 0x0e3a63, 0x2b3a4a, 0, 0xc85a17, false, 'wrench', 3.55);
+    person(g, 3.2, 2.1, Math.PI, 0x2f7f6e, 0x2b3a4a, 1, 0x0e3a63, false, 'wrench');
+    person(g, -.6, 4.2, Math.PI, 0xc85a8a, 0x3b4252, 0, null, false, 'wave'); person(g, 1.0, 4.9, Math.PI, 0x2f7f6e, 0x3b4252, 1, null, false, 'patrol');
+    van(g, -3.8, 6.45, 0);
   };
-  const buildInd = () => {
-  B(ind, 6, 3.2, 4, 0, 1.6, 0, metal('#5b6b7c')); B(ind, 6.06, .5, 4.06, 0, .25, 0, concrete(4, 1));
-  gable(ind, 6, 4, .55, 3.2, mm(0x5b6b7c, .5, .4), metal('#8b97a5', 8));
-  B(ind, 2.2, 2.3, .08, 0, 1.15, 2.02, steel); B(ind, 2, 2.1, .1, 0, 1.1, 2.06, slats);
-  B(ind, 1.05, 2.1, .08, 1.9, 1.05, 2.02, dark); B(ind, .9, 1.95, .1, 1.9, 1, 2.06, mm(0x7b8794, .5, .4));
-  B(ind, .7, 1, .25, -2.4, 1.4, 2.12, mm(0x1f4f7a, .5, .4));
-  for (let i = 0; i < 4; i++) { B(ind, 1, .55, .06, -2.1 + i * 1.4, 2.6, 2.02, dark); B(ind, .9, .45, .08, -2.1 + i * 1.4, 2.6, 2.04, glass); }
-  B(ind, .25, 3.1, .25, -3.2, 1.55, 2.25, steel); B(ind, .25, 3.1, .25, 3.2, 1.55, 2.25, steel); B(ind, 6.7, .25, .25, 0, 3.1, 2.25, steel);
-  const br = B(ind, .12, 1.4, .12, 2.95, 2.4, 2.25, steel); br.rotation.z = .75; const br2 = B(ind, .12, 1.4, .12, -2.95, 2.4, 2.25, steel); br2.rotation.z = -.75;
-  B(ind, .05, .5, 4.02, -3.02, 2.4, 0, steel);
-  CY(ind, .32, .36, 1.8, 2, 4.25, 0, mm(0x9aa3ad, .4, .6)); CY(ind, .55, .3, .25, 2, 5.25, 0, dark);
-  CY(ind, .7, .7, 2.2, 4.1, 1.1, -.5, mm(0x9aa7b5, .35, .6)); CY(ind, .73, .73, .08, 4.1, .6, -.5, dark); CY(ind, .73, .73, .08, 4.1, 1.6, -.5, dark); B(ind, .5, .14, .14, 3.2, .6, -.5, dark); B(ind, .06, 2.2, .06, 4.78, 1.1, -.5, dark);
-  B(ind, 8, .06, 2.4, 0, .03, 3.1, concrete(4, 1)); B(ind, 8, .02, .1, 0, .07, 2.5, mm(0xf2c200, .6)); B(ind, 8, .02, .1, 0, .07, 3.9, mm(0xf2c200, .6));
-  gutters(ind, 6, 4, 3.2, mm(0x9aa3ad, .4, .6)); stain(ind, 3.035, .9, 1.3, 1.6, 1.3, Math.PI / 2);
-  person(ind, -2.4, 2.8, Math.PI, 0x2b3a4a, 0x2b3a4a, 0, 0xf2c200, true, 'patrol');
-  ladder(ind, -4.22, -1.2, 3.67, Math.PI, .2618); person(ind, -4.44, -1.2, Math.PI / 2, 0x0e3a63, 0x2b3a4a, 1, 0xf2c200, true, 'hammer');
-  person(ind, 3.0, 2.95, Math.PI, 0x5b6b7c, 0x2b3a4a, 2, 0xf2c200, true, 'weld'); person(ind, 4.1, .7, Math.PI, 0xc85a17, 0x2b3a4a, 0, 0xf2c200, true, 'wrench');
-  B(ind, .7, .5, .7, 3.6, .25, 3.2, mm(0xb08a5a, .9)); B(ind, .6, .4, .6, 3.6, .7, 3.2, mm(0xb08a5a, .9)); B(ind, .7, .5, .7, -3.6, .25, 3.4, mm(0xb08a5a, .9));
-  van(ind, 2, 3.6, .1);
-  const puffs = [0, 1, 2].map(() => { const m = new THREE.Mesh(new THREE.SphereGeometry(.28, 10, 8), new THREE.MeshBasicMaterial({color: 0xcfd6de, transparent: true})); ind.add(m); return m; });
-  anims.push(t => { if (!ind.visible) return; puffs.forEach((m, i) => { const f = (t * .35 + i / 3) % 1; m.position.set(2 + f * .6, 5.4 + f * 1.8, 0); m.scale.setScalar(.6 + f * 1.1); m.material.opacity = .55 * (1 - f); }); });
+
+  // ===================== INDÚSTRIA: galpão moderno =====================
+  const buildInd = () => { const g = ind;
+    B(g, 16, .08, 10.4, 0, .04, 0, concA);
+    B(g, 7.1, .5, 4.7, 0, .35, -.5, conc1); B(g, 7, 3.2, 4.6, 0, 1.7, -.5, metal('#6c7f95'));
+    { const gg = new THREE.Group(); gg.position.z = -.5; g.add(gg); gable(gg, 7, 4.6, .7, 3.3, mm(0x6c7f95, .5, .4), metal('#aab4c6', 8)); }
+    [-3.45, 0, 3.45].forEach(x => B(g, .2, 3.3, .2, x, 1.75, 1.88, steel)); B(g, 7.1, .2, .2, 0, 3.3, 1.88, steel); B(g, .08, 1.9, .08, -1.7, 2.3, 1.9, steel).rotation.z = .9; B(g, .08, 1.9, .08, 1.7, 2.3, 1.9, steel).rotation.z = -.9;
+    B(g, 7.0, .05, .05, 0, 3.22, 1.93, orgN, 0);
+    B(g, 2.4, 2.3, .08, 1.4, 1.25, 1.86, steel); B(g, 2.2, 2.1, .1, 1.4, 1.2, 1.9, slats); B(g, .8, 1.95, .08, 3.0, 1.1, 1.86, dark); B(g, .65, 1.8, .1, 3.0, 1.05, 1.9, mm(0x8a94a3, .5, .4));
+    [-2.4, -1.2, 1.2, 2.4].forEach(x => win(g, x, 2.75, 1.82, .9, .4, 0, warmGlass));
+    // painéis elétricos
+    B(g, .55, .8, .12, -.55, 1.5, 1.9, box); B(g, .45, .6, .05, -.55, 1.5, 1.97, mm(0x4b5563, .5, .4)); B(g, .04, .04, .04, -.7, 1.75, 1.99, bm(0x3dff7a), 0); B(g, .04, .04, .04, -.55, 1.75, 1.99, bm(0xffd23f), 0); B(g, .04, .04, .04, -.4, 1.75, 1.99, bm(0xff3b3b), 0); B(g, .5, .5, .12, -.55, .75, 1.9, box);
+    // escritório com ar-condicionado e exaustor
+    B(g, 2.5, 2.5, 1.8, -2.25, 1.35, 2.7, plaster('#ffe3c8')); B(g, 2.7, .12, 2.0, -2.25, 2.66, 2.7, conc1); win(g, -2.25, 1.5, 3.62, 1.4, .8); B(g, 2.5, .05, .05, -2.25, 2.4, 3.62, cyanN, 0);
+    B(g, .8, .5, .7, -2.8, 3.0, 2.7, alu); fan(g, -2.8, 3.28, 2.7, .25); B(g, .8, .5, .7, -1.8, 3.0, 2.7, alu); fan(g, -1.8, 3.28, 2.7, .25); CY(g, .16, .2, .5, -2.3, 3.05, 3.1, alu);
+    // doca de carga e caminhão
+    B(g, 1.3, .9, 3.4, 4.15, .55, -.4, conc1); [-1.2, .1].forEach(z => { B(g, .08, 1.6, 1.1, 3.54, 1.85, z, slats); B(g, .1, .3, .2, 4.82, .6, z, mm(0x15191f, .9)); B(g, .08, .1, .3, 3.58, 2.75, z, warmN, 0); });
+    B(g, 2.1, 1.5, 1.4, 5.95, 1.05, -.4, white); B(g, 2.1, .12, 1.42, 5.95, .75, -.4, steel); B(g, .8, 1.0, 1.3, 7.35, .85, -.4, white); B(g, .05, .5, 1.0, 7.77, 1.0, -.4, glass);
+    [5.3, 7.3].forEach(x => [-1.1, .3].forEach(z => { const t = CY(g, .25, .25, .18, x, .25, z, mm(0x15191f, .9)); t.rotation.x = Math.PI / 2; }));
+    // tubulações e tanque d'água
+    [[2.1, 0x00b8d9], [2.4, 0xff6b00]].forEach(p => { const c = CY(g, .09, .09, 3.1, -3.65, p[0], -1.05, mm(p[1], .4, .5)); c.rotation.x = Math.PI / 2; });
+    [-2.4, -1.4, -.4].forEach(z => B(g, .06, .5, .06, -3.58, 2.25, z, dark)); const cp = CY(g, .09, .09, 1.1, -4.4, 2.1, -1.6, mm(0x00b8d9, .4, .5)); cp.rotation.z = Math.PI / 2;
+    [-4.0, -3.7].forEach(x => { CY(g, .14, .14, .05, x, 2.3, -1.4, bm(0xe53935)); });
+    [[-1, -1], [-1, 1], [1, -1], [1, 1]].forEach(s => B(g, .1, 1.8, .1, -5.4 + s[0] * .55, 1.0, -1.6 + s[1] * .55, dark));
+    CY(g, .8, .8, 1.4, -5.4, 2.7, -1.6, mm(0xb8c4d6, .35, .6)); CY(g, .5, .8, .35, -5.4, 3.55, -1.6, mm(0xb8c4d6, .35, .6)); const tr = new THREE.Mesh(new THREE.TorusGeometry(.8, .03, 8, 32), cyanN); tr.rotation.x = Math.PI / 2; tr.position.set(-5.4, 2.7, -1.6); g.add(tr);
+    CY(g, .6, .6, 3.4, -6.5, 1.8, -.4, mm(0xe8e1ee, .4, .5)); CY(g, 0, .6, .6, -6.5, 3.8, -.4, mm(0xc9c1d6, .4, .5));
+    // chaminés e fumaça, calhas
+    [2.0, 2.9].forEach(x => { CY(g, .26, .3, 1.8, x, 4.2, -1.3, mm(0x8a94a3, .4, .6)); CY(g, .3, .3, .12, x, 5.14, -1.3, dark); });
+    gutters(g, -3.5, 3.5, -.5, 4.6, 3.2, mm(0xaab4c6, .4, .6), -1);
+    const puffs = [0, 1, 2, 3, 4, 5].map(() => { const m = new THREE.Mesh(new THREE.SphereGeometry(.28, 10, 8), new THREE.MeshBasicMaterial({color: 0xe8c9da, transparent: true})); g.add(m); return m; });
+    anims.push(t => { if (!g.visible) return; puffs.forEach((m, i) => { const k = i % 3, cx = i < 3 ? 2.0 : 2.9, f = (t * .35 + k / 3) % 1; m.position.set(cx + f * .8, 5.3 + f * 1.8, -1.3); m.scale.setScalar(.6 + f * 1.1); m.material.opacity = .55 * (1 - f); }); });
+    // holofotes
+    const flood = (x, z, tx_, tz_) => { CY(g, .08, .1, 5, x, 2.5, z, dark); B(g, .9, .1, .1, x, 5.0, z, dark); const dx = tx_ - x, dz = tz_ - z, az = Math.atan2(-dz, dx);
+      [-.35, 0, .35].forEach(o => { B(g, .26, .2, .2, x + o, 4.9, z, warmN, 0); const bg = new THREE.Group(); bg.position.set(x + o, 4.9, z); const cn = new THREE.Mesh(new THREE.ConeGeometry(1.4, 5.2, 16, 1, true), new THREE.MeshBasicMaterial({color: 0xffe4a8, transparent: true, opacity: .09, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide})); cn.position.y = -2.6; bg.add(cn); bg.rotation.set(0, az, .5); g.add(bg); });
+      glowDisc(g, x + Math.cos(az) * 2.0, z - Math.sin(az) * 2.0, 2.6, 0xffb060, .55, .1); };
+    flood(-6.4, 3.8, 0, 0); flood(6.6, 3.9, 0, 0);
+    // pátio: faixas, bollards, piso reparado
+    B(g, 14, .01, .1, 0, .09, 4.0, yelB, 0); B(g, 14, .01, .1, 0, .09, 4.9, yelB, 0); for (let x = -7; x <= 7; x += 1.75) CY(g, .07, .07, .5, x, .3, 4.95, mm(0xffd23f, .5));
+    B(g, 1.1, .015, .8, .9, .095, 3.6, mm(0xbab4c8, .9)); [[-.2, 3.4, 1.2, .3], [.2, 3.9, 1.0, -.4], [1.7, 3.2, .9, .6]].forEach(c => { const m = B(g, c[2], .012, .04, c[0] + .5, .092, c[1], mm(0x2a2438, .9), 0); m.rotation.y = c[3]; });
+    [[.0, 3.1], [1.8, 4.0], [.2, 4.2]].forEach(c => { const cn = new THREE.Mesh(new THREE.ConeGeometry(.12, .34, 12), mm(0xff6b00, .6)); cn.position.set(c[0], .27, c[1]); cn.castShadow = true; g.add(cn); });
+    // estrutura metálica sendo soldada
+    B(g, 2.0, .12, .12, 4.8, 1.2, 2.5, steel); B(g, .12, 1.7, .12, 3.9, .95, 2.5, steel); B(g, .12, 1.7, .12, 5.7, .95, 2.5, steel); B(g, .08, 1.3, .08, 4.3, .7, 2.5, steel).rotation.z = .6; glowDisc(g, 4.6, 2.5, 1.2, 0xff8a2a, .5, .12);
+    stain(g, -3.505, .9, -.2, 1.5, 1.2, -Math.PI / 2);
+    ladder(g, -4.4, 1.0, 3.6, Math.PI, .2618); person(g, -3.96, 1.0, Math.PI / 2, 0x0e3a63, 0x2b3a4a, 1, 0xf2c200, true, 'wrench', 2.4);
+    person(g, 4.4, 3.2, Math.PI, 0x5b6b7c, 0x2b3a4a, 2, 0xf2c200, true, 'weld');
+    person(g, -.5, 2.45, Math.PI, 0x2b3a4a, 0x2b3a4a, 0, 0xf2c200, true, 'wrench');
+    person(g, 1.0, 4.5, Math.PI, 0xc85a17, 0x2b3a4a, 1, 0xf2c200, true, 'patrol');
+    van(g, -4.2, 6.45, 0);
   };
   const built = {}; const ensure = k => { if (!built[k]) { built[k] = 1; ({res: buildCasa, com: buildLoja, ind: buildInd})[k](); } };
+
+  // Pontos numerados (mesma ordem de "lugares") e luzes neon por cenário
   const P = {
-    res: [[-1.3,1.5,2.2],[1.3,1.5,2.2],[2.6,1.2,.3],[0,.3,2.9],[-2.6,1,.4],[0,4.1,.2],[-1.2,3.6,1.0],[2.9,2.4,1.0],[-2.7,1.0,-1.0]],
-    com: [[-1.2,1.2,2.3],[2.9,1.3,-.2],[-2.9,1.3,-.2],[0,3.8,.6],[2.1,1,2.3],[-2.2,2.2,2.3],[0,3.6,-1.0],[2.9,2.3,1.6],[-2.9,.8,1.0]],
-    ind: [[-2.4,2.1,2.5],[4.1,2.7,-.5],[2,5.9,0],[-1.5,4.2,.8],[3.3,2.2,2.6],[0,.3,3.5],[-3.5,2.4,0],[-3.6,3.1,.8],[3.45,.9,1.3]]
+    res: [[-.8,1.5,1.45],[1.3,1.55,1.4],[-3.5,1.65,-.9],[-3.3,.9,3.2],[5.55,1.5,-.2],[-2.1,1.7,1.35],[0,4.7,-1.0],[5.35,1.2,1.3],[-3.5,.9,-2.0]],
+    com: [[-1.9,1.5,1.7],[3.75,1.7,-.6],[-3.75,1.7,-.7],[0,3.4,1.75],[3.2,1.55,1.7],[-3.4,2.7,1.6],[-1.8,4.5,-1.0],[3.8,2.1,1.6],[-3.75,.9,-1.7]],
+    ind: [[-.55,1.7,2.0],[-5.4,3.6,-1.6],[-2.3,3.4,2.7],[-3.9,3.7,1.0],[4.6,1.6,2.5],[.9,.45,3.6],[1.4,3.15,1.95],[-3.65,1.9,-2.85],[-3.6,1.0,-.2]]
+  };
+  const RIG = {
+    res: [[-3.3,1.2,3.4],[1.0,3.0,4.2],[5.5,2.5,-.5]],
+    com: [[-3,2.0,3.2],[0,3.0,2.8],[3.8,2.8,2.8]],
+    ind: [[6.6,4.5,3.4],[0,3.6,4.2],[-5.4,4.5,3.0]]
   };
   const mk = n => { const c = document.createElement("canvas"); c.width = c.height = 128; const x = c.getContext("2d"); x.beginPath(); x.arc(64,64,54,0,7); x.fillStyle = "#B34E10"; x.fill(); x.lineWidth = 8; x.strokeStyle = "#fff"; x.stroke(); x.fillStyle = "#fff"; x.font = "bold 58px sans-serif"; x.textAlign = "center"; x.textBaseline = "middle"; x.fillText(n,64,68); const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; return t; };
   const sp = {};
-  for (const k in P) sp[k] = P[k].map((p, i) => { const s = new THREE.Sprite(new THREE.SpriteMaterial({map: mk(i+1), depthTest: false})); s.position.set(...p); s.renderOrder = 9; s.userData.i = i; S.add(s); return s; });
+  for (const k in P) sp[k] = P[k].map((p, i) => { const s = new THREE.Sprite(new THREE.SpriteMaterial({map: mk(i+1), depthTest: false, fog: false})); s.position.set(...p); s.renderOrder = 9; s.userData.i = i; S.add(s); return s; });
   let foc = 0, goal = 0, auto = !matchMedia("(prefers-reduced-motion:reduce)").matches, tour = null;
-  scSyncFn = () => { ensure(exM); casa.visible = exM === "res"; loja.visible = exM === "com"; ind.visible = exM === "ind"; for (const k in sp) sp[k].forEach(s => s.visible = k === exM); const p = P[exM][exI]; goal = Math.atan2(p[0], p[2]); foc = 1.4; };
+  scSyncFn = () => { ensure(exM); casa.visible = exM === "res"; loja.visible = exM === "com"; ind.visible = exM === "ind"; for (const k in sp) sp[k].forEach(s => s.visible = k === exM); neonL.forEach((l, i) => l.position.set(...RIG[exM][i])); const p = P[exM][exI]; goal = Math.atan2(p[0], p[2]); foc = 1.4; };
   const rot = a => { const o = C.position.clone().sub(O.target).applyAxisAngle(Y, a); C.position.copy(O.target).add(o); };
   const size = () => { const w = cv.clientWidth, h = cv.clientHeight; R.setSize(w, h, false); C.aspect = w / h; C.updateProjectionMatrix(); };
-  addEventListener("resize", size); size();
+  let rz; addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(size, 120); }); size();
   let vis = true; new IntersectionObserver(e => vis = e[0].isIntersecting).observe(cv);
   const clock = new THREE.Clock();
   (function loop(){
@@ -881,6 +1048,8 @@ $("#orc").addEventListener("submit", ev => {
   $("#resumo").classList.remove("hidden");
   $("#resumo").scrollIntoView({behavior:"smooth", block:"nearest"});
 });
+$("#f_tel").addEventListener("input", e => { const d = e.target.value.replace(/\D/g, "").slice(0, 11), c = d.length > 10 ? 7 : 6; e.target.value = d.length > 6 ? `(${d.slice(0, 2)}) ${d.slice(2, c)}-${d.slice(c)}` : d.length > 2 ? `(${d.slice(0, 2)}) ${d.slice(2)}` : d; });
+$("#f_modo").addEventListener("change", e => { if (e.target.value === "Vistoria técnica") $("#f_srv").value = "Vistoria com termografia"; });
 $("#copiar").onclick = async e => {
   try { await navigator.clipboard.writeText(msg); e.target.textContent = "Texto copiado"; }
   catch (_) { e.target.textContent = "Selecione e copie o texto acima"; }
