@@ -5,19 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>SOS Home | Manutenção residencial e comercial em Caxias do Sul</title>
 <meta name="description" content="Elétrica, hidráulica, pintura, automação smart, reformas e manutenção preventiva para residências e comércios em Caxias do Sul e região. Orçamento rápido pelo WhatsApp e garantia de serviço.">
+<meta name="theme-color" content="#0E3A63">
+<meta name="color-scheme" content="light dark">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="SOS Home">
+<meta property="og:title" content="SOS Home | Manutenção residencial e comercial em Caxias do Sul">
+<meta property="og:description" content="Elétrica, hidráulica, pintura, automação smart, reformas e manutenção preventiva em Caxias do Sul e região. Orçamento rápido pelo WhatsApp.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230E3A63'/%3E%3Cpath d='M10 32L32 14l22 18' fill='none' stroke='%23fff' stroke-width='5' stroke-linejoin='round'/%3E%3Cpath d='M18 30v20h28V30' fill='none' stroke='%23EE8446' stroke-width='5'/%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"SOS Home","description":"Serviços profissionais a domicílio: elétrica, hidráulica, pintura, automação smart, climatização, solda, reformas, manutenção preventiva e vistoria com termografia.","telephone":"+55 54 99696-0909","email":"soshome54@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Caxias do Sul","addressRegion":"RS","addressCountry":"BR"},"areaServed":[{"@type":"City","name":"Caxias do Sul"},{"@type":"City","name":"Farroupilha"},{"@type":"City","name":"Bento Gonçalves"},{"@type":"City","name":"Garibaldi"},{"@type":"City","name":"Carlos Barbosa"},{"@type":"City","name":"Flores da Cunha"},{"@type":"City","name":"Nova Petrópolis"},{"@type":"City","name":"Gramado"},{"@type":"City","name":"Canela"}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script>
-tailwind.config={theme:{extend:{fontFamily:{sans:['"Plus Jakarta Sans"','Inter','system-ui','sans-serif']},colors:{bg:'var(--bg)',surf:'var(--surf)',line:'var(--line)',ink:'var(--ink)',mute:'var(--mute)',brand:'var(--brand)',btn:'var(--btn)',acc:'var(--acc)'}}}}
+if(window.tailwind)tailwind.config={theme:{extend:{fontFamily:{sans:['"Plus Jakarta Sans"','Inter','system-ui','sans-serif']},colors:{bg:'var(--bg)',surf:'var(--surf)',line:'var(--line)',ink:'var(--ink)',mute:'var(--mute)',brand:'var(--brand)',btn:'var(--btn)',acc:'var(--acc-t)'}}}}
 </script>
 <style>
-:root{--bg:#F4F6F8;--surf:#FFFFFF;--line:#DCE2E8;--ink:#10151C;--mute:#4B5565;--brand:#0E3A63;--btn:#0E3A63;--acc:#C85A17;--tint:#E8EEF4;--home:#0E3A63;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1319;--surf:#151C25;--line:#273240;--ink:#E8EDF2;--mute:#A3AEBB;--brand:#7DB2E6;--btn:#1B5A94;--acc:#EE8446;--tint:#1A2430;--home:#F1F5F9}}
-:root[data-theme="dark"]{--bg:#0E1319;--surf:#151C25;--line:#273240;--ink:#E8EDF2;--mute:#A3AEBB;--brand:#7DB2E6;--btn:#1B5A94;--acc:#EE8446;--tint:#1A2430;--home:#F1F5F9}
+:root{--bg:#F4F6F8;--surf:#FFFFFF;--line:#DCE2E8;--ink:#10151C;--mute:#4B5565;--brand:#0E3A63;--btn:#0E3A63;--acc:#C85A17;--acc-t:#B34E10;--acc-b:#B34E10;--on-acc:#FFFFFF;--tint:#E8EEF4;--home:#0E3A63;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1319;--surf:#151C25;--line:#273240;--ink:#E8EDF2;--mute:#A3AEBB;--brand:#7DB2E6;--btn:#1B5A94;--acc:#EE8446;--acc-t:#EE8446;--acc-b:#EE8446;--on-acc:#10151C;--tint:#1A2430;--home:#F1F5F9;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E1319;--surf:#151C25;--line:#273240;--ink:#E8EDF2;--mute:#A3AEBB;--brand:#7DB2E6;--btn:#1B5A94;--acc:#EE8446;--acc-t:#EE8446;--acc-b:#EE8446;--on-acc:#10151C;--tint:#1A2430;--home:#F1F5F9;color-scheme:dark}
 
 :root{--paint:#5B9BD5;--wall:#5B9BD5}
 .bulb{fill:#cfd8e3;animation:bulb 14s infinite}
@@ -39,7 +46,7 @@ tailwind.config={theme:{extend:{fontFamily:{sans:['"Plus Jakarta Sans"','Inter',
 @keyframes ok2{0%,52%{opacity:0}56%,92%{opacity:1}97%,100%{opacity:0}}
 @keyframes ok3{0%,70%{opacity:0}74%,92%{opacity:1}97%,100%{opacity:0}}
 .lt{fill:var(--surf);animation:lt 14s infinite}
-@keyframes lt{0%,10%{fill:var(--surf);filter:none}13%,90%{fill:#FFD34D;filter:drop-shadow(0 0 5px #FFB800)}96%,100%{fill:var(--surf);filter:none}}
+@keyframes lt{0%,10%{fill:var(--surf)}13%,90%{fill:#FFD34D}96%,100%{fill:var(--surf)}}
 @media (prefers-reduced-motion:reduce){.bulb{fill:#FFD34D}.glow{opacity:1}.dk{opacity:0}.leak{opacity:0}.pt{transform:none}.ok{opacity:1}.lt{fill:#FFD34D}}
 html{scroll-behavior:smooth;scroll-padding-top:calc(5rem + env(safe-area-inset-top,0px))}
 body{background:var(--bg);background:color-mix(in srgb,var(--paint) 6%,var(--bg));transition:background-color 1.6s;color:var(--ink);font-family:"Plus Jakarta Sans",Inter,system-ui,sans-serif}
@@ -47,7 +54,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .grid-bg{background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:40px 40px;opacity:.45;mask-image:linear-gradient(to bottom,#000,transparent 85%);-webkit-mask-image:linear-gradient(to bottom,#000,transparent 85%)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:700;border-radius:.5rem;padding:.8rem 1.25rem;transition:filter .15s,border-color .15s;text-align:center}
 .btn-p{background:var(--btn);color:#fff}.btn-p:hover{filter:brightness(1.12)}
-.btn-a{background:var(--acc);color:#fff}.btn-a:hover{filter:brightness(1.08)}
+.btn-a{background:var(--acc-b);color:var(--on-acc)}.btn-a:hover{filter:brightness(1.08)}
 .btn-o{border:1.5px solid var(--line);background:var(--surf)}.btn-o:hover{border-color:var(--brand)}
 :focus-visible{outline:3px solid var(--acc);outline-offset:2px}
 .chip{border:1px solid var(--line);background:var(--surf);padding:.5rem 1rem;border-radius:999px;font-weight:600;font-size:.9rem;color:var(--mute)}
@@ -60,10 +67,43 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .plus{transition:transform .2s}
 .reveal{animation:rv .7s ease both}@keyframes rv{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.glass95{background:var(--surf);background:color-mix(in srgb,var(--surf) 95%,transparent)}
+.glass90{background:var(--surf);background:color-mix(in srgb,var(--surf) 90%,transparent)}
+.glass80{background:var(--surf);background:color-mix(in srgb,var(--surf) 80%,transparent)}
+.fld[aria-invalid="true"]{border-color:var(--acc-t)}
+/* Bonecos: braços e pernas giram em torno da origem local (ombro/quadril) */
+.sw{animation:sw var(--d,1s) ease-in-out infinite}
+@keyframes sw{0%,100%{transform:rotate(var(--a0,0deg))}50%{transform:rotate(var(--a1,0deg))}}
+.bob{animation:bob 1.3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-1.6px)}}
+.act.off *{animation-play-state:paused!important}
+.spin,.pulse,.pop,.heat,.rise,.pud2,.roll,.draw{transform-box:fill-box;transform-origin:center}
+.spin{animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.pulse{animation:pulse 2s ease-out infinite}@keyframes pulse{0%{transform:scale(.4);opacity:.9}100%{transform:scale(1.5);opacity:0}}
+.pop{animation:pop 4s ease-out infinite}@keyframes pop{0%,6%{opacity:0;transform:scale(.6)}16%,86%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+.heat{animation:heat 2.6s ease-in-out infinite}@keyframes heat{50%{transform:scale(1.25);opacity:.65}}
+.blink{animation:blink 1.1s steps(1) infinite}@keyframes blink{50%{opacity:.15}}
+.tog{animation:blink 2.4s steps(1) infinite}
+.alt{animation:blink .9s steps(1) infinite}.alt2{animation-delay:-.45s}
+.flick{animation:flick 1.8s infinite}@keyframes flick{0%,100%{opacity:1}42%{opacity:.35}48%{opacity:1}56%{opacity:.5}}
+.fly{animation:fly .7s ease-out infinite}@keyframes fly{0%{transform:translate(0,0);opacity:1}100%{transform:translate(var(--sx,10px),var(--sy,-10px));opacity:0}}
+.drop{animation:drop 1.1s ease-in infinite}@keyframes drop{0%{transform:translateY(0);opacity:1}85%{opacity:1}100%{transform:translateY(28px);opacity:0}}
+.pud2{animation:pud2 1.1s ease-in infinite}@keyframes pud2{0%{transform:scaleX(.3);opacity:.3}100%{transform:scaleX(1);opacity:.7}}
+.roll{transform-origin:50% 0;animation:roll 6s ease-in-out infinite;opacity:.92}@keyframes roll{0%{transform:scaleY(0)}70%,90%{transform:scaleY(1);opacity:.92}100%{transform:scaleY(1);opacity:0}}
+.draw{transform-origin:0 50%;animation:draw 4s ease-out infinite}@keyframes draw{0%{transform:scaleX(0)}40%,88%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:0}}
+.scan{animation:scan 2.8s ease-in-out infinite alternate}@keyframes scan{to{transform:translateY(68px)}}
+.wisp{animation:wisp 1.4s ease-in infinite}@keyframes wisp{0%{transform:translateY(-3px);opacity:0}30%{opacity:1}100%{transform:translateY(5px);opacity:0}}
+.rise{animation:rise 3s ease-out infinite}@keyframes rise{0%{transform:translateY(0) scale(.6);opacity:.6}100%{transform:translateY(-26px) scale(1.4);opacity:0}}
+.walk{animation:walk var(--d,30s) linear infinite}@keyframes walk{to{transform:translateX(var(--w,1300px))}}
+.walkL{animation:walkL var(--d,36s) linear infinite}@keyframes walkL{to{transform:translateX(calc(var(--w,1300px) * -1))}}
+.pace{animation:pace 12s linear infinite}@keyframes pace{0%{transform:translateX(0) scaleX(1)}48%{transform:translateX(150px) scaleX(1)}52%{transform:translateX(150px) scaleX(-1)}98%{transform:translateX(0) scaleX(-1)}100%{transform:translateX(0) scaleX(1)}}
 </style>
 </head>
 <body class="antialiased">
+<a href="#topo" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[70] focus:bg-[var(--surf)] focus:text-[var(--ink)] focus:px-4 focus:py-2 focus:rounded-lg">Pular para o conteúdo</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<radialGradient id="heatg"><stop offset="0" stop-color="#FFF59D"/><stop offset=".35" stop-color="#FF9800"/><stop offset=".7" stop-color="#E53935" stop-opacity=".85"/><stop offset="1" stop-color="#E53935" stop-opacity="0"/></radialGradient>
 <symbol id="logo-sos" viewBox="0 0 240 170">
 <path d="M12 66 L118 10 L176 40 V20 H198 V52 L226 66" fill="none" stroke="var(--brand)" stroke-width="7" stroke-linejoin="miter"/>
 <path d="M34 66 L118 24 L168 48" fill="none" stroke="var(--acc)" stroke-width="3"/>
@@ -74,7 +114,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <text transform="skewX(-12)" x="72" y="160" font-size="38" font-weight="800" fill="var(--home)" textLength="158" lengthAdjust="spacingAndGlyphs" style="font-family:'Plus Jakarta Sans',Inter,sans-serif">HOME</text>
 </symbol></defs></svg>
 
-<header class="fixed top-0 inset-x-0 z-50 border-b border-line bg-surf/95 backdrop-blur" style="padding-top:env(safe-area-inset-top,0px)">
+<header class="fixed top-0 inset-x-0 z-50 border-b border-line glass95 backdrop-blur" style="padding-top:env(safe-area-inset-top,0px)">
   <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
     <a href="#topo" aria-label="SOS Home, início"><svg class="h-14 w-auto" viewBox="0 0 240 170" role="img" aria-label="SOS Home – Serviços profissionais a domicílio"><use href="#logo-sos"/></svg></a>
     <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-mute" aria-label="Principal">
@@ -99,6 +139,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 </header>
 
 <main id="topo" class="pt-16">
+<noscript><p class="p-4 text-center font-semibold bg-[var(--tint)]">Para ver a página completa, ative o JavaScript. Se preferir, chame a SOS Home no WhatsApp ou ligue: (54) 99696-0909.</p></noscript>
 
 <section id="hero" class="relative overflow-hidden border-b border-line" style="background:var(--bg);background:color-mix(in srgb,var(--paint) 16%,var(--bg));transition:background-color 1.6s">
   <div class="grid-bg absolute inset-0" aria-hidden="true"></div>
@@ -115,7 +156,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <ul id="difer" class="mt-6 grid sm:grid-cols-3 gap-3"></ul>
     </div>
     <aside class="lg:col-span-2 reveal" style="animation-delay:.12s" aria-label="Ilustração animada dos serviços">
-      <div class="bg-surf/80 border border-line rounded-2xl p-3 backdrop-blur-sm">
+      <div class="glass80 border border-line rounded-2xl p-3 backdrop-blur-sm">
         <svg id="scene" viewBox="0 0 480 420" class="w-full h-auto block" role="img" aria-label="Ilustração animada: um eletricista acende a luz, um encanador conserta um vazamento e um pintor renova a parede">
           <defs><radialGradient id="gl"><stop offset="0" stop-color="#FFD34D" stop-opacity=".95"/><stop offset="1" stop-color="#FFD34D" stop-opacity="0"/></radialGradient></defs>
           <path d="M8 126 L240 22 L472 126Z" fill="var(--btn)"/>
@@ -144,6 +185,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     </aside>
   </div>
 </section>
+
+<div class="faixa act" data-k="elet,pint,hidr,inst,solda,clim,auto" aria-hidden="true" style="background:linear-gradient(var(--bg),var(--tint))"></div>
 
 <section id="explorar" class="border-b border-line bg-surf">
   <div class="max-w-6xl mx-auto px-4 py-16 lg:py-20">
@@ -180,6 +223,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <div class="lg:col-span-2">
     <h2 class="text-3xl font-extrabold tracking-tight">Seu imóvel está pedindo manutenção?</h2>
     <p class="mt-3 text-mute leading-relaxed">Marque os sinais que você já percebeu. Pequenos defeitos costumam piorar com o tempo, e identificar cedo sai mais barato.</p>
+    <div id="sgScene" class="act mt-6 rounded-xl border border-line bg-[var(--tint)] p-3"></div>
   </div>
   <div class="lg:col-span-3 bg-surf border border-line rounded-xl p-6">
     <div class="grid sm:grid-cols-2 gap-3" id="sgList"></div>
@@ -204,11 +248,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <p class="mt-3 text-mute leading-relaxed max-w-xl">Antes de comprar, alugar ou reformar um imóvel, ou para investigar problemas que não aparecem a olho nu, inspecionamos com câmera termográfica FLIR e entregamos um laudo com o logo da SOS Home e assinatura do responsável técnico.</p>
     <a href="#contato" data-modo="Vistoria técnica" class="btn btn-p mt-6">Solicitar vistoria</a>
   </div>
-  <ul class="lg:col-span-2 bg-surf border border-line rounded-xl divide-y divide-line text-sm font-semibold">
+  <div class="lg:col-span-2"><div id="vsScene" class="act mb-4 rounded-xl border border-line bg-[var(--tint)] p-3"></div>
+  <ul class="bg-surf border border-line rounded-xl divide-y divide-line text-sm font-semibold">
     <li class="p-4">Identificação de pontos de aquecimento em instalações elétricas</li>
     <li class="p-4">Apoio na busca por umidade e infiltrações</li>
     <li class="p-4">Registro fotográfico e laudo escrito</li>
-  </ul>
+  </ul></div>
 </section>
 
 <section id="como" class="border-y border-line bg-surf">
@@ -217,6 +262,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <ol class="mt-8 grid md:grid-cols-4 gap-5" id="etapas"></ol>
   </div>
 </section>
+
+<div class="faixa act" data-k="solda,clim,termo,prev,inst,hidr,pint" aria-hidden="true" style="background:linear-gradient(var(--bg),var(--tint))"></div>
 
 <section id="faq" class="max-w-3xl mx-auto px-4 py-16 lg:py-20">
   <h2 class="text-3xl font-extrabold tracking-tight">Dúvidas frequentes</h2>
@@ -233,7 +280,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <p class="mt-3 text-xs text-mute">Mapa esquemático. As distâncias são em linha reta e a disponibilidade deve ser confirmada pelo WhatsApp.</p>
     </div>
     <div class="lg:col-span-3">
-      <div class="bg-surf/90 border border-line rounded-xl p-3">
+      <div class="glass90 border border-line rounded-xl p-3">
         <svg id="mapaSvg" viewBox="0 150 480 260" class="w-full h-auto block" role="img" aria-label="Mapa esquemático da Serra Gaúcha com Caxias do Sul e cidades da região"></svg>
       </div>
       <div id="mapaChips" class="mt-3 flex flex-wrap gap-2" role="group" aria-label="Escolher cidade"></div>
@@ -251,8 +298,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
         <li><a href="#contato" data-wa="Olá, SOS Home! Gostaria de pedir um orçamento." class="hover:underline">WhatsApp: (54) 99696-0909</a></li>
         <li><a href="mailto:soshome54@gmail.com" class="hover:underline">E-mail: soshome54@gmail.com</a></li>
       </ul>
+      <div id="ctScene" class="act mt-6 rounded-xl border border-line bg-[var(--tint)] p-3"></div>
     </div>
-    <div class="lg:col-span-3 bg-bg border border-line rounded-xl p-6">
+    <form id="orc" class="lg:col-span-3 bg-bg border border-line rounded-xl p-6" novalidate>
       <div class="grid sm:grid-cols-2 gap-4">
         <label class="block text-sm font-semibold">Seu nome<input id="f_nome" class="fld mt-1.5" autocomplete="name"></label>
         <label class="block text-sm font-semibold">Telefone / WhatsApp<input id="f_tel" class="fld mt-1.5" type="tel" autocomplete="tel" placeholder="(54) 90000-0000"></label>
@@ -266,7 +314,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
         <label class="block text-sm font-semibold sm:col-span-2">Descreva o que precisa<textarea id="f_obs" rows="3" class="fld mt-1.5" placeholder="O que aconteceu, onde fica e qual o melhor horário"></textarea></label>
       </div>
       <p id="erro" class="hidden mt-4 text-sm font-semibold text-acc" role="alert"></p>
-      <button id="gerar" class="btn btn-a w-full mt-5">Gerar mensagem para WhatsApp</button>
+      <button id="gerar" type="submit" class="btn btn-a w-full mt-5">Gerar mensagem para WhatsApp</button>
       <div id="resumo" class="hidden mt-5 border border-line rounded-lg bg-surf p-4">
         <p class="font-bold text-sm">Resumo do pedido</p>
         <pre id="msgTxt" class="mt-2 whitespace-pre-wrap text-sm text-mute" style="font-family:inherit"></pre>
@@ -276,9 +324,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
           <a id="mailLink" class="btn btn-o">Enviar por e-mail</a>
         </div>
       </div>
-    </div>
+    </form>
   </div>
 </section>
+
+<div class="faixa act" data-k="auto,elet,pint,clim,solda,hidr,inst" aria-hidden="true" style="background:linear-gradient(var(--bg),var(--tint))"></div>
+
 </main>
 
 <div class="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-surf shadow-[0_-4px_16px_rgba(0,0,0,.12)]" style="padding-bottom:env(safe-area-inset-bottom,0px)">
@@ -314,26 +365,109 @@ mb.onclick = () => { const o = mn.classList.toggle("hidden") === false; mb.setAt
 mn.querySelectorAll("a").forEach(a => a.addEventListener("click", () => { mn.classList.add("hidden"); mb.setAttribute("aria-expanded", "false"); }));
 
 const dif = [["Orçamento rápido","Descreva o problema pelo WhatsApp e receba o orçamento sem enrolação."],["Profissionais uniformizados","Equipe identificada, com ferramentas completas para resolver no local."],["Garantia de serviço","O trabalho executado tem garantia."]];
-$("#difer").innerHTML = dif.map(d => `<li class="bg-surf/80 border border-line rounded-lg p-3"><p class="font-bold text-sm">${d[0]}</p><p class="text-xs text-mute mt-1 leading-snug">${d[1]}</p></li>`).join("");
+$("#difer").innerHTML = dif.map(d => `<li class="glass80 border border-line rounded-lg p-3"><p class="font-bold text-sm">${d[0]}</p><p class="text-xs text-mute mt-1 leading-snug">${d[1]}</p></li>`).join("");
+
+// ===== Bonecos animados: profissionais em ação por toda a página =====
+// Convenção: ângulo 0 = braço para baixo; negativo = para a frente (o boneco olha para +x; flip:-1 espelha).
+const SKIN = "#f1c9a5";
+const T = {
+  roller:'<line y1="26" y2="29" stroke="#6b7886" stroke-width="2"/><rect x="-9" y="28" width="18" height="6" rx="3" style="fill:var(--wall)" stroke="#6b7886" stroke-width=".6"/>',
+  hammer:'<line y1="26" y2="41" stroke="#8b5a2b" stroke-width="3" stroke-linecap="round"/><rect x="-7" y="38" width="14" height="6" rx="1.5" fill="#6b7886"/>',
+  wrench:'<rect x="-2" y="28" width="4" height="15" rx="2" fill="#aab4bf"/><circle cy="46" r="4.5" fill="none" stroke="#aab4bf" stroke-width="3"/>',
+  driver:'<rect x="-1.5" y="28" width="3" height="13" fill="#aab4bf"/><rect x="-2.6" y="24" width="5.2" height="7" rx="2" fill="#C85A17"/>',
+  phone:'<rect x="-4" y="25" width="8" height="14" rx="2" fill="#1b2430"/><rect x="-3" y="27" width="6" height="10" rx="1" fill="#7DB2E6"/>',
+  clip:'<rect x="-8" y="25" width="16" height="20" rx="2" fill="#fff" stroke="#6b7886"/><path d="M-4 31h8M-4 36h8M-4 41h5" stroke="#9aa7b5"/>',
+  pen:'<rect x="-1" y="27" width="2" height="12" fill="#1b2430"/>',
+  torch:'<rect x="-1.5" y="26" width="3" height="16" fill="#6b7886"/><rect x="-2.6" y="40" width="5.2" height="5" rx="1" fill="#C85A17"/>',
+  thermal:'<rect x="-9" y="26" width="18" height="13" rx="3" fill="#1b2430"/><rect x="-7" y="28" width="14" height="8" rx="1" fill="url(#heatg)"/>',
+  brush:'<rect x="-1.5" y="26" width="3" height="10" fill="#8b5a2b"/><rect x="-6" y="35" width="12" height="5" rx="1.5" fill="#aab4bf"/>',
+  box:'<rect x="-10" y="26" width="20" height="13" rx="2" fill="#C85A17"/><rect x="-10" y="30" width="20" height="2" fill="#10151C" opacity=".35"/>'
+};
+function arm(side, sh, skin, a){
+  const [a0 = 0, a1 = a0, d = 1, ex = "", dl = 0] = a || [];
+  return `<g transform="translate(${side * 12},-50)"><g${a0 === a1 ? "" : ' class="sw"'} style="--a0:${a0}deg;--a1:${a1}deg;--d:${d}s;animation-delay:${dl}s;transform:rotate(${a0}deg)"><line y2="24" stroke="${sh}" stroke-width="6" stroke-linecap="round"/><circle cy="26" r="3.5" fill="${skin}"/>${ex}</g></g>`;
+}
+function leg(px, pants, walk){
+  if (!walk) return `<rect x="${px - 3.5}" y="-26" width="7" height="26" rx="2" fill="${pants}"/>`;
+  return `<g transform="translate(${px},-26)"><g class="sw" style="--a0:-28deg;--a1:28deg;--d:${walk}s;animation-delay:${px > 0 ? -walk / 2 : 0}s;transform:rotate(-28deg)"><rect x="-3.5" width="7" height="26" rx="2" fill="${pants}"/></g></g>`;
+}
+function bn(o){
+  const {x = 0, y = 0, s = 1, sh = "#0E3A63", cap = "#F2C200", pants = "#2b3a4a", skin = SKIN, flip = 1, vest = false, mask = false, walk = 0, a, b} = o;
+  return `<g transform="translate(${x},${y}) scale(${s * flip},${s})">${arm(-1, sh, skin, a)}${leg(-5, pants, walk)}${leg(5, pants, walk)}<g class="bob" style="animation-duration:${walk || 1.3}s;animation-delay:${(Math.abs(x) % 5) / 10}s"><rect x="-12" y="-54" width="24" height="30" rx="7" fill="${sh}"/>${vest ? '<rect x="-12" y="-54" width="24" height="30" rx="7" fill="#ff7a1a" opacity=".92"/><rect x="-12" y="-42" width="24" height="4" fill="#dfe6ee"/>' : ""}<circle cy="-64" r="9" fill="${skin}"/>${mask ? '<rect x="-3" y="-71" width="14" height="12" rx="3" fill="#1b2430"/>' : '<circle cx="4" cy="-65" r="1.2" fill="#1b2430"/>'}<path d="M-10 -66a10 10 0 0 1 20 0z" fill="${cap}"/><rect x="-11" y="-67" width="22" height="3" rx="1.5" fill="${cap}"/><rect x="3" y="-68" width="11" height="3" rx="1.5" fill="${cap}"/></g>${arm(1, sh, skin, b)}</g>`;
+}
+const spark = (pts, col = "#FFD34D") => pts.map((p, i) => `<circle class="fly" r="1.8" fill="${i % 2 ? "#FFB800" : col}" style="--sx:${p[0]}px;--sy:${p[1]}px;animation-delay:${p[2]}s"/>`).join("");
+
+// Cenas 160x100 (o chão em y=92 é desenhado pelo contêiner)
+const SC = {
+  elet: () => `<line x1="30" y1="4" x2="30" y2="20" stroke="var(--ink)"/><circle class="flick" cx="30" cy="26" r="18" fill="url(#gl)"/><circle class="flick" cx="30" cy="26" r="6" fill="#FFD34D" stroke="var(--ink)"/><rect x="108" y="16" width="38" height="56" rx="3" fill="var(--surf)" stroke="var(--brand)" stroke-width="2"/><g fill="var(--line)"><rect x="114" y="24" width="11" height="9"/><rect x="129" y="24" width="11" height="9"/><rect x="114" y="38" width="11" height="9"/><rect x="129" y="38" width="11" height="9"/><rect x="114" y="52" width="26" height="9"/></g><rect class="blink" x="129" y="38" width="11" height="9" fill="#FFD34D"/><g transform="translate(108,40)">${spark([[-12, -9, 0], [-16, 3, .2], [-7, -16, .4]])}</g>${bn({x: 62, y: 92, s: .86, sh: "#0E3A63", cap: "#F2C200", a: [4, 10, 2], b: [-98, -122, .9, T.driver]})}`,
+  hidr: () => `<path d="M90 52H146V92" fill="none" stroke="#9aa7b5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><rect x="111" y="45" width="14" height="14" rx="3" fill="#6b7886"/>${[0, .35, .7].map(d => `<circle class="drop" cx="118" cy="62" r="2.4" fill="#4DA3FF" style="animation-delay:${d}s"/>`).join("")}<ellipse class="pud2" cx="118" cy="91" rx="13" ry="2.5" fill="#4DA3FF"/>${bn({x: 58, y: 92, s: .86, sh: "#2f7f6e", cap: "#0E3A63", a: [6, 14, 2.2], b: [-82, -106, .8, T.wrench]})}`,
+  pint: () => `<rect x="96" y="10" width="58" height="82" fill="var(--tint)" stroke="var(--line)"/><rect class="roll" x="96" y="10" width="58" height="82" style="fill:var(--wall)"/><rect x="38" y="80" width="13" height="12" rx="2" fill="#9aa7b5"/><rect x="38" y="78" width="13" height="4" rx="2" style="fill:var(--wall)"/>${bn({x: 72, y: 92, s: .86, sh: "#C85A17", cap: "#0E3A63", a: [8, 14, 2.4], b: [-72, -120, 1.5, T.roller]})}`,
+  auto: () => `<rect x="104" y="14" width="46" height="46" rx="8" fill="var(--surf)" stroke="var(--brand)" stroke-width="2"/>${[0, .7, 1.4].map(d => `<circle class="pulse" cx="127" cy="37" r="12" fill="none" stroke="var(--acc)" stroke-width="2" style="animation-delay:${d}s"/>`).join("")}<circle cx="127" cy="37" r="3.5" fill="var(--acc)"/><line x1="128" y1="62" x2="128" y2="70" stroke="var(--ink)"/><circle class="tog" cx="128" cy="76" r="6" fill="#FFD34D" stroke="var(--ink)"/><rect x="14" y="12" width="22" height="10" rx="3" fill="#1b2430"/><circle cx="25" cy="17" r="3" fill="#7DB2E6"/><circle class="blink" cx="32" cy="14" r="1.6" fill="#E53935"/>${bn({x: 66, y: 92, s: .86, sh: "#1B5A94", cap: "#F2C200", a: [4, 8, 2.4], b: [-86, -96, 2, T.phone]})}`,
+  inst: () => `<rect x="96" y="10" width="58" height="82" fill="var(--tint)" stroke="var(--line)"/>${[0, 1, 2].map(r => [0, 1, 2].map(c => `<rect x="${97 + c * 17 + (r % 2) * 7}" y="${81 - r * 11}" width="16" height="10" fill="#c4623a" stroke="#8a3d20" stroke-width=".6"/>`).join("")).join("")}<rect x="104" y="40" width="42" height="5" rx="1" fill="#8b5a2b"/><path d="M108 45v8M142 45v8" stroke="#6b7886" stroke-width="3"/><circle class="blink" cx="106" cy="42" r="1.5" fill="#FFD34D"/>${bn({x: 64, y: 92, s: .86, sh: "#0E3A63", cap: "#C85A17", a: [4, 9, 2], b: [-165, -94, .65, T.hammer]})}`,
+  prev: () => `<rect x="98" y="10" width="54" height="70" rx="4" fill="var(--surf)" stroke="var(--brand)" stroke-width="2"/><rect x="98" y="10" width="54" height="12" rx="4" fill="var(--btn)"/>${[0, 1, 2].map(i => `<rect x="106" y="${30 + i * 16}" width="8" height="8" fill="none" stroke="var(--mute)"/><path class="pop" d="M107.5 ${34 + i * 16}l2.5 2.5 5-6" fill="none" stroke="#2e9e5b" stroke-width="2.2" stroke-linecap="round" style="animation-delay:${i * .9}s"/><rect x="120" y="${32 + i * 16}" width="26" height="3" rx="1.5" fill="var(--line)"/>`).join("")}${bn({x: 62, y: 92, s: .86, sh: "#2f7f6e", cap: "#F2C200", a: [-60, -56, 1, T.clip], b: [-96, -80, .5, T.pen]})}`,
+  termo: () => `<rect x="98" y="10" width="54" height="72" rx="3" fill="#1b2430" stroke="var(--brand)" stroke-width="2"/><circle class="heat" cx="124" cy="36" r="16" fill="url(#heatg)"/><circle class="heat" cx="140" cy="62" r="9" fill="url(#heatg)" style="animation-delay:-1.2s"/><rect class="scan" x="98" y="10" width="54" height="2" fill="#7DB2E6" opacity=".8"/>${bn({x: 62, y: 92, s: .86, sh: "#0E3A63", cap: "#C85A17", a: [5, 10, 2.2], b: [-92, -86, 1.8, T.thermal]})}`,
+  clim: () => `<rect x="94" y="34" width="58" height="20" rx="5" fill="var(--surf)" stroke="var(--brand)" stroke-width="2"/><path d="M100 48h46" stroke="var(--line)" stroke-width="2"/><g stroke="#7DB2E6" stroke-width="2" stroke-linecap="round" fill="none"><path class="wisp" d="M104 58v6"/><path class="wisp" d="M122 58v6" style="animation-delay:.4s"/><path class="wisp" d="M140 58v6" style="animation-delay:.8s"/></g><rect x="122" y="68" width="32" height="24" rx="3" fill="#9aa7b5" stroke="#6b7886"/><g transform="translate(138,80)"><circle r="9" fill="#6b7886"/><g class="spin"><path d="M0-8V8M-8 0H8" stroke="#dfe6ee" stroke-width="3" stroke-linecap="round"/></g></g>${bn({x: 62, y: 92, s: .86, sh: "#2f7f6e", cap: "#0E3A63", a: [4, 8, 2.2], b: [-100, -70, 1, T.brush]})}`,
+  solda: () => `<rect x="100" y="44" width="52" height="7" fill="#9aa7b5"/><rect x="104" y="51" width="7" height="41" fill="#8b97a5"/><rect x="142" y="51" width="7" height="41" fill="#8b97a5"/><g transform="translate(104,47)"><circle class="blink" r="9" fill="#FFD34D" opacity=".45"/><circle r="3" fill="#fff"/>${spark([[-14, -10, 0], [-8, -18, .1], [-18, 2, .2], [10, -14, .3], [14, -4, .15], [4, -20, .35]])}</g>${bn({x: 62, y: 92, s: .86, sh: "#5b6b7c", cap: "#F2C200", mask: true, a: [-70, -70], b: [-88, -92, .12, T.torch]})}`,
+  chamar: () => `<g class="pop"><rect x="96" y="14" width="52" height="20" rx="10" fill="var(--btn)"/><circle cx="110" cy="24" r="2.2" fill="#fff"/><circle cx="120" cy="24" r="2.2" fill="#fff"/><circle cx="130" cy="24" r="2.2" fill="#fff"/></g><g class="pop" style="animation-delay:1.2s"><rect x="104" y="42" width="48" height="18" rx="9" fill="var(--surf)" stroke="var(--line)"/><rect x="112" y="49" width="32" height="3" rx="1.5" fill="var(--mute)" opacity=".6"/></g><g class="pop" style="animation-delay:2.2s"><circle cx="140" cy="76" r="9" fill="#25D366"/><path d="M135 76l3 3 6-6" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></g>${bn({x: 64, y: 92, s: .86, sh: "#0E3A63", cap: "#F2C200", a: [6, 12, 2.4], b: [-168, -164, 1, T.phone]})}`,
+  orc: () => `<rect x="98" y="10" width="52" height="70" rx="3" fill="#fff" stroke="var(--line)"/>${[0, 1, 2, 3, 4].map(i => `<rect class="draw" x="106" y="${20 + i * 11}" width="${i === 4 ? 20 : 36}" height="3" rx="1.5" fill="#9aa7b5" style="animation-delay:${i * .6}s"/>`).join("")}<rect x="106" y="70" width="20" height="5" rx="2" fill="var(--acc)" opacity=".8"/>${bn({x: 64, y: 92, s: .86, sh: "#2f7f6e", cap: "#0E3A63", a: [-58, -54, 1, T.clip], b: [-95, -80, .4, T.pen]})}`,
+  agenda: () => `<rect x="98" y="12" width="52" height="58" rx="4" fill="var(--surf)" stroke="var(--brand)" stroke-width="2"/><rect x="98" y="12" width="52" height="12" rx="4" fill="var(--acc)"/>${[0, 1, 2].map(r => [0, 1, 2, 3].map(c => `<rect x="${104 + c * 11}" y="${30 + r * 12}" width="8" height="8" rx="1.5" fill="var(--line)"/>`).join("")).join("")}<rect class="tog" x="126" y="42" width="8" height="8" rx="1.5" fill="var(--acc)"/>${bn({x: 64, y: 92, s: .86, sh: "#C85A17", cap: "#F2C200", a: [4, 9, 2.4], b: [-98, -82, 1.6, T.pen]})}`,
+  exec: () => `<g class="pop"><circle cx="128" cy="40" r="20" fill="#2e9e5b"/><path d="M118 40l7 7 13-15" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g><path class="blink" d="M150 16l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#FFD34D"/><path class="blink" d="M104 22l1.5 3.5 3.5 1.5-3.5 1.5-1.5 3.5-1.5-3.5-3.5-1.5 3.5-1.5z" fill="#FFD34D" style="animation-delay:-.5s"/>${bn({x: 64, y: 92, s: .86, sh: "#C85A17", cap: "#0E3A63", a: [8, 14, 2.4], b: [-172, -150, .5]})}`,
+  sos: () => `<g transform="translate(128,92)"><rect x="-3" y="-60" width="6" height="60" fill="#6b7886"/><circle class="flick" cy="-66" r="22" fill="#E53935" opacity=".25"/><circle class="alt" cy="-66" r="9" fill="#E53935"/><circle class="alt alt2" cy="-66" r="9" fill="#1E88E5"/></g><g stroke="var(--mute)" stroke-width="2" stroke-linecap="round" opacity=".5"><path d="M20 50h14M12 60h18M20 70h12"/></g>${bn({x: 80, y: 92, s: .9, sh: "#C85A17", cap: "#F2C200", walk: .4, a: [40, -40, .4], b: [-40, 40, .4, T.box]})}`
+};
+const KEY = {"Elétrica": "elet", "Hidráulica": "hidr", "Pintura": "pint", "Automação smart": "auto", "Instalações e reformas": "inst", "Manutenção preventiva": "prev", "Vistoria com termografia": "termo", "Climatização": "clim", "Solda e estruturas metálicas": "solda"};
+const cena = (k, cls = "") => `<svg viewBox="0 0 160 100" class="w-full block ${cls || "h-auto"}" aria-hidden="true"><rect y="92" width="160" height="8" fill="var(--line)" opacity=".7"/>${SC[k]()}</svg>`;
+
+// Cenário por tipo de imóvel (painel do explorador): casa, loja e indústria, com um segundo profissional
+const smoke = [0, 1.5].map(d => `<circle class="rise" cx="416" cy="20" r="6" fill="var(--mute)" opacity=".5" style="animation-delay:${d}s"/>`).join("");
+const BK = {
+  res: '<path d="M256 62L330 22L404 62Z" fill="var(--btn)"/><rect x="266" y="62" width="128" height="48" fill="var(--surf)" stroke="var(--brand)" stroke-width="3"/><rect x="278" y="74" width="24" height="20" rx="2" fill="#8fb8d8"/><rect x="358" y="74" width="24" height="20" rx="2" fill="#8fb8d8"/><rect x="322" y="78" width="18" height="32" fill="#8b5a2b"/><rect x="368" y="26" width="10" height="22" fill="#b0603b"/>',
+  com: `<rect x="244" y="50" width="196" height="60" fill="var(--surf)" stroke="var(--brand)" stroke-width="3"/>${[0, 1, 2, 3, 4, 5, 6, 7].map(i => `<rect x="${244 + i * 24.5}" y="50" width="24.5" height="14" fill="${i % 2 ? "#fff" : "#C85A17"}"/>`).join("")}<rect x="262" y="72" width="80" height="38" fill="#8fb8d8"/><rect x="358" y="72" width="28" height="38" fill="#8fb8d8"/><rect x="290" y="36" width="64" height="12" rx="2" fill="#0E3A63"/>`,
+  ind: `<path d="M236 110V62L266 42V62L296 42V62L326 42V62L356 42V62L386 42V62H420V110Z" fill="#8b97a5" stroke="var(--brand)" stroke-width="3" stroke-linejoin="round"/><rect x="408" y="22" width="16" height="46" fill="#6b7886"/>${smoke}<rect x="296" y="72" width="54" height="38" fill="#C85A17"/>`
+};
+const BX = {
+  res: bn({x: 424, y: 110, s: .72, flip: -1, sh: "#2f7f6e", cap: "#0E3A63", a: [-10, -16, 2.4], b: [-72, -120, 1.5, T.roller]}),
+  com: `<g transform="translate(250,110)"><g class="pace">${bn({s: .72, sh: "#2f7f6e", cap: "#0E3A63", walk: .7, a: [-20, 20, .7], b: [-70, -70, 1, T.box]})}</g></g>`,
+  ind: bn({x: 440, y: 110, s: .72, flip: -1, vest: true, sh: "#0E3A63", cap: "#F2C200", a: [-8, -12, 2.6], b: [-78, -70, 1.9, T.clip]})
+};
+const banner = (tipo, srv) => `<svg viewBox="0 0 480 130" class="w-full h-auto block" aria-hidden="true"><rect width="480" height="130" fill="var(--tint)"/><rect y="110" width="480" height="20" fill="var(--line)" opacity=".8"/>${BK[tipo]}<svg x="0" y="${110 - 92 * 1.15}" width="184" height="115" viewBox="0 0 160 100" overflow="visible">${SC[KEY[srv] || "prev"]()}</svg>${BX[tipo]}</svg>`;
+
+// Pausa as animações das cenas que estão fora da tela
+const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle("off", !e.isIntersecting)), {rootMargin: "80px"}) : null;
+const watch = () => { if (!io) return; io.disconnect(); document.querySelectorAll(".act").forEach(el => io.observe(el)); };
+
+// Faixas de obra: cenas lado a lado + profissionais caminhando com ferramentas
+let faixaW = 0;
+function drawFaixas(){
+  const W = innerWidth < 700 ? 560 : 1200; if (W === faixaW) return; faixaW = W;
+  const n = W === 560 ? 4 : 7, slot = W / n, sc = slot / 160, H = 124, gy = 112;
+  document.querySelectorAll(".faixa").forEach((el, fi) => {
+    const ks = el.dataset.k.split(",");
+    let tiles = "";
+    for (let i = 0; i < n; i++) tiles += `<svg x="${i * slot}" y="${gy - 92 * sc}" width="${slot}" height="${100 * sc}" viewBox="0 0 160 100" overflow="visible">${SC[ks[(i + fi) % ks.length]]()}</svg>`;
+    const walkers = `<g class="walk" style="--w:${W + 180}px;--d:${30 + fi * 4}s;animation-delay:-${8 + fi * 6}s"><g transform="translate(-90,${gy + 6})">${bn({s: .8, sh: "#0E3A63", cap: "#F2C200", walk: .6, a: [-25, 25, .6], b: [-70, -70, 1, T.box]})}</g></g><g class="walkL" style="--w:${W + 180}px;--d:${38 - fi * 3}s;animation-delay:-${20 - fi * 4}s"><g transform="translate(${W + 90},${gy + 6})">${bn({s: .8, flip: -1, sh: "#C85A17", cap: "#0E3A63", walk: .6, a: [-25, 25, .6], b: [-80, -80, 1, T.hammer]})}</g></g>`;
+    el.innerHTML = `<div class="max-w-6xl mx-auto px-4 pt-4"><svg viewBox="0 0 ${W} ${H}" class="w-full h-auto block" aria-hidden="true"><rect y="${gy}" width="${W}" height="${H - gy}" fill="var(--line)" opacity=".8"/>${tiles}${walkers}</svg></div>`;
+  });
+}
 
 // Serviços
 const servicos = [
-  ["Elétrica","Tomadas, interruptores, disjuntores, quadros, chuveiros, luminárias e ventiladores.",["res","com","emer"]],
-  ["Hidráulica","Vazamentos, torneiras, registros, descargas, caixa d’água, desentupimento e louças.",["res","com","emer"]],
-  ["Pintura","Pintura interna e externa, correção de paredes e acabamento para casa ou loja.",["res","com"]],
+  ["Elétrica","Tomadas, interruptores, disjuntores, quadros, chuveiros, luminárias e ventiladores.",["res","com","emer","ind"]],
+  ["Hidráulica","Vazamentos, torneiras, registros, descargas, caixa d’água, desentupimento e louças.",["res","com","emer","ind"]],
+  ["Pintura","Pintura interna e externa, correção de paredes e acabamento para casa ou loja.",["res","com","ind"]],
   ["Automação smart","Instalação e configuração de iluminação, tomadas, fechaduras e câmeras inteligentes.",["res","com"]],
-  ["Instalações e reformas","Instalações em geral, pequenas reformas e obras com acabamento cuidadoso.",["res","com"]],
-  ["Manutenção preventiva","Revisões periódicas para encontrar e corrigir problemas antes que virem emergência.",["res","com","prev"]],
-  ["Vistoria com termografia","Inspeção com câmera FLIR e laudo técnico do imóvel.",["res","com","prev"]]
+  ["Instalações e reformas","Instalações em geral, pequenas reformas e obras com acabamento cuidadoso.",["res","com","ind"]],
+  ["Manutenção preventiva","Revisões periódicas para encontrar e corrigir problemas antes que virem emergência.",["res","com","prev","ind"]],
+  ["Vistoria com termografia","Inspeção com câmera FLIR e laudo técnico do imóvel.",["res","com","prev","ind"]],
+  ["Climatização","Manutenção de climatização, ventilação e exaustão para conforto e operação sem paradas.",["res","com","ind","prev"]],
+  ["Solda e estruturas metálicas","Soldagem, reforços, portões, suportes e reparos em estruturas metálicas.",["res","com","ind"]]
 ];
 const cats = [["todos","Todos"],["res","Residências"],["com","Comércios"],["ind","Indústrias"],["emer","Emergência"],["prev","Preventiva"]];
-servicos.forEach(s => { if (["Elétrica","Hidráulica","Pintura","Instalações e reformas","Manutenção preventiva","Vistoria com termografia"].includes(s[0])) s[2].push("ind"); });
-servicos.push(["Climatização","Manutenção de climatização, ventilação e exaustão para conforto e operação sem paradas.",["res","com","ind","prev"]],["Solda e estruturas metálicas","Soldagem, reforços, portões, suportes e reparos em estruturas metálicas.",["res","com","ind"]]);
 const nome = {res:"Residências",com:"Comércios",ind:"Indústrias",emer:"Emergência",prev:"Preventiva"};
 const fil = $("#filtros"), gs = $("#gridServ");
 fil.innerHTML = cats.map(c => `<button class="chip" data-c="${c[0]}" aria-pressed="${c[0]==="todos"}">${c[1]}</button>`).join("");
 function render(c){
-  gs.innerHTML = servicos.filter(s => c === "todos" || s[2].includes(c)).map(s => `<article class="bg-surf border border-line rounded-xl p-6 flex flex-col"><h3 class="font-bold text-lg">${s[0]}</h3><p class="text-sm text-mute mt-2 leading-relaxed grow">${s[1]}</p><p class="mt-4 text-xs font-semibold text-brand">${s[2].map(x => nome[x]).join(" · ")}</p><a href="#contato" data-srv="${s[0]}" class="mt-3 text-sm font-bold text-acc hover:underline">Pedir orçamento deste serviço</a></article>`).join("");
+  gs.innerHTML = servicos.filter(s => c === "todos" || s[2].includes(c)).map(s => `<article class="bg-surf border border-line rounded-xl p-6 flex flex-col"><div class="act rounded-lg border border-line bg-[var(--tint)] mb-4 overflow-hidden">${cena(KEY[s[0]], "h-40")}</div><h3 class="font-bold text-lg">${s[0]}</h3><p class="text-sm text-mute mt-2 leading-relaxed grow">${s[1]}</p><p class="mt-4 text-xs font-semibold text-brand">${s[2].map(x => nome[x]).join(" · ")}</p><a href="#contato" data-srv="${s[0]}" class="mt-3 text-sm font-bold text-acc hover:underline">Pedir orçamento deste serviço</a></article>`).join("");
+  watch();
   fil.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", b.dataset.c === c));
 }
 fil.onclick = e => { const b = e.target.closest(".chip"); if (b) render(b.dataset.c); };
@@ -345,11 +479,11 @@ const modos = [
   ["Emergência","Falta de energia, vazamento ou outro problema que não pode esperar.",["Atendimento emergencial","Descreva a situação e marque como emergência","Confirmamos a disponibilidade na hora"]],
   ["Plano mensal de manutenção","Manutenção preventiva e corretiva recorrente para a sua casa ou o seu comércio.",["Revisões periódicas","Menos surpresas e custos de última hora","Atendimento contínuo por plano mensal"]]
 ];
-$("#modos").innerHTML = modos.map((m, i) => `<div class="bg-bg border border-line rounded-xl p-6 flex flex-col ${i===2?'border-t-4':''}" ${i===2?'style="border-top-color:var(--acc)"':''}><h3 class="text-xl font-bold">${m[0]}</h3><p class="text-sm text-mute mt-2 leading-relaxed">${m[1]}</p><ul class="mt-4 space-y-2.5 text-sm grow">${m[2].map(x => `<li class="flex gap-3">${OK}<span>${x}</span></li>`).join("")}</ul><a href="#contato" data-modo="${m[0]}" class="btn ${i===2?'btn-a':'btn-p'} mt-6">Escolher ${m[0].toLowerCase()}</a></div>`).join("");
+$("#modos").innerHTML = modos.map((m, i) => `<div class="bg-bg border border-line rounded-xl p-6 flex flex-col ${i===2?'border-t-4':''}" ${i===2?'style="border-top-color:var(--acc)"':''}><div class="act rounded-lg border border-line bg-[var(--tint)] mb-4 overflow-hidden">${cena(["inst","sos","prev"][i], "h-36")}</div><h3 class="text-xl font-bold">${m[0]}</h3><p class="text-sm text-mute mt-2 leading-relaxed">${m[1]}</p><ul class="mt-4 space-y-2.5 text-sm grow">${m[2].map(x => `<li class="flex gap-3">${OK}<span>${x}</span></li>`).join("")}</ul><a href="#contato" data-modo="${m[0]}" class="btn ${i===2?'btn-a':'btn-p'} mt-6">Escolher ${m[0].toLowerCase()}</a></div>`).join("");
 
 // Etapas
 const et = [["Chame no WhatsApp","Conte o que precisa e envie fotos, se puder."],["Receba o orçamento","Retorno rápido com valores e prazo."],["Agende o atendimento","Definimos o dia e o horário que ficam bons para você."],["Serviço executado","Equipe uniformizada, ferramentas completas e garantia."]];
-$("#etapas").innerHTML = et.map((e, i) => `<li class="bg-surf border border-line rounded-xl p-6"><span class="text-3xl font-extrabold text-acc">0${i+1}</span><h3 class="font-bold mt-2">${e[0]}</h3><p class="text-sm text-mute mt-2 leading-relaxed">${e[1]}</p></li>`).join("");
+$("#etapas").innerHTML = et.map((e, i) => `<li class="bg-surf border border-line rounded-xl p-6"><div class="act rounded-lg border border-line bg-[var(--tint)] mb-3 overflow-hidden">${cena(["chamar","orc","agenda","exec"][i], "h-28")}</div><span class="text-3xl font-extrabold text-acc">0${i+1}</span><h3 class="font-bold mt-2">${e[0]}</h3><p class="text-sm text-mute mt-2 leading-relaxed">${e[1]}</p></li>`).join("");
 
 // FAQ
 const faq = [
@@ -363,6 +497,9 @@ const faq = [
 ];
 $("#faqList").innerHTML = faq.map((f, i) => `<div class="faq-item"><h3><button class="w-full flex justify-between items-center gap-4 text-left p-5 font-bold" aria-expanded="false" aria-controls="fa${i}"><span>${f[0]}</span><span class="plus text-2xl text-acc leading-none" aria-hidden="true">+</span></button></h3><div class="faq-body" id="fa${i}"><div><p class="px-5 pb-5 text-mute leading-relaxed">${f[1]}</p></div></div></div>`).join("");
 $("#faqList").onclick = e => { const b = e.target.closest("button"); if (!b) return; const o = b.closest(".faq-item").classList.toggle("faq-open"); b.setAttribute("aria-expanded", o); };
+
+// FAQ estruturado para buscadores
+(function(){ const j = document.createElement("script"); j.type = "application/ld+json"; j.textContent = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:faq.map(f => ({"@type":"Question",name:f[0],acceptedAnswer:{"@type":"Answer",text:f[1]}}))}); document.head.appendChild(j); })();
 
 // Explorador do imóvel
 const lugares = {
@@ -406,27 +543,29 @@ lugares.ind.push(
   ["Calhas e condutores",["Calhas de grande vazão entupidas","Emendas vazando","Água caindo junto às paredes e ao piso"],"Limpeza, reparo e substituição de calhas e condutores, com planejamento do trabalho em altura.","Hidráulica"],
   ["Infiltrações e umidade",["Manchas e corrosão na base das paredes","Umidade em piso e rodapés","Goteiras sobre estoque ou máquinas"],"Identificação da origem da infiltração, vedação, tratamento das paredes e acabamentos, com vistoria termográfica quando necessário.","Vistoria com termografia"]
 );
-let exM = "res", exI = 0;
+let exM = "res", exI = 0, scSyncFn = null;
+const expTabs = $("#expTabs"), expTiles = $("#expTiles"), expPanel = $("#expPanel");
+const TIPO = {res: "Residência", com: "Comércio", ind: "Indústria"};
+expTabs.innerHTML = Object.keys(TIPO).map(k => `<button type="button" class="chip" data-m="${k}" aria-pressed="false">${TIPO[k]}</button>`).join("");
 function drawEx(){
   const L = lugares[exM], l = L[exI];
-  $("#expTabs").innerHTML = [["res","Residência"],["com","Comércio"],["ind","Indústria"]].map(t => `<button class="chip" data-m="${t[0]}" aria-pressed="${t[0]===exM}">${t[1]}</button>`).join("");
-  $("#expTiles").innerHTML = L.map((x, i) => `<button class="chip !rounded-xl !py-4 !text-base" data-i="${i}" aria-pressed="${i===exI}">${x[0]}</button>`).join("");
-  $("#expPanel").innerHTML = `<h3 class="text-2xl font-bold">${l[0]}</h3><p class="mt-4 font-bold text-sm text-mute">Problemas que costumam aparecer</p><ul class="mt-2 space-y-2.5">${l[1].map(x => `<li class="flex gap-3">${OK}<span>${x}</span></li>`).join("")}</ul><p class="mt-5 font-bold text-sm text-mute">O que a SOS Home faz</p><p class="mt-1 leading-relaxed">${l[2]}</p><a href="#contato" data-srv="${l[3]}" data-obs="Local: ${l[0]}" data-imo="${({res:"Residência",com:"Comércio",ind:"Indústria"})[exM]}" class="btn btn-a mt-6">Pedir orçamento para ${l[0].toLowerCase()}</a>`;
+  expTabs.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", b.dataset.m === exM));
+  if (expTiles.dataset.m !== exM) { expTiles.dataset.m = exM; expTiles.innerHTML = L.map((x, i) => `<button type="button" class="chip !rounded-xl !py-4 !text-base" data-i="${i}" aria-pressed="false">${x[0]}</button>`).join(""); }
+  expTiles.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", +b.dataset.i === exI));
+  expPanel.innerHTML = `<div class="act rounded-lg overflow-hidden border border-line mb-5">${banner(exM, l[3])}</div><h3 class="text-2xl font-bold">${l[0]}</h3><p class="mt-4 font-bold text-sm text-mute">Problemas que costumam aparecer</p><ul class="mt-2 space-y-2.5">${l[1].map(x => `<li class="flex gap-3">${OK}<span>${x}</span></li>`).join("")}</ul><p class="mt-5 font-bold text-sm text-mute">O que a SOS Home faz</p><p class="mt-1 leading-relaxed">${l[2]}</p><a href="#contato" data-srv="${l[3]}" data-obs="Local: ${l[0]}" data-imo="${TIPO[exM]}" class="btn btn-a mt-6">Pedir orçamento para ${l[0].toLowerCase()}</a>`;
+  watch();
+  if (scSyncFn) scSyncFn();
 }
-$("#expTabs").onclick = e => { const b = e.target.closest("[data-m]"); if (b) { exM = b.dataset.m; exI = 0; drawEx(); } };
-$("#expTiles").onclick = e => { const b = e.target.closest("[data-i]"); if (b) { exI = +b.dataset.i; drawEx(); } };
+expTabs.onclick = e => { const b = e.target.closest("[data-m]"); if (b) { exM = b.dataset.m; exI = 0; drawEx(); } };
+expTiles.onclick = e => { const b = e.target.closest("[data-i]"); if (b) { exI = +b.dataset.i; drawEx(); } };
 drawEx();
-
-// Cena 3D (Three.js): marcadores ligados ao painel do explorador
-let scSyncFn = null;
-const _dx = drawEx; drawEx = function(){ _dx(); scSyncFn && scSyncFn(); };
-addEventListener("load", () => {
+function init3D(){
   const cv = $("#sc"); let R;
   try { R = new THREE.WebGLRenderer({canvas: cv, antialias: true, alpha: true}); } catch (e) { cv.parentElement.remove(); return; }
   R.setPixelRatio(Math.min(devicePixelRatio, 2)); R.outputEncoding = THREE.sRGBEncoding; R.shadowMap.enabled = true; R.shadowMap.type = THREE.PCFSoftShadowMap;
   const S = new THREE.Scene(), C = new THREE.PerspectiveCamera(40, 2, .1, 100), O = new THREE.OrbitControls(C, cv), Y = new THREE.Vector3(0,1,0);
   const home = new THREE.Vector3(0,1.5,0), homePos = new THREE.Vector3(0,5,11);
-  C.position.copy(homePos); O.target.copy(home); O.enableDamping = true; O.enableZoom = false; O.enablePan = false; O.maxPolarAngle = Math.PI/2 - .05;
+  C.position.copy(homePos); O.target.copy(home); O.enableDamping = true; O.enableZoom = false; O.enablePan = false; O.maxPolarAngle = Math.PI/2 - .05; cv.style.touchAction = "pan-y";
   S.add(new THREE.HemisphereLight(0xcfe3ff, 0x2a3442, .85)); const dl = new THREE.DirectionalLight(0xfff3e0, 1.05); dl.position.set(6,10,8); dl.castShadow = true; dl.shadow.mapSize.set(2048,2048); Object.assign(dl.shadow.camera, {left:-9, right:9, top:9, bottom:-9, near:1, far:40}); dl.shadow.bias = -.0005; S.add(dl);
   const mat = c => new THREE.MeshStandardMaterial({color: c, roughness: .7});
   
@@ -451,15 +590,36 @@ addEventListener("load", () => {
   const win = (g, x, y, z, w, h, ry = 0) => { const k = new THREE.Group(); B(k, w + .14, h + .14, .08, 0, 0, 0, dark); B(k, w, h, .1, 0, 0, .02, glass); B(k, .04, h, .12, 0, 0, .03, dark); B(k, w, .04, .12, 0, 0, .03, dark); B(k, w + .22, .06, .2, 0, -h / 2 - .08, .08, white); k.position.set(x, y, z); k.rotation.y = ry; g.add(k); };
   // Pessoas, escada, van, calhas e manchas de infiltração
   const skin = [0xf1c9a5, 0xc68642, 0x8d5524];
-  const person = (g, x, z, ry, shirt, pants, k = 0, hat = null, vest = false, hold = false) => {
-    const p = new THREE.Group(), sk = mm(skin[k], .7);
-    [-.09, .09].forEach(s => B(p, .14, .75, .16, s, .38, 0, mm(pants, .8)));
-    B(p, .36, .6, .22, 0, 1.05, 0, mm(shirt, .8));
+  const anims = [];
+  const toolDef = {paint: [0x5b9bd5, .08, .2, .08], hammer: [0x6b7886, .22, .08, .08], wrench: [0xaab4bf, .07, .07, .32], weld: [0xc85a17, .07, .07, .3]};
+  const person = (g, x, z, ry, shirt, pants, k = 0, hat = null, vest = false, task = null, y = 0) => {
+    const p = new THREE.Group(), sk = mm(skin[k], .7), pm = mm(pants, .8), sm = mm(shirt, .8), ph = x * 1.7 + z;
+    const legs = [-.09, .09].map(s => { const l = new THREE.Group(); l.position.set(s, .75, 0); B(l, .14, .75, .16, 0, -.375, 0, pm); p.add(l); return l; });
+    B(p, .36, .6, .22, 0, 1.05, 0, sm);
     if (vest) { B(p, .38, .5, .24, 0, 1.08, 0, mm(0xff7a1a, .7)); B(p, .39, .06, .25, 0, 1.0, 0, mm(0xdfe6ee, .4, .3)); }
-    [-.25, .25].forEach(s => hold ? B(p, .09, .1, .5, s, 1.25, .25, mm(shirt, .8)) : B(p, .09, .55, .12, s, 1.05, 0, mm(shirt, .8)));
+    const arms = [-.25, .25].map(s => { const a = new THREE.Group(); a.position.set(s, 1.32, 0); B(a, .09, .55, .12, 0, -.27, 0, sm); p.add(a); return a; });
     SP(p, .13, 0, 1.5, 0, sk);
     if (hat) { const h = new THREE.Mesh(new THREE.SphereGeometry(.15, 14, 8, 0, Math.PI * 2, 0, Math.PI / 2), mm(hat, .5)); h.position.set(0, 1.52, 0); h.castShadow = true; p.add(h); B(p, .34, .03, .3, 0, 1.52, 0, mm(hat, .5)); }
-    p.position.set(x, 0, z); p.rotation.y = ry; g.add(p);
+    const td = toolDef[task]; if (td) B(arms[1], td[1], td[2], td[3], 0, -.6, 0, mm(td[0], .5));
+    p.position.set(x, y, z); p.rotation.y = ry; g.add(p);
+    if (!task) return;
+    const sparks = task === "weld" ? [0, 1, 2].map(() => { const m = new THREE.Mesh(new THREE.SphereGeometry(.035, 6, 6), new THREE.MeshBasicMaterial({color: 0xffd34d})); p.add(m); return m; }) : null;
+    anims.push(t => {
+      if (!g.visible) return;
+      const w = t + ph;
+      if (task === "paint") { arms[1].rotation.x = -(1.5 + Math.sin(w * 2.6) * .5); arms[0].rotation.x = -.3 + Math.sin(w * 1.3) * .1; }
+      else if (task === "hammer") { arms[1].rotation.x = -(1.9 + Math.sin(w * 5.5) * .7); arms[0].rotation.x = -.5; }
+      else if (task === "wrench") { arms[1].rotation.x = -1.45 + Math.sin(w * 4) * .15; arms[1].rotation.z = Math.sin(w * 4) * .15; arms[0].rotation.x = -.4; }
+      else if (task === "weld") {
+        arms[0].rotation.x = -1.3 + Math.sin(w * 31) * .02; arms[1].rotation.x = -1.35 + Math.sin(w * 37) * .03;
+        sparks.forEach((m, i) => { m.visible = Math.sin(w * 23 + i * 2.1) > -.2; m.position.set(-.2 + Math.sin(w * 19 + i) * .12, 1.2 + Math.cos(w * 17 + i * 1.7) * .12, .75 + Math.abs(Math.sin(w * 13 + i)) * .15); });
+      }
+      else if (task === "wave") { arms[1].rotation.z = 2.6 + Math.sin(w * 6) * .35; }
+      else if (task === "patrol") {
+        p.position.x = x + Math.sin(w * .5) * 1.1; p.rotation.y = Math.cos(w * .5) > 0 ? Math.PI / 2 : -Math.PI / 2;
+        const q = Math.sin(w * 6) * .5; legs[0].rotation.x = q; legs[1].rotation.x = -q; arms[0].rotation.x = -q * .8; arms[1].rotation.x = q * .8;
+      }
+    });
   };
   const ladder = (g, x, z, len, ry, tilt) => { const l = new THREE.Group(); [-.21, .21].forEach(s => { B(l, .05, len, .05, 0, len / 2, s, alu); B(l, .08, .05, .1, 0, .025, s, dark); }); for (let y = .3; y < len - .1; y += .3) B(l, .05, .04, .42, 0, y, 0, alu); l.rotation.z = tilt; const w = new THREE.Group(); w.add(l); w.position.set(x, 0, z); w.rotation.y = ry; g.add(w); };
   const vanTxt = new THREE.MeshBasicMaterial({map: tx(256, 40, (x, w, h) => { x.fillStyle = '#fff'; x.font = 'bold 30px sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText('SOS HOME', w / 2, h / 2); }), transparent: true});
@@ -484,7 +644,7 @@ addEventListener("load", () => {
   };
   const tree = (g, x, z, s = 1) => { CY(g, .08 * s, .12 * s, .9 * s, x, .45 * s, z, mm(0x5b3a22, .9)); const l1 = mm(0x2f6b34, .9), l2 = mm(0x3d8a42, .9); SP(g, .7 * s, x, 1.3 * s, z, l1); SP(g, .5 * s, x + .3 * s, 1.7 * s, z + .1 * s, l2); SP(g, .45 * s, x - .25 * s, 1.6 * s, z - .15 * s, l1); };
 
-  // Casa
+  const buildCasa = () => {
   B(casa, 4.4, 2.4, 3.6, 0, 1.2, 0, plaster('#e8e1d3')); B(casa, 4.52, .3, 3.72, 0, .15, 0, concrete(3, 1));
   gable(casa, 4.4, 3.6, 1.3, 2.4, mm(0xe8e1d3, .9), tiles);
   B(casa, .5, 1.3, .5, 1.3, 3.5, -.4, mm(0xb0603b, .9)); B(casa, .62, .1, .62, 1.3, 4.2, -.4, concrete());
@@ -497,11 +657,13 @@ addEventListener("load", () => {
   tree(casa, -3.5, 1.2); tree(casa, 3.7, -2.2, 1.15); tree(casa, -3.2, -1.5, .8);
   gutters(casa, 4.4, 3.6, 2.4, white); stain(casa, -2.215, .9, -1, 1.4, 1.2, -Math.PI / 2); stain(casa, -2.215, 2.15, -.2, .9, .5, -Math.PI / 2);
   const bt = B(casa, .5, .05, .4, 1.2, 3.12, .8, mm(0xc4623a, .7)); bt.rotation.z = -.75;
-  ladder(casa, 3.2, -.9, 2.5, 0, .2618); person(casa, 3.42, -.9, -Math.PI / 2, 0x0e3a63, 0x2b3a4a, 0, 0xc85a17, false, true); B(casa, .4, .2, .2, 3.6, .1, -.2, steel);
-  person(casa, -1.4, 3.1, Math.PI, 0xb5485a, 0x3b4252, 1); van(casa, -3.4, 4.5, .15);
+  ladder(casa, 3.2, -.9, 2.5, 0, .2618); person(casa, 3.42, -.9, -Math.PI / 2, 0x0e3a63, 0x2b3a4a, 0, 0xc85a17, false, 'hammer'); B(casa, .4, .2, .2, 3.6, .1, -.2, steel);
+  person(casa, -2.95, .4, Math.PI / 2, 0xc85a17, 0x2b3a4a, 2, 0xf2c200, false, 'wrench'); person(casa, .9, 2.45, Math.PI, 0x2f7f6e, 0x2b3a4a, 0, 0x0e3a63, false, 'paint');
+  person(casa, -1.4, 3.1, Math.PI, 0xb5485a, 0x3b4252, 1, null, false, 'patrol'); van(casa, -3.4, 4.5, .15);
   [-2.1, .7, 1.9].forEach(x => SP(casa, .3, x, .3, 1.95, mm(0x2f6b34, .9)));
 
-  // Comércio
+  };
+  const buildLoja = () => {
   B(loja, 5, 2.6, 3.4, 0, 1.3, 0, plaster('#cfd6de')); B(loja, 5.2, .4, 3.6, 0, 2.8, 0, concrete(3, 1)); B(loja, 4.8, .05, 3.2, 0, 3.02, 0, mm(0x4b5563, .9));
   [-1.3, 1.2].forEach(x => { B(loja, .9, .5, .7, x, 3.3, 0, alu); CY(loja, .22, .22, .06, x, 3.58, 0, dark); });
   B(loja, 3.1, 1.6, .1, -.8, 1, 1.72, alu); B(loja, 2.9, 1.4, .1, -.8, 1, 1.75, glass); [-1.5, -.8, -.1].forEach(x => B(loja, .05, 1.4, .12, x, 1, 1.77, alu));
@@ -513,10 +675,12 @@ addEventListener("load", () => {
   B(loja, 7, .08, 2, 0, .04, 2.7, concrete(3, 1)); B(loja, 6.6, .06, 1.2, 0, .03, 4.4, mm(0x2a2f38, .95));
   tree(loja, -3.3, 3, .8); tree(loja, 3.3, 3, .8);
   CY(loja, .05, .05, 2.7, 2.65, 1.35, 1.55, dark); stain(loja, -2.515, .9, 1, 1.6, 1.3, -Math.PI / 2); B(loja, 1.6, .02, 1.2, .8, 3.06, -.8, mm(0x2e3f52, .15, .4));
-  ladder(loja, 3.47, -1.2, 4.04, 0, .2618); person(loja, 3.69, -1.2, -Math.PI / 2, 0x0e3a63, 0x2b3a4a, 2, 0xc85a17, false, true);
-  person(loja, -1.2, 3, Math.PI, 0x2f7f6e, 0x2b3a4a, 1); person(loja, -.1, 3.3, Math.PI, 0xc85a8a, 0x3b4252, 0); van(loja, -1.8, 4.4, 0);
+  ladder(loja, 3.47, -1.2, 4.04, 0, .2618); person(loja, 3.69, -1.2, -Math.PI / 2, 0x0e3a63, 0x2b3a4a, 2, 0xc85a17, false, 'paint');
+  person(loja, -1.2, 2.7, Math.PI, 0x2f7f6e, 0x2b3a4a, 1, null, false, 'patrol'); person(loja, -.1, 3.3, Math.PI, 0xc85a8a, 0x3b4252, 0, null, false, 'wave'); van(loja, -1.8, 4.4, 0);
+  person(loja, -.05, .7, Math.PI, 0x0e3a63, 0x2b3a4a, 1, 0xf2c200, false, 'wrench', 3.05);
 
-  // Indústria
+  };
+  const buildInd = () => {
   B(ind, 6, 3.2, 4, 0, 1.6, 0, metal('#5b6b7c')); B(ind, 6.06, .5, 4.06, 0, .25, 0, concrete(4, 1));
   gable(ind, 6, 4, .55, 3.2, mm(0x5b6b7c, .5, .4), metal('#8b97a5', 8));
   B(ind, 2.2, 2.3, .08, 0, 1.15, 2.02, steel); B(ind, 2, 2.1, .1, 0, 1.1, 2.06, slats);
@@ -530,28 +694,25 @@ addEventListener("load", () => {
   CY(ind, .7, .7, 2.2, 4.1, 1.1, -.5, mm(0x9aa7b5, .35, .6)); CY(ind, .73, .73, .08, 4.1, .6, -.5, dark); CY(ind, .73, .73, .08, 4.1, 1.6, -.5, dark); B(ind, .5, .14, .14, 3.2, .6, -.5, dark); B(ind, .06, 2.2, .06, 4.78, 1.1, -.5, dark);
   B(ind, 8, .06, 2.4, 0, .03, 3.1, concrete(4, 1)); B(ind, 8, .02, .1, 0, .07, 2.5, mm(0xf2c200, .6)); B(ind, 8, .02, .1, 0, .07, 3.9, mm(0xf2c200, .6));
   gutters(ind, 6, 4, 3.2, mm(0x9aa3ad, .4, .6)); stain(ind, 3.035, .9, 1.3, 1.6, 1.3, Math.PI / 2);
-  person(ind, -2.4, 2.8, Math.PI, 0x2b3a4a, 0x2b3a4a, 0, 0xf2c200, true);
-  ladder(ind, -4.22, -1.2, 3.67, Math.PI, .2618); person(ind, -4.44, -1.2, Math.PI / 2, 0x0e3a63, 0x2b3a4a, 1, 0xf2c200, true, true);
+  person(ind, -2.4, 2.8, Math.PI, 0x2b3a4a, 0x2b3a4a, 0, 0xf2c200, true, 'patrol');
+  ladder(ind, -4.22, -1.2, 3.67, Math.PI, .2618); person(ind, -4.44, -1.2, Math.PI / 2, 0x0e3a63, 0x2b3a4a, 1, 0xf2c200, true, 'hammer');
+  person(ind, 3.0, 2.95, Math.PI, 0x5b6b7c, 0x2b3a4a, 2, 0xf2c200, true, 'weld'); person(ind, 4.1, .7, Math.PI, 0xc85a17, 0x2b3a4a, 0, 0xf2c200, true, 'wrench');
   B(ind, .7, .5, .7, 3.6, .25, 3.2, mm(0xb08a5a, .9)); B(ind, .6, .4, .6, 3.6, .7, 3.2, mm(0xb08a5a, .9)); B(ind, .7, .5, .7, -3.6, .25, 3.4, mm(0xb08a5a, .9));
   van(ind, 2, 3.6, .1);
-  
-  
-  
-  
-  
-  
-  
-  
+  const puffs = [0, 1, 2].map(() => { const m = new THREE.Mesh(new THREE.SphereGeometry(.28, 10, 8), new THREE.MeshBasicMaterial({color: 0xcfd6de, transparent: true})); ind.add(m); return m; });
+  anims.push(t => { if (!ind.visible) return; puffs.forEach((m, i) => { const f = (t * .35 + i / 3) % 1; m.position.set(2 + f * .6, 5.4 + f * 1.8, 0); m.scale.setScalar(.6 + f * 1.1); m.material.opacity = .55 * (1 - f); }); });
+  };
+  const built = {}; const ensure = k => { if (!built[k]) { built[k] = 1; ({res: buildCasa, com: buildLoja, ind: buildInd})[k](); } };
   const P = {
     res: [[-1.3,1.5,2.2],[1.3,1.5,2.2],[2.6,1.2,.3],[0,.3,2.9],[-2.6,1,.4],[0,4.1,.2],[-1.2,3.6,1.0],[2.9,2.4,1.0],[-2.7,1.0,-1.0]],
     com: [[-1.2,1.2,2.3],[2.9,1.3,-.2],[-2.9,1.3,-.2],[0,3.8,.6],[2.1,1,2.3],[-2.2,2.2,2.3],[0,3.6,-1.0],[2.9,2.3,1.6],[-2.9,.8,1.0]],
     ind: [[-2.4,2.1,2.5],[4.1,2.7,-.5],[2,5.9,0],[-1.5,4.2,.8],[3.3,2.2,2.6],[0,.3,3.5],[-3.5,2.4,0],[-3.6,3.1,.8],[3.45,.9,1.3]]
   };
-  const mk = n => { const c = document.createElement("canvas"); c.width = c.height = 128; const x = c.getContext("2d"); x.beginPath(); x.arc(64,64,54,0,7); x.fillStyle = "#C85A17"; x.fill(); x.lineWidth = 8; x.strokeStyle = "#fff"; x.stroke(); x.fillStyle = "#fff"; x.font = "bold 58px sans-serif"; x.textAlign = "center"; x.textBaseline = "middle"; x.fillText(n,64,68); const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; return t; };
+  const mk = n => { const c = document.createElement("canvas"); c.width = c.height = 128; const x = c.getContext("2d"); x.beginPath(); x.arc(64,64,54,0,7); x.fillStyle = "#B34E10"; x.fill(); x.lineWidth = 8; x.strokeStyle = "#fff"; x.stroke(); x.fillStyle = "#fff"; x.font = "bold 58px sans-serif"; x.textAlign = "center"; x.textBaseline = "middle"; x.fillText(n,64,68); const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; return t; };
   const sp = {};
   for (const k in P) sp[k] = P[k].map((p, i) => { const s = new THREE.Sprite(new THREE.SpriteMaterial({map: mk(i+1), depthTest: false})); s.position.set(...p); s.renderOrder = 9; s.userData.i = i; S.add(s); return s; });
   let foc = 0, goal = 0, auto = !matchMedia("(prefers-reduced-motion:reduce)").matches, tour = null;
-  scSyncFn = () => { casa.visible = exM === "res"; loja.visible = exM === "com"; ind.visible = exM === "ind"; for (const k in sp) sp[k].forEach(s => s.visible = k === exM); const p = P[exM][exI]; goal = Math.atan2(p[0], p[2]); foc = 1.4; };
+  scSyncFn = () => { ensure(exM); casa.visible = exM === "res"; loja.visible = exM === "com"; ind.visible = exM === "ind"; for (const k in sp) sp[k].forEach(s => s.visible = k === exM); const p = P[exM][exI]; goal = Math.atan2(p[0], p[2]); foc = 1.4; };
   const rot = a => { const o = C.position.clone().sub(O.target).applyAxisAngle(Y, a); C.position.copy(O.target).add(o); };
   const size = () => { const w = cv.clientWidth, h = cv.clientHeight; R.setSize(w, h, false); C.aspect = w / h; C.updateProjectionMatrix(); };
   addEventListener("resize", size); size();
@@ -563,6 +724,7 @@ addEventListener("load", () => {
     if (foc > 0) { foc -= dt; const a = Math.atan2(C.position.x - O.target.x, C.position.z - O.target.z); let d = goal - a; d = Math.atan2(Math.sin(d), Math.cos(d)); rot(d * .08); }
     else if (auto) rot(.003);
     sp[exM].forEach((s, i) => { const on = i === exI, k = (on ? 1.15 : .8) * (1 + (on ? Math.sin(t * 5) * .07 : 0)); s.scale.set(k, k, 1); });
+    for (const f of anims) f(t);
     O.update(); R.render(S, C);
   })();
   const ray = new THREE.Raycaster(), pt = new THREE.Vector2(); let down = null;
@@ -580,18 +742,24 @@ addEventListener("load", () => {
   tb.onclick = () => { if (tour) return stopT(); auto = false; lab(); tb.textContent = "Pausar tour"; const n = () => { exI = (exI + 1) % lugares[exM].length; drawEx(); }; n(); tour = setInterval(n, 4000); };
   $("#scReset").onclick = () => { stopT(); foc = 0; O.target.copy(home); C.position.copy(homePos); };
   scSyncFn();
-});
+}
+// Three.js só é baixado quando a seção do 3D está perto de aparecer
+(function(){
+  let iniciado = false;
+  const ld = src => new Promise((ok, err) => { const e = document.createElement("script"); e.src = src; e.onload = ok; e.onerror = err; document.head.appendChild(e); });
+  const boot = () => { if (iniciado) return; iniciado = true; ld("https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js").then(() => ld("https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js")).then(init3D).catch(() => { const c = $("#sc"); if (c) c.parentElement.remove(); }); };
+  if ("IntersectionObserver" in window) new IntersectionObserver((e, o) => { if (e[0].isIntersecting) { boot(); o.disconnect(); } }, {rootMargin: "600px"}).observe($("#explorar"));
+  else addEventListener("load", boot);
+})();
 
 // Cena animada do topo e céu com luzes acendendo
 (function(){
-  const arm = (sx, sh, a, b, dur, extra = '') => `<g transform="translate(${sx},-50)"><g><animateTransform attributeName="transform" type="rotate" values="${a};${b};${a}" dur="${dur}s" repeatCount="indefinite"/><line y2="24" stroke="${sh}" stroke-width="6" stroke-linecap="round"/><circle cy="26" r="3.5" fill="#f1c9a5"/>${extra}</g></g>`;
-  const man = (x, y, sh, cap, a0, a1) => `<g transform="translate(${x},${y})"><rect x="-9" y="-26" width="7" height="26" rx="2" fill="#2b3a4a"/><rect x="2" y="-26" width="7" height="26" rx="2" fill="#2b3a4a"/>${a0}<rect x="-12" y="-54" width="24" height="30" rx="7" fill="${sh}"/><circle cy="-64" r="9" fill="#f1c9a5"/><path d="M-10 -66a10 10 0 0 1 20 0z" fill="${cap}"/><rect x="-11" y="-67" width="22" height="3" rx="1.5" fill="${cap}"/>${a1}</g>`;
   let f = '<g stroke="#9aa7b5" stroke-width="4" stroke-linecap="round"><line x1="60" y1="380" x2="86" y2="235"/><line x1="92" y1="380" x2="118" y2="235"/></g><g stroke="#9aa7b5" stroke-width="3">';
   for (let y = 355; y > 240; y -= 25) { const o = 26 * (380 - y) / 145; f += `<line x1="${60 + o}" y1="${y}" x2="${92 + o}" y2="${y}"/>`; }
   f += '</g>';
-  f += man(90, 300, '#0E3A63', '#F2C200', arm(-12, '#0E3A63', 15, 15, 3), arm(12, '#0E3A63', 168, 192, 1.1));
-  f += man(300, 380, '#2f7f6e', '#0E3A63', arm(12, '#2f7f6e', 10, 10, 3), arm(-12, '#2f7f6e', 126, 134, .8, '<rect x="-2.5" y="28" width="5" height="12" rx="2" fill="#aab4bf"/><circle cy="44" r="4" fill="none" stroke="#aab4bf" stroke-width="3"/>'));
-  f += man(385, 380, '#C85A17', '#0E3A63', arm(-12, '#C85A17', 20, 20, 3), arm(12, '#C85A17', 200, 216, 1.3, '<rect x="-3.5" y="36" width="7" height="18" rx="3" style="fill:var(--wall)"/><line y1="26" y2="36" stroke="#6b7886" stroke-width="2"/>'));
+  f += bn({x: 90, y: 300, sh: '#0E3A63', cap: '#F2C200', a: [15, 15, 3], b: [168, 192, 1.1]});
+  f += bn({x: 300, y: 380, sh: '#2f7f6e', cap: '#0E3A63', flip: -1, a: [-10, -10, 3], b: [-126, -134, .8, T.wrench]});
+  f += bn({x: 385, y: 380, sh: '#C85A17', cap: '#0E3A63', a: [20, 20, 3], b: [200, 216, 1.3, '<line y1="26" y2="36" stroke="#6b7886" stroke-width="2"/><rect x="-3.5" y="36" width="7" height="18" rx="3" style="fill:var(--wall)"/>']});
   $('#figs').innerHTML = f;
   // casas ao fundo com janelas acendendo uma a uma
   let x = 10, h = '';
@@ -602,10 +770,11 @@ addEventListener("load", () => {
     x += w + 20;
   }
   $('#sky').innerHTML = h;
+  $('#scene').classList.add('act');
   // a cor do site muda a cada pintura concluída
   const cols = ['#5B9BD5', '#E8A464', '#6BBF7A', '#E07A7A', '#9575CD'], root = document.documentElement; let k = 0;
   if (matchMedia('(prefers-reduced-motion:reduce)').matches) { $('#scene').pauseAnimations(); return; }
-  const cycle = () => { const c = cols[k++ % cols.length]; root.style.setProperty('--wall', c); setTimeout(() => root.style.setProperty('--paint', c), 9800); };
+  const cycle = () => { if (document.hidden) return; const c = cols[k++ % cols.length]; root.style.setProperty('--wall', c); setTimeout(() => root.style.setProperty('--paint', c), 9800); };
   cycle(); setInterval(cycle, 14000);
 })();
 
@@ -626,10 +795,23 @@ addEventListener("load", () => {
     const t = {t: [x, y - o, 'middle'], b: [x, y + o + 10, 'middle'], l: [x - o + 1, y + 5, 'end'], r: [x + o - 1, y + 5, 'start']}[c[3]];
     return `<g class="pin" data-i="${i}" tabindex="0" role="button" aria-label="${c[0]}" style="cursor:pointer">${i === 0 && !calm ? `<circle cx="${x}" cy="${y}" r="11" fill="none" stroke="var(--acc)" stroke-width="2"><animate attributeName="r" values="11;26;11" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;0;.8" dur="2.4s" repeatCount="indefinite"/></circle>` : ''}<circle class="ring" cx="${x}" cy="${y}" r="${r + 5}" fill="none" stroke="var(--ink)" stroke-width="2.5" opacity="0"/><circle cx="${x}" cy="${y}" r="${r}" fill="${i ? 'var(--btn)' : 'var(--acc)'}" stroke="#fff" stroke-width="2.5"/><text x="${t[0]}" y="${t[1]}" text-anchor="${t[2]}" font-size="${f}" font-weight="${i ? 600 : 800}" fill="var(--ink)" style="paint-order:stroke;stroke:var(--surf);stroke-width:4px;stroke-linejoin:round">${c[0]}</text></g>`;
   }).join('');
-  svg.innerHTML = cont + `<text x="385" y="240" text-anchor="middle" font-size="20" font-weight="800" letter-spacing="4" fill="var(--brand)" opacity=".35">SERRA GAÚCHA</text><path d="M24 200 l10 -22 l10 22 l-10 -6z" fill="var(--ink)" opacity=".7"/><text x="34" y="218" text-anchor="middle" font-size="13" font-weight="700" fill="var(--ink)">N</text><path d="M30 388h62M30 382v12M92 382v12" stroke="var(--ink)" stroke-width="2" fill="none"/><text x="61" y="376" text-anchor="middle" font-size="13" fill="var(--mute)">20 km</text>` + lines + pins;
+  svg.innerHTML = cont + `<text x="385" y="240" text-anchor="middle" font-size="20" font-weight="800" letter-spacing="4" fill="var(--brand)" opacity=".35">SERRA GAÚCHA</text><path d="M24 200 l10 -22 l10 22 l-10 -6z" fill="var(--ink)" opacity=".7"/><text x="34" y="218" text-anchor="middle" font-size="13" font-weight="700" fill="var(--ink)">N</text><path d="M30 388h62M30 382v12M92 382v12" stroke="var(--ink)" stroke-width="2" fill="none"/><text x="61" y="376" text-anchor="middle" font-size="13" fill="var(--mute)">20 km</text>` + lines + pins + '<g id="viajante" pointer-events="none"></g>';
   chips.innerHTML = cid.map((c, i) => `<button type="button" class="chip" data-i="${i}" aria-pressed="false">${c[0]}</button>`).join('');
+  let ult = 0, vOn = false;
+  function viaja(i){
+    const v = svg.querySelector('#viajante'); if (!v) return;
+    const a = pts[ult], b = pts[i], fl = b[0] >= a[0] ? 1 : -1;
+    const idle = () => { v.setAttribute('transform', `translate(${b[0]},${b[1] - 2})`); v.innerHTML = bn({s: .42, flip: fl, sh: '#0E3A63', cap: '#F2C200', a: [4, 10, 2.2], b: [-92, -120, .8, T.hammer]}); };
+    if (calm || !vOn || i === ult) { vOn = true; ult = i; idle(); return; }
+    v.removeAttribute('transform');
+    v.innerHTML = bn({s: .42, flip: fl, sh: '#0E3A63', cap: '#F2C200', walk: .5, a: [-30, 30, .5], b: [-70, -70, 1, T.box]}) + `<animateMotion dur="1.6s" fill="freeze" begin="indefinite" path="M${a[0]},${a[1] - 2} L${b[0]},${b[1] - 2}"/>`;
+    const m = v.querySelector('animateMotion'), dest = i; ult = i;
+    m.addEventListener('endEvent', () => { if (ult === dest) idle(); });
+    m.beginElement();
+  }
   function sel(i){
     const c = cid[i], d = km([cid[0][1], cid[0][2]], [c[1], c[2]]);
+    viaja(i);
     svg.querySelectorAll('.pin').forEach(g => g.querySelector('.ring').setAttribute('opacity', +g.dataset.i === i ? 1 : 0));
     chips.querySelectorAll('.chip').forEach(b => b.setAttribute('aria-pressed', +b.dataset.i === i));
     info.innerHTML = `<h3 class="text-xl font-bold">${c[0]}</h3><p class="mt-1 text-sm text-mute leading-relaxed">${i === 0 ? 'Base da SOS Home. Atendimento para residências, comércios e indústrias.' : `Cerca de ${Math.round(d)} km de Caxias do Sul, em linha reta. Confirme a disponibilidade e a agenda pelo WhatsApp.`}</p><a href="#contato" data-cidade="${c[0]}" class="btn btn-a mt-4">Pedir orçamento em ${c[0]}</a>`;
@@ -645,43 +827,52 @@ addEventListener("load", () => {
 const sinais = ["Disjuntor desarma com frequência","Cheiro de queimado perto de tomadas ou quadro","Tomadas ou plugues quentes","Torneira ou descarga pingando","Manchas de umidade ou mofo","Pintura descascando ou com bolhas","Luzes piscando ou oscilando","Chuveiro que não esquenta ou dá choque"];
 const sg = $("#sgList"), sgBtn = $("#sgBtn");
 sg.innerHTML = sinais.map((s, i) => `<label class="flex gap-3 p-3 border border-line rounded-lg cursor-pointer bg-bg text-sm font-semibold"><input type="checkbox" class="mt-0.5 w-4 h-4 accent-[#C85A17]" data-i="${i}"><span>${s}</span></label>`).join("");
+const sgEl = $("#sgScene");
+function sgScene(r){ const k = r ? "elet" : "prev"; if (sgEl.dataset.k !== k) { sgEl.dataset.k = k; sgEl.innerHTML = cena(k, "h-44"); watch(); } }
 function sgUp(){
   const on = [...sg.querySelectorAll("input:checked")].map(x => +x.dataset.i), n = on.length;
   $("#sgBar").style.width = (n / sinais.length * 100) + "%";
-  $("#sgTxt").textContent = n === 0 ? "Nenhum sinal marcado. Revisões periódicas ajudam a manter tudo assim." : n < 3 ? `${n} sinal(is) marcado(s). Vale agendar uma revisão antes que o problema aumente.` : `${n} sinais marcados. Recomendamos uma avaliação em breve, porque vários sinais juntos aumentam o risco de um problema maior.`;
+  $("#sgTxt").textContent = n === 0 ? "Nenhum sinal marcado. Revisões periódicas ajudam a manter tudo assim." : n === 1 ? "1 sinal marcado. Vale agendar uma revisão antes que o problema aumente." : n < 3 ? `${n} sinais marcados. Vale agendar uma revisão antes que o problema aumente.` : `${n} sinais marcados. Recomendamos uma avaliação em breve, porque vários sinais juntos aumentam o risco de um problema maior.`;
   const risco = on.some(i => [1,2,7].includes(i));
   $("#sgRisco").classList.toggle("hidden", !risco);
   sgBtn.dataset.obs = n ? "Sinais observados: " + on.map(i => sinais[i].toLowerCase()).join("; ") + "." : "";
   sgBtn.dataset.modo = risco ? "Emergência" : "Atendimento avulso";
   sgBtn.textContent = risco ? "Pedir atendimento urgente" : "Pedir uma revisão";
+  sgScene(risco);
 }
 sg.addEventListener("change", sgUp); sgUp();
 
-// Botões que pré-selecionam serviço, imóvel e observações
+// Botões que pré-selecionam serviço, imóvel, modalidade e observações
+let obsAuto = "";
 document.addEventListener("click", e => {
-  const a = e.target.closest("[data-srv]"); if (!a) return;
-  const s = $("#f_srv"); [...s.options].forEach(o => { if (o.text === a.dataset.srv) s.value = o.text; });
+  const a = e.target.closest("[data-srv],[data-modo]"); if (!a) return;
+  if (a.dataset.srv) { const s = $("#f_srv"); [...s.options].forEach(o => { if (o.text === a.dataset.srv) s.value = o.text; }); }
   if (a.dataset.imo) $("#f_imo").value = a.dataset.imo;
-  if (a.dataset.obs) $("#f_obs").value = a.dataset.obs;
-});
-
-// Botões que pré-selecionam a modalidade no formulário
-document.addEventListener("click", e => {
-  const a = e.target.closest("[data-modo]"); if (!a) return;
-  const m = a.dataset.modo, sel = $("#f_modo");
-  const alvo = m === "Vistoria técnica" ? "Vistoria técnica" : m;
-  [...sel.options].forEach(o => { if (o.text === alvo) sel.value = o.text; });
-  if (m === "Vistoria técnica") $("#f_srv").value = "Vistoria com termografia";
+  if (a.dataset.modo) {
+    const m = $("#f_modo"); [...m.options].forEach(o => { if (o.text === a.dataset.modo) m.value = o.text; });
+    if (a.dataset.modo === "Vistoria técnica") $("#f_srv").value = "Vistoria com termografia";
+  }
+  const o = $("#f_obs");
+  if (!o.value.trim() || o.value === obsAuto) { o.value = a.dataset.obs || ""; obsAuto = o.value; }
 });
 
 // Formulário -> WhatsApp
 let msg = "";
-$("#gerar").onclick = () => {
+$("#orc").addEventListener("submit", ev => {
+  ev.preventDefault();
   const v = id => $("#" + id).value.trim();
   const d = {nome:v("f_nome"), tel:v("f_tel"), imo:v("f_imo"), loc:v("f_loc"), modo:v("f_modo"), srv:v("f_srv"), obs:v("f_obs")};
   const er = $("#erro");
-  const falta = [["nome","Seu nome"],["tel","Telefone"],["imo","Tipo de imóvel"],["modo","Como quer contratar"],["srv","Serviço"]].filter(x => !d[x[0]]).map(x => x[1]);
-  if (falta.length) { er.textContent = "Preencha: " + falta.join(", ") + "."; er.classList.remove("hidden"); return; }
+  const campos = [["nome","Seu nome","f_nome"],["tel","Telefone","f_tel"],["imo","Tipo de imóvel","f_imo"],["modo","Como quer contratar","f_modo"],["srv","Serviço","f_srv"]];
+  const falta = campos.filter(x => !d[x[0]]);
+  const telOk = d.tel.replace(/\D/g, "").length >= 10;
+  document.querySelectorAll(".fld").forEach(f => f.removeAttribute("aria-invalid"));
+  if (falta.length || !telOk) {
+    const ruins = falta.length ? falta : [campos[1]];
+    er.textContent = falta.length ? "Preencha: " + falta.map(x => x[1]).join(", ") + "." : "Informe um telefone com DDD, por exemplo (54) 90000-0000.";
+    ruins.forEach(x => $("#" + x[2]).setAttribute("aria-invalid", "true"));
+    er.classList.remove("hidden"); $("#" + ruins[0][2]).focus(); return;
+  }
   er.classList.add("hidden");
   msg = `Olá, SOS Home! Gostaria de solicitar um atendimento.\n\n*Nome:* ${d.nome}\n*Telefone:* ${d.tel}\n*Imóvel:* ${d.imo}\n*Local:* ${d.loc || "Não informado"}\n*Contratação:* ${d.modo}\n*Serviço:* ${d.srv}\n*Detalhes:* ${d.obs || "Não informado"}\n\nAguardo retorno com o orçamento e a data para agendar.`;
   $("#msgTxt").textContent = msg;
@@ -689,12 +880,18 @@ $("#gerar").onclick = () => {
   $("#mailLink").href = "mailto:soshome54@gmail.com?subject=" + encodeURIComponent("Pedido de orçamento – " + d.nome) + "&body=" + encodeURIComponent(msg);
   $("#resumo").classList.remove("hidden");
   $("#resumo").scrollIntoView({behavior:"smooth", block:"nearest"});
-};
+});
 $("#copiar").onclick = async e => {
   try { await navigator.clipboard.writeText(msg); e.target.textContent = "Texto copiado"; }
   catch (_) { e.target.textContent = "Selecione e copie o texto acima"; }
   setTimeout(() => e.target.textContent = "Copiar texto", 2200);
 };
+
+// Cenas animadas nas demais seções e faixas de obra
+$("#vsScene").innerHTML = cena("termo", "h-44");
+$("#ctScene").innerHTML = cena("chamar", "h-44");
+drawFaixas(); watch();
+let rszT; addEventListener("resize", () => { clearTimeout(rszT); rszT = setTimeout(() => { drawFaixas(); watch(); }, 200); });
 </script>
 </body>
 </html>
