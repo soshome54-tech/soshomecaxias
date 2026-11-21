@@ -18,8 +18,31 @@ tailwind.config={theme:{extend:{fontFamily:{sans:['"Plus Jakarta Sans"','Inter',
 :root{--bg:#F4F6F8;--surf:#FFFFFF;--line:#DCE2E8;--ink:#10151C;--mute:#4B5565;--brand:#0E3A63;--btn:#0E3A63;--acc:#C85A17;--tint:#E8EEF4;--home:#0E3A63;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1319;--surf:#151C25;--line:#273240;--ink:#E8EDF2;--mute:#A3AEBB;--brand:#7DB2E6;--btn:#1B5A94;--acc:#EE8446;--tint:#1A2430;--home:#F1F5F9}}
 :root[data-theme="dark"]{--bg:#0E1319;--surf:#151C25;--line:#273240;--ink:#E8EDF2;--mute:#A3AEBB;--brand:#7DB2E6;--btn:#1B5A94;--acc:#EE8446;--tint:#1A2430;--home:#F1F5F9}
+
+:root{--paint:#5B9BD5;--wall:#5B9BD5}
+.bulb{fill:#cfd8e3;animation:bulb 14s infinite}
+@keyframes bulb{0%,18%{fill:#cfd8e3}20%{fill:#FFD34D}22%{fill:#cfd8e3}24%,92%{fill:#FFD34D}98%,100%{fill:#cfd8e3}}
+.glow{opacity:0;animation:glow 14s infinite}
+@keyframes glow{0%,22%{opacity:0}27%,92%{opacity:1}98%,100%{opacity:0}}
+.dk{opacity:.55;animation:dk 14s infinite}
+@keyframes dk{0%,22%{opacity:.55}28%,92%{opacity:0}98%,100%{opacity:.55}}
+.leak{animation:leak 14s infinite}
+@keyframes leak{0%,48%{opacity:1}52%,94%{opacity:0}98%,100%{opacity:1}}
+.dr{animation:drip 1s infinite ease-in}
+@keyframes drip{0%{transform:translateY(0);opacity:1}85%{opacity:1}100%{transform:translateY(70px);opacity:0}}
+.pud{transform-box:fill-box;transform-origin:center;animation:pud 14s infinite}
+@keyframes pud{0%{transform:scaleX(.2)}48%{transform:scaleX(1)}100%{transform:scaleX(.2)}}
+.pt{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(0);animation:pt 14s infinite}
+@keyframes pt{0%,4%{transform:scaleY(0)}68%,94%{transform:scaleY(1)}95%,100%{transform:scaleY(0)}}
+.ok{opacity:0}.ok1{animation:ok1 14s infinite}.ok2{animation:ok2 14s infinite}.ok3{animation:ok3 14s infinite}
+@keyframes ok1{0%,30%{opacity:0}34%,92%{opacity:1}97%,100%{opacity:0}}
+@keyframes ok2{0%,52%{opacity:0}56%,92%{opacity:1}97%,100%{opacity:0}}
+@keyframes ok3{0%,70%{opacity:0}74%,92%{opacity:1}97%,100%{opacity:0}}
+.lt{fill:var(--surf);animation:lt 14s infinite}
+@keyframes lt{0%,10%{fill:var(--surf);filter:none}13%,90%{fill:#FFD34D;filter:drop-shadow(0 0 5px #FFB800)}96%,100%{fill:var(--surf);filter:none}}
+@media (prefers-reduced-motion:reduce){.bulb{fill:#FFD34D}.glow{opacity:1}.dk{opacity:0}.leak{opacity:0}.pt{transform:none}.ok{opacity:1}.lt{fill:#FFD34D}}
 html{scroll-behavior:smooth;scroll-padding-top:calc(5rem + env(safe-area-inset-top,0px))}
-body{background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sans",Inter,system-ui,sans-serif}
+body{background:var(--bg);background:color-mix(in srgb,var(--paint) 6%,var(--bg));transition:background-color 1.6s;color:var(--ink);font-family:"Plus Jakarta Sans",Inter,system-ui,sans-serif}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surf);z-index:60}
 .grid-bg{background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:40px 40px;opacity:.45;mask-image:linear-gradient(to bottom,#000,transparent 85%);-webkit-mask-image:linear-gradient(to bottom,#000,transparent 85%)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:700;border-radius:.5rem;padding:.8rem 1.25rem;transition:filter .15s,border-color .15s;text-align:center}
@@ -77,8 +100,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <main id="topo" class="pt-16">
 
-<section class="relative overflow-hidden border-b border-line">
+<section id="hero" class="relative overflow-hidden border-b border-line" style="background:var(--bg);background:color-mix(in srgb,var(--paint) 16%,var(--bg));transition:background-color 1.6s">
   <div class="grid-bg absolute inset-0" aria-hidden="true"></div>
+  <svg id="sky" class="absolute inset-x-0 bottom-0 w-full h-40 pointer-events-none" viewBox="0 0 1200 160" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg>
   <div class="relative max-w-6xl mx-auto px-4 py-14 lg:py-24 grid lg:grid-cols-5 gap-10 items-center">
     <div class="lg:col-span-3 reveal">
       <p class="inline-block text-sm font-bold text-brand border border-line bg-surf rounded-full px-3 py-1 mb-5">Caxias do Sul e região</p>
@@ -88,11 +112,34 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
         <a href="#contato" class="btn btn-a">Pedir orçamento</a>
         <a href="#explorar" class="btn btn-o">Explore o seu imóvel</a>
       </div>
+      <ul id="difer" class="mt-6 grid sm:grid-cols-3 gap-3"></ul>
     </div>
-    <aside class="lg:col-span-2 reveal" style="animation-delay:.12s" aria-label="Diferenciais">
-      <div class="bg-surf border border-line rounded-xl overflow-hidden">
-        <div class="px-5 py-3 border-b border-line bg-[var(--tint)] font-bold text-sm">Como a SOS Home atende</div>
-        <ul class="divide-y divide-line" id="difer"></ul>
+    <aside class="lg:col-span-2 reveal" style="animation-delay:.12s" aria-label="Ilustração animada dos serviços">
+      <div class="bg-surf/80 border border-line rounded-2xl p-3 backdrop-blur-sm">
+        <svg id="scene" viewBox="0 0 480 420" class="w-full h-auto block" role="img" aria-label="Ilustração animada: um eletricista acende a luz, um encanador conserta um vazamento e um pintor renova a parede">
+          <defs><radialGradient id="gl"><stop offset="0" stop-color="#FFD34D" stop-opacity=".95"/><stop offset="1" stop-color="#FFD34D" stop-opacity="0"/></radialGradient></defs>
+          <path d="M8 126 L240 22 L472 126Z" fill="var(--btn)"/>
+          <rect x="22" y="126" width="436" height="270" fill="var(--surf)" stroke="var(--brand)" stroke-width="6"/>
+          <rect x="25" y="380" width="430" height="13" fill="var(--tint)"/>
+          <rect class="dk" x="25" y="129" width="154" height="251" fill="#0b1a2b"/>
+          <circle class="glow" cx="102" cy="218" r="85" fill="url(#gl)"/>
+          <line x1="102" y1="129" x2="102" y2="208" stroke="var(--ink)" stroke-width="2"/>
+          <circle class="bulb" cx="102" cy="218" r="10" stroke="var(--ink)" stroke-width="1.5"/>
+          <rect x="212" y="236" width="64" height="8" rx="3" fill="var(--line)"/>
+          <path d="M248 236v-14h12" stroke="#9aa7b5" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <rect x="244" y="244" width="8" height="86" fill="#9aa7b5"/><rect x="244" y="322" width="86" height="8" fill="#9aa7b5"/>
+          <rect x="241" y="292" width="14" height="10" rx="2" fill="#6b7886"/>
+          <g class="leak"><circle class="dr" cx="248" cy="306" r="3.2" fill="#4DA3FF"/><circle class="dr" cx="248" cy="306" r="3.2" fill="#4DA3FF" style="animation-delay:.33s"/><circle class="dr" cx="248" cy="306" r="3.2" fill="#4DA3FF" style="animation-delay:.66s"/><ellipse class="pud" cx="248" cy="379" rx="30" ry="4" fill="#4DA3FF" opacity=".55"/></g>
+          <rect x="418" y="196" width="34" height="178" fill="var(--tint)" stroke="var(--line)"/>
+          <rect class="pt" x="418" y="196" width="34" height="178" style="fill:var(--wall);transition:fill .3s"/>
+          <rect x="352" y="362" width="18" height="18" rx="2" style="fill:var(--wall)" stroke="var(--ink)" stroke-width="1.5"/>
+          <path d="M182 126V396M340 126V396" stroke="var(--brand)" stroke-width="4"/>
+          <g id="figs"></g>
+          <g class="ok ok1"><rect x="34" y="140" width="96" height="24" rx="12" fill="var(--btn)"/><text x="82" y="156" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Luz acesa ✓</text></g>
+          <g class="ok ok2"><rect x="196" y="140" width="110" height="24" rx="12" fill="var(--btn)"/><text x="251" y="156" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Sem vazamento ✓</text></g>
+          <g class="ok ok3"><rect x="352" y="140" width="100" height="24" rx="12" fill="var(--btn)"/><text x="402" y="156" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">Pintura pronta ✓</text></g>
+          <g font-size="13" font-weight="800" fill="var(--mute)" text-anchor="middle"><text x="102" y="414">Elétrica</text><text x="261" y="414">Hidráulica</text><text x="399" y="414">Pintura</text></g>
+        </svg>
       </div>
     </aside>
   </div>
@@ -267,7 +314,7 @@ mb.onclick = () => { const o = mn.classList.toggle("hidden") === false; mb.setAt
 mn.querySelectorAll("a").forEach(a => a.addEventListener("click", () => { mn.classList.add("hidden"); mb.setAttribute("aria-expanded", "false"); }));
 
 const dif = [["Orçamento rápido","Descreva o problema pelo WhatsApp e receba o orçamento sem enrolação."],["Profissionais uniformizados","Equipe identificada, com ferramentas completas para resolver no local."],["Garantia de serviço","O trabalho executado tem garantia."]];
-$("#difer").innerHTML = dif.map(d => `<li class="p-5 flex gap-4"><span class="w-1.5 rounded bg-acc shrink-0"></span><div><p class="font-bold">${d[0]}</p><p class="text-sm text-mute mt-1">${d[1]}</p></div></li>`).join("");
+$("#difer").innerHTML = dif.map(d => `<li class="bg-surf/80 border border-line rounded-lg p-3"><p class="font-bold text-sm">${d[0]}</p><p class="text-xs text-mute mt-1 leading-snug">${d[1]}</p></li>`).join("");
 
 // Serviços
 const servicos = [
@@ -534,6 +581,33 @@ addEventListener("load", () => {
   $("#scReset").onclick = () => { stopT(); foc = 0; O.target.copy(home); C.position.copy(homePos); };
   scSyncFn();
 });
+
+// Cena animada do topo e céu com luzes acendendo
+(function(){
+  const arm = (sx, sh, a, b, dur, extra = '') => `<g transform="translate(${sx},-50)"><g><animateTransform attributeName="transform" type="rotate" values="${a};${b};${a}" dur="${dur}s" repeatCount="indefinite"/><line y2="24" stroke="${sh}" stroke-width="6" stroke-linecap="round"/><circle cy="26" r="3.5" fill="#f1c9a5"/>${extra}</g></g>`;
+  const man = (x, y, sh, cap, a0, a1) => `<g transform="translate(${x},${y})"><rect x="-9" y="-26" width="7" height="26" rx="2" fill="#2b3a4a"/><rect x="2" y="-26" width="7" height="26" rx="2" fill="#2b3a4a"/>${a0}<rect x="-12" y="-54" width="24" height="30" rx="7" fill="${sh}"/><circle cy="-64" r="9" fill="#f1c9a5"/><path d="M-10 -66a10 10 0 0 1 20 0z" fill="${cap}"/><rect x="-11" y="-67" width="22" height="3" rx="1.5" fill="${cap}"/>${a1}</g>`;
+  let f = '<g stroke="#9aa7b5" stroke-width="4" stroke-linecap="round"><line x1="60" y1="380" x2="86" y2="235"/><line x1="92" y1="380" x2="118" y2="235"/></g><g stroke="#9aa7b5" stroke-width="3">';
+  for (let y = 355; y > 240; y -= 25) { const o = 26 * (380 - y) / 145; f += `<line x1="${60 + o}" y1="${y}" x2="${92 + o}" y2="${y}"/>`; }
+  f += '</g>';
+  f += man(90, 300, '#0E3A63', '#F2C200', arm(-12, '#0E3A63', 15, 15, 3), arm(12, '#0E3A63', 168, 192, 1.1));
+  f += man(300, 380, '#2f7f6e', '#0E3A63', arm(12, '#2f7f6e', 10, 10, 3), arm(-12, '#2f7f6e', 126, 134, .8, '<rect x="-2.5" y="28" width="5" height="12" rx="2" fill="#aab4bf"/><circle cy="44" r="4" fill="none" stroke="#aab4bf" stroke-width="3"/>'));
+  f += man(385, 380, '#C85A17', '#0E3A63', arm(-12, '#C85A17', 20, 20, 3), arm(12, '#C85A17', 200, 216, 1.3, '<rect x="-3.5" y="36" width="7" height="18" rx="3" style="fill:var(--wall)"/><line y1="26" y2="36" stroke="#6b7886" stroke-width="2"/>'));
+  $('#figs').innerHTML = f;
+  // casas ao fundo com janelas acendendo uma a uma
+  let x = 10, h = '';
+  for (let i = 0; i < 9; i++) {
+    const w = 90 + (i * 37 % 50), ht = 60 + (i * 53 % 50), y = 160 - ht;
+    h += `<rect x="${x}" y="${y}" width="${w}" height="${ht}" fill="var(--line)" opacity=".55"/><path d="M${x - 6} ${y} L${x + w / 2} ${y - 34} L${x + w + 6} ${y}Z" fill="var(--line)" opacity=".75"/>`;
+    [0, 1].forEach(j => { h += `<rect class="lt" style="animation-delay:${((i * 2 + j) * .9).toFixed(1)}s" x="${x + 14 + j * (w / 2 - 6)}" y="${y + 14}" width="16" height="18" rx="2"/>`; });
+    x += w + 20;
+  }
+  $('#sky').innerHTML = h;
+  // a cor do site muda a cada pintura concluída
+  const cols = ['#5B9BD5', '#E8A464', '#6BBF7A', '#E07A7A', '#9575CD'], root = document.documentElement; let k = 0;
+  if (matchMedia('(prefers-reduced-motion:reduce)').matches) { $('#scene').pauseAnimations(); return; }
+  const cycle = () => { const c = cols[k++ % cols.length]; root.style.setProperty('--wall', c); setTimeout(() => root.style.setProperty('--paint', c), 9800); };
+  cycle(); setInterval(cycle, 14000);
+})();
 
 // Mapa da Serra Gaúcha (esquemático, posições a partir de latitude e longitude)
 (function(){
